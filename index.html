@@ -417,7 +417,7 @@
                     </div>
 
                     <!-- Tab Contents -->
-                    <div class="bg-white dark:bg-darkCard rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-800 min-h-[400px]">
+                    <div class="bg-white dark:bg-darkCard rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100 dark:border-gray-800 min-h-[400px]">
                         
                         <!-- TAB 1: Courses Taught -->
                         <div id="tab-courses" class="tab-pane block">
@@ -494,52 +494,58 @@
                             </div>
                         </div>
 
-                        <!-- TAB 4: Academic Videos (Embedded YouTube Frames) -->
+                        <!-- TAB 4: Academic Videos (Horizontal Cards with embedded frames) -->
                         <div id="tab-videos" class="tab-pane hidden">
-                            <h3 class="text-2xl font-bold mb-6">Academic Learning Videos</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                            <div class="flex items-center justify-between mb-8">
+                                <h3 class="text-2xl font-bold">Academic Learning Videos</h3>
+                            </div>
+                            
+                            <!-- Container uses 1 column on small/med, 2 columns on very large screens for nice wide horizontal cards -->
+                            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
                                 
                                 <!-- Video 1: Quantum Linear Harmonic Oscillator -->
-                                <div class="rounded-xl overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg shadow-sm hover:shadow-md transition-shadow">
-                                    <div class="relative w-full aspect-video bg-gray-200 dark:bg-gray-800">
+                                <div class="flex flex-col sm:flex-row overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                                    <!-- Video Container (Left side on sm+ screens) -->
+                                    <div class="relative w-full sm:w-[45%] md:w-1/2 aspect-video shrink-0 bg-gray-200 dark:bg-gray-800">
                                         <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/ptzMffb9sOM" title="The Quantum Linear Harmonic Oscillator" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
-                                    <div class="p-5">
-                                        <h4 class="font-bold text-base mb-1">The Quantum Linear Harmonic Oscillator: Derivation and Solutions</h4>
-                                        <p class="text-sm text-gray-500">Duration: 4:11</p>
+                                    <!-- Text Container (Right side on sm+ screens) -->
+                                    <div class="p-6 flex flex-col justify-center w-full">
+                                        <h4 class="font-bold text-lg mb-2 leading-snug">The Quantum Linear Harmonic Oscillator: Derivation and Solutions</h4>
+                                        <p class="text-sm text-gray-500 mt-auto"><i class="fa-regular fa-clock mr-1"></i> Duration: 4:11</p>
                                     </div>
                                 </div>
 
                                 <!-- Video 2: Probability and probability current densities -->
-                                <div class="rounded-xl overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg shadow-sm hover:shadow-md transition-shadow">
-                                    <div class="relative w-full aspect-video bg-gray-200 dark:bg-gray-800">
+                                <div class="flex flex-col sm:flex-row overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="relative w-full sm:w-[45%] md:w-1/2 aspect-video shrink-0 bg-gray-200 dark:bg-gray-800">
                                         <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/QFmjfvyay0s" title="Probability and probability current densities" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
-                                    <div class="p-5">
-                                        <h4 class="font-bold text-base mb-1">Probability and probability current densities</h4>
-                                        <p class="text-sm text-gray-500">Duration: 3:38</p>
+                                    <div class="p-6 flex flex-col justify-center w-full">
+                                        <h4 class="font-bold text-lg mb-2 leading-snug">Probability and Probability Current Densities</h4>
+                                        <p class="text-sm text-gray-500 mt-auto"><i class="fa-regular fa-clock mr-1"></i> Duration: 3:38</p>
                                     </div>
                                 </div>
 
                                 <!-- Video 3: Compton Scattering -->
-                                <div class="rounded-xl overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg shadow-sm hover:shadow-md transition-shadow">
-                                    <div class="relative w-full aspect-video bg-gray-200 dark:bg-gray-800">
+                                <div class="flex flex-col sm:flex-row overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="relative w-full sm:w-[45%] md:w-1/2 aspect-video shrink-0 bg-gray-200 dark:bg-gray-800">
                                         <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/yg7NdGt7nk4" title="Compton Scattering" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
-                                    <div class="p-5">
-                                        <h4 class="font-bold text-base mb-1">Compton Scattering</h4>
-                                        <p class="text-sm text-gray-500">Duration: 5:49</p>
+                                    <div class="p-6 flex flex-col justify-center w-full">
+                                        <h4 class="font-bold text-lg mb-2 leading-snug">Compton Scattering: A Cosmic Slingshot</h4>
+                                        <p class="text-sm text-gray-500 mt-auto"><i class="fa-regular fa-clock mr-1"></i> Duration: 5:49</p>
                                     </div>
                                 </div>
 
                                 <!-- Video 4: Quantum Mechanics of the Infinite Potential Well -->
-                                <div class="rounded-xl overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg shadow-sm hover:shadow-md transition-shadow">
-                                    <div class="relative w-full aspect-video bg-gray-200 dark:bg-gray-800">
+                                <div class="flex flex-col sm:flex-row overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="relative w-full sm:w-[45%] md:w-1/2 aspect-video shrink-0 bg-gray-200 dark:bg-gray-800">
                                         <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/it-XfYts8EQ" title="Quantum Mechanics of the Infinite Potential Well" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
-                                    <div class="p-5">
-                                        <h4 class="font-bold text-base mb-1">Quantum Mechanics of the Infinite Potential Well</h4>
-                                        <p class="text-sm text-gray-500">Duration: 5:35</p>
+                                    <div class="p-6 flex flex-col justify-center w-full">
+                                        <h4 class="font-bold text-lg mb-2 leading-snug">Quantum Mechanics of the Infinite Potential Well</h4>
+                                        <p class="text-sm text-gray-500 mt-auto"><i class="fa-regular fa-clock mr-1"></i> Duration: 5:35</p>
                                     </div>
                                 </div>
 
