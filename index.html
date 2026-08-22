@@ -165,6 +165,7 @@
             <div class="max-w-6xl mx-auto px-4 z-10 w-full flex flex-col md:flex-row items-center gap-12 py-12">
                 <div class="w-48 h-48 md:w-72 md:h-72 shrink-0 rounded-full p-2 bg-gradient-to-tr from-primary to-secondary shadow-2xl fade-in-section">
                     <div class="w-full h-full rounded-full overflow-hidden bg-white dark:bg-gray-800 flex items-center justify-center text-gray-400">
+                        <!-- Using SVG avatar as high-quality placeholder -->
                         <svg class="w-full h-full object-cover" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                         </svg>
@@ -189,9 +190,9 @@
                         <a href="#contact" class="border-2 border-gray-300 dark:border-gray-600 hover:border-primary dark:hover:border-primary px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2">
                             <i class="fa-solid fa-envelope"></i> Contact Me
                         </a>
-                        <button onclick="alert('In a real deployment, this would trigger a PDF download.')" class="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2">
+                        <a href="Resume-Dr Sachin Pathak.pdf" target="_blank" class="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2">
                             <i class="fa-solid fa-download"></i> CV
-                        </button>
+                        </a>
                     </div>
                     
                     <div class="mt-8 flex gap-4 justify-center md:justify-start">
@@ -257,6 +258,7 @@
                 </div>
 
                 <div class="relative timeline-container py-4">
+                    <!-- Timeline Item 1 -->
                     <div class="timeline-item relative w-1/2 ml-auto pl-8 py-4 fade-in-section">
                         <div class="timeline-dot absolute w-4 h-4 bg-primary rounded-full left-0 top-6 transform -translate-x-1/2 ring-4 ring-blue-100 dark:ring-darkCard"></div>
                         <div class="bg-white dark:bg-darkCard p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
@@ -267,6 +269,7 @@
                         </div>
                     </div>
                     
+                    <!-- Timeline Item 2 -->
                     <div class="timeline-item relative w-1/2 mr-auto pr-8 py-4 text-right fade-in-section">
                         <div class="timeline-dot absolute w-4 h-4 bg-secondary rounded-full right-0 top-6 transform translate-x-1/2 ring-4 ring-blue-100 dark:ring-darkCard"></div>
                         <div class="bg-white dark:bg-darkCard p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
@@ -277,6 +280,7 @@
                         </div>
                     </div>
 
+                    <!-- Timeline Item 3 -->
                     <div class="timeline-item relative w-1/2 ml-auto pl-8 py-4 fade-in-section">
                         <div class="timeline-dot absolute w-4 h-4 bg-gray-400 rounded-full left-0 top-6 transform -translate-x-1/2 ring-4 ring-gray-100 dark:ring-darkCard"></div>
                         <div class="bg-white dark:bg-darkCard p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
@@ -287,6 +291,7 @@
                         </div>
                     </div>
 
+                    <!-- Timeline Item 4 -->
                     <div class="timeline-item relative w-1/2 mr-auto pr-8 py-4 text-right fade-in-section">
                         <div class="timeline-dot absolute w-4 h-4 bg-gray-400 rounded-full right-0 top-6 transform translate-x-1/2 ring-4 ring-gray-100 dark:ring-darkCard"></div>
                         <div class="bg-white dark:bg-darkCard p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
@@ -300,7 +305,96 @@
             </div>
         </section>
 
-        <!-- 6. TEACHING, LABS & LEARNING RESOURCES -->
+        <!-- 4 & 5. PUBLICATIONS, PROJECTS & SKILLS -->
+        <section id="publications" class="py-20 bg-white dark:bg-darkCard">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-12">
+                    
+                    <!-- Left: Publications & Projects -->
+                    <div class="lg:w-2/3">
+                        <div class="mb-10 fade-in-section">
+                            <h2 class="text-3xl font-bold mb-2 font-serif text-gradient inline-block">Selected Publications</h2>
+                            <p class="text-sm text-gray-500">Highlighting recent and high-impact peer-reviewed journals.</p>
+                        </div>
+                        
+                        <!-- Dynamic Publication List Container -->
+                        <div id="pub-list" class="space-y-6 fade-in-section">
+                            <!-- JS will populate this -->
+                        </div>
+
+                        <div class="mt-12 mb-10 fade-in-section">
+                            <h2 class="text-2xl font-bold mb-4 border-b pb-2 dark:border-gray-700">Research Grants & Projects</h2>
+                            <div class="space-y-4">
+                                <div class="p-4 bg-gray-50 dark:bg-darkBg rounded-lg border-l-4 border-primary">
+                                    <h4 class="font-bold">Origin and modulation of interfacial magnetic anisotropy...</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Collaborative Research Scheme (CRS) Project, UGC-DAE CSR. (Role: PI)</p>
+                                </div>
+                                <div class="p-4 bg-gray-50 dark:bg-darkBg rounded-lg border-l-4 border-secondary">
+                                    <h4 class="font-bold">Spin-orbit torque (SOT) induced magnetization dynamics...</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">UPES-SEED Grant. Non-volatile memory applications. (Role: PI)</p>
+                                </div>
+                                <div class="p-4 bg-gray-50 dark:bg-darkBg rounded-lg border-l-4 border-gray-400">
+                                    <h4 class="font-bold">MOKE instrument for the study of magnetic dynamics...</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">UPES-SEED INFRA Grant. (Role: PI)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Skills & Collaborations -->
+                    <div class="lg:w-1/3 space-y-10 fade-in-section">
+                        <!-- Technical Skills -->
+                        <div class="bg-gray-50 dark:bg-darkBg p-6 rounded-2xl border border-gray-100 dark:border-gray-800">
+                            <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="fa-solid fa-wrench text-primary"></i> Technical Skills</h3>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Growth & Fabrication</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-white dark:bg-darkCard text-sm rounded-full border border-gray-200 dark:border-gray-700 shadow-sm">DC/RF Sputtering</span>
+                                    <span class="px-3 py-1 bg-white dark:bg-darkCard text-sm rounded-full border border-gray-200 dark:border-gray-700 shadow-sm">Electrodeposition</span>
+                                    <span class="px-3 py-1 bg-white dark:bg-darkCard text-sm rounded-full border border-gray-200 dark:border-gray-700 shadow-sm">Lithography</span>
+                                    <span class="px-3 py-1 bg-white dark:bg-darkCard text-sm rounded-full border border-gray-200 dark:border-gray-700 shadow-sm">Ion Milling</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Characterization</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-sm rounded-full">MOKE</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-sm rounded-full">VSM / SQUID</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-sm rounded-full">SEM & AFM</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-sm rounded-full">FMR / EPR</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-sm rounded-full">XRD</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Software & Simulation</h4>
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mb-2"><div class="bg-primary h-2 rounded-full" style="width: 90%"></div></div>
+                                <p class="text-xs text-right text-gray-500 mb-4">OOMMF / Micromagnetics</p>
+                                
+                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mb-2"><div class="bg-primary h-2 rounded-full" style="width: 85%"></div></div>
+                                <p class="text-xs text-right text-gray-500 mb-4">SRIM-TRIM / LabVIEW</p>
+                            </div>
+                        </div>
+
+                        <!-- Highlights / Awards -->
+                        <div class="bg-gradient-to-br from-primary to-secondary p-6 rounded-2xl text-white shadow-lg">
+                            <h3 class="text-xl font-bold mb-4"><i class="fa-solid fa-trophy text-yellow-300"></i> Key Honors</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex gap-2"><i class="fa-solid fa-check-circle mt-1 text-blue-200"></i> STAR Researcher-2020 (UPES)</li>
+                                <li class="flex gap-2"><i class="fa-solid fa-check-circle mt-1 text-blue-200"></i> Yonsei Univ. Post-Doctoral Fellow (2016)</li>
+                                <li class="flex gap-2"><i class="fa-solid fa-check-circle mt-1 text-blue-200"></i> Brain Korea (BK21) Plus Fellow (2014)</li>
+                                <li class="flex gap-2"><i class="fa-solid fa-check-circle mt-1 text-blue-200"></i> CSIR-SRF & JRF Awardee</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. TEACHING & LEARNING RESOURCES (Tabbed) -->
         <section id="teaching" class="py-20 bg-gray-50 dark:bg-darkBg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12 fade-in-section">
@@ -390,12 +484,12 @@
 
                         <!-- TAB 3: Interactive Physics Lab -->
                         <div id="tab-virtual-lab" class="tab-pane hidden">
-                            <div class="bg-gray-900 text-white rounded-xl p-8 relative overflow-hidden shadow-lg mb-8">
+                            <div class="bg-gray-900 text-white rounded-xl p-8 relative overflow-hidden shadow-lg h-full min-h-[300px] flex items-center">
                                 <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
-                                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+                                <div class="relative z-10 w-full flex flex-col md:flex-row items-center justify-between gap-8">
                                     <div>
-                                        <h3 class="text-3xl font-bold mb-2 text-white">Interactive Physics Virtual Lab</h3>
-                                        <p class="text-gray-400 max-w-xl">A comprehensive digital environment for simulating physics experiments, visualizing quantum models, and understanding magnetic dynamics interactively.</p>
+                                        <h3 class="text-3xl font-bold mb-4 text-white">Interactive Physics Virtual Lab</h3>
+                                        <p class="text-gray-400 max-w-xl text-lg">A comprehensive digital environment for simulating physics experiments, visualizing quantum models, and understanding magnetic dynamics interactively.</p>
                                     </div>
                                     <a href="https://spathakiitd.github.io/physics-virtual-lab/" target="_blank" class="bg-primary hover:bg-blue-600 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-[0_0_15px_rgba(14,165,233,0.5)] hover:scale-105 whitespace-nowrap flex items-center gap-3">
                                         Launch Virtual Lab <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -407,46 +501,64 @@
                         <!-- TAB 4: Academic Videos -->
                         <div id="tab-videos" class="tab-pane hidden">
                             <h3 class="text-2xl font-bold mb-6">Academic Learning Videos</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <div class="rounded-xl overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg group cursor-pointer">
-                                    <div class="relative w-full h-40 bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-                                        <img src="https://youtu.be/ptzMffb9sOM" alt="Video thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                
+                                <!-- Video 1: Quantum Linear Harmonic Oscillator -->
+                                <a href="https://youtu.be/ptzMffb9sOM" target="_blank" class="rounded-xl overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg group cursor-pointer block hover:shadow-lg transition-all">
+                                    <div class="relative w-full h-36 bg-gray-200 dark:bg-gray-800 flex items-center justify-center overflow-hidden">
+                                        <img src="https://img.youtube.com/vi/ptzMffb9sOM/maxresdefault.jpg" alt="The Quantum Linear Harmonic Oscillator" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500">
                                         <div class="w-12 h-12 bg-white/90 text-red-600 rounded-full flex items-center justify-center z-10 shadow-lg group-hover:bg-red-600 group-hover:text-white transition-colors">
                                             <i class="fa-solid fa-play ml-1"></i>
                                         </div>
                                     </div>
                                     <div class="p-4">
-                                        <h4 class="font-bold text-sm mb-1 line-clamp-2">Introduction to Spin-Orbit Torque in MTJs</h4>
-                                        <p class="text-xs text-gray-500">Duration: 45:20 • Graduate Level</p>
+                                        <h4 class="font-bold text-sm mb-1 line-clamp-2">The Quantum Linear Harmonic Oscillator: Derivation and Solutions</h4>
+                                        <p class="text-xs text-gray-500">Duration: 4:11</p>
                                     </div>
-                                </div>
-                                <div class="rounded-xl overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg group cursor-pointer">
-                                    <div class="relative w-full h-40 bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-                                        <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=400" alt="Video thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500">
+                                </a>
+
+                                <!-- Video 2: Probability and probability current densities -->
+                                <a href="https://youtu.be/QFmjfvyay0s" target="_blank" class="rounded-xl overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg group cursor-pointer block hover:shadow-lg transition-all">
+                                    <div class="relative w-full h-36 bg-gray-200 dark:bg-gray-800 flex items-center justify-center overflow-hidden">
+                                        <img src="https://img.youtube.com/vi/QFmjfvyay0s/maxresdefault.jpg" alt="Probability and probability current densities" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500">
                                         <div class="w-12 h-12 bg-white/90 text-red-600 rounded-full flex items-center justify-center z-10 shadow-lg group-hover:bg-red-600 group-hover:text-white transition-colors">
                                             <i class="fa-solid fa-play ml-1"></i>
                                         </div>
                                     </div>
                                     <div class="p-4">
-                                        <h4 class="font-bold text-sm mb-1 line-clamp-2">Quantum Mechanics: Particle in a 1D Box</h4>
-                                        <p class="text-xs text-gray-500">Duration: 32:15 • Undergraduate Level</p>
+                                        <h4 class="font-bold text-sm mb-1 line-clamp-2">Probability and probability current densities</h4>
+                                        <p class="text-xs text-gray-500">Duration: 3:38</p>
                                     </div>
-                                </div>
-                                <div class="rounded-xl overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg group cursor-pointer">
-                                    <div class="relative w-full h-40 bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-                                        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=400" alt="Video thumbnail" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-500">
+                                </a>
+
+                                <!-- Video 3: Compton Scattering -->
+                                <a href="https://youtu.be/yg7NdGt7nk4" target="_blank" class="rounded-xl overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg group cursor-pointer block hover:shadow-lg transition-all">
+                                    <div class="relative w-full h-36 bg-gray-200 dark:bg-gray-800 flex items-center justify-center overflow-hidden">
+                                        <img src="https://img.youtube.com/vi/yg7NdGt7nk4/maxresdefault.jpg" alt="Compton Scattering" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500">
                                         <div class="w-12 h-12 bg-white/90 text-red-600 rounded-full flex items-center justify-center z-10 shadow-lg group-hover:bg-red-600 group-hover:text-white transition-colors">
                                             <i class="fa-solid fa-play ml-1"></i>
                                         </div>
                                     </div>
                                     <div class="p-4">
-                                        <h4 class="font-bold text-sm mb-1 line-clamp-2">Understanding MOKE Magnetometry Setup</h4>
-                                        <p class="text-xs text-gray-500">Duration: 18:40 • Lab Equipment Guide</p>
+                                        <h4 class="font-bold text-sm mb-1 line-clamp-2">Compton Scattering</h4>
+                                        <p class="text-xs text-gray-500">Duration: 5:49</p>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="text-center mt-6">
-                                <button class="text-primary font-medium hover:underline text-sm">View Full YouTube Channel <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                                </a>
+
+                                <!-- Video 4: Quantum Mechanics of the Infinite Potential Well -->
+                                <a href="https://youtu.be/it-XfYts8EQ" target="_blank" class="rounded-xl overflow-hidden border dark:border-gray-700 bg-gray-50 dark:bg-darkBg group cursor-pointer block hover:shadow-lg transition-all">
+                                    <div class="relative w-full h-36 bg-gray-200 dark:bg-gray-800 flex items-center justify-center overflow-hidden">
+                                        <img src="https://img.youtube.com/vi/it-XfYts8EQ/maxresdefault.jpg" alt="Quantum Mechanics of the Infinite Potential Well" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500">
+                                        <div class="w-12 h-12 bg-white/90 text-red-600 rounded-full flex items-center justify-center z-10 shadow-lg group-hover:bg-red-600 group-hover:text-white transition-colors">
+                                            <i class="fa-solid fa-play ml-1"></i>
+                                        </div>
+                                    </div>
+                                    <div class="p-4">
+                                        <h4 class="font-bold text-sm mb-1 line-clamp-2">Quantum Mechanics of the Infinite Potential Well</h4>
+                                        <p class="text-xs text-gray-500">Duration: 5:35</p>
+                                    </div>
+                                </a>
+
                             </div>
                         </div>
 
@@ -455,13 +567,32 @@
             </div>
         </section>
 
-        <!-- 11. CONTACT & NETWORKING -->
+        <!-- 7. IMAGE GALLERY -->
+        <section class="py-20 bg-gray-50 dark:bg-darkBg border-t dark:border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 fade-in-section">
+                    <h2 class="text-3xl font-bold font-serif">Gallery</h2>
+                    <p class="mt-2 text-gray-500">Conferences, Lab work, and Collaborations</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-in-section">
+                    <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&q=80&w=400" alt="Conference Presentation" class="gallery-img w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=400" alt="Laboratory Setup" class="gallery-img w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400" alt="Research Discussion" class="gallery-img w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=400" alt="Data Analysis" class="gallery-img w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity shadow-sm">
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. CONTACT & NETWORKING -->
         <section id="contact" class="py-20 bg-white dark:bg-darkCard">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    
                     <div class="fade-in-section">
                         <h2 class="text-3xl font-bold mb-6 font-serif">Get in Touch</h2>
                         <p class="text-gray-600 dark:text-gray-400 mb-8">For research collaborations, speaking engagements, or student inquiries, please send a message below.</p>
+                        
                         <form id="contactForm" class="space-y-6" onsubmit="event.preventDefault(); alert('Message feature requires backend integration.');">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
@@ -519,7 +650,7 @@
                             </div>
                         </div>
 
-                        <!-- Map Embed (Simulated area of Dehradun) -->
+                        <!-- Map Embed (Dehradun, India) -->
                         <div class="w-full h-48 rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110204.74617260533!2d77.9470942417192!3d30.325409794025008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929c356c888af%3A0x4c3562c032518799!2sDehradun%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
@@ -537,6 +668,12 @@
             <p class="mt-2 text-xs">Designed with <i class="fa-solid fa-heart text-red-500"></i> for scientific excellence.</p>
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden flex items-center justify-center opacity-0">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white text-4xl hover:text-gray-300">&times;</button>
+        <img id="lightbox-img" src="" alt="Expanded View" class="max-w-[90%] max-h-[90vh] object-contain rounded-lg shadow-2xl">
+    </div>
 
     <!-- Scripts -->
     <script>
@@ -609,6 +746,87 @@
                     targetPane.classList.remove('hidden');
                     targetPane.classList.add('block');
                 });
+            });
+
+            // Dynamic Publication Rendering (JSON approach)
+            const publicationsData = [
+                {
+                    title: "Depth selective magnetization investigation in thermally reduced Co/Pd multilayers revealed by MCD study",
+                    authors: "Kuldeep Rawat, Anmol Sharma, Ranjeet Kumar Brajpuriya... Sachin Pathak",
+                    journal: "Applied Surface Science 120(A), 164939 (2025)",
+                    doi: "#",
+                    impact: "6.9"
+                },
+                {
+                    title: "Giant Orbital Anisotropy with Strong Spin-Orbit Coupling Established at the Pseudomorphic Interface of the Co/Pd Superlattice",
+                    authors: "Sanghoon Kim, Sachin Pathak, Sonny H. Rhim... and Jongill Hong",
+                    journal: "Advanced Science 9, 2201749 (2022)",
+                    doi: "#",
+                    impact: "17.521"
+                },
+                {
+                    title: "Impact of Spin-Orbit Torque on Spin-Transfer Torque in Magnetic Tunnel Junctions",
+                    authors: "Sachin Pathak, Chanyoung Youm and Jongill Hong",
+                    journal: "Nature Scientific Reports 10, 2799 (2020)",
+                    doi: "#",
+                    impact: "4.996"
+                },
+                {
+                    title: "Fast and Efficient STT Switching in MTJ using Additional Transient Pulse Current",
+                    authors: "Sachin Pathak, Jongin Cha, Kangwook Jo, Hongil Yoon and Jongill Hong",
+                    journal: "Applied Physics Letters, 110, 232401 (2017)",
+                    doi: "#",
+                    impact: "3.971"
+                }
+            ];
+
+            const pubListContainer = document.getElementById('pub-list');
+            publicationsData.forEach(pub => {
+                const pubHTML = `
+                    <div class="p-6 bg-gray-50 dark:bg-darkBg rounded-xl border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow group relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-gray-100 leading-snug">${pub.title}</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">${pub.authors}</p>
+                        <div class="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <span class="text-xs font-semibold text-primary italic">${pub.journal} <span class="ml-2 px-2 py-0.5 bg-blue-100 dark:bg-blue-900/50 rounded">IF: ${pub.impact}</span></span>
+                            <a href="${pub.doi}" target="_blank" class="text-xs font-bold px-3 py-1 bg-white dark:bg-darkCard border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-1">
+                                DOI <i class="fa-solid fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                pubListContainer.innerHTML += pubHTML;
+            });
+
+            // Lightbox Gallery Logic
+            const galleryImages = document.querySelectorAll('.gallery-img');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxClose = document.getElementById('lightbox-close');
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightbox.classList.remove('hidden');
+                    setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.add('opacity-0');
+                setTimeout(() => {
+                    lightbox.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            };
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
             });
 
             // Intersection Observer for scroll animations
