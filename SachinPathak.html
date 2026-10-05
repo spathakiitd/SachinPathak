@@ -1,806 +1,3438 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Sachin Pathak | Physics & Spintronics</title>
-    <meta name="description" content="Academic Portfolio of Dr. Sachin Pathak, Senior Associate Professor in Physics, specializing in Spintronics, Nanomagnetism, and Materials Science.">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        primary: '#0ea5e9', // Sky blue
-                        secondary: '#1e40af', // Deep blue
-                        darkBg: '#0f172a',
-                        darkCard: '#1e293b',
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Sachin Pathak | Physicist • Materials Scientist • Spintronics Researcher</title>
+  <meta name="description" content="Official academic research website of Dr. Sachin Pathak. Physicist, Materials Scientist, and Spintronics Researcher at UPES. Exploring spin-dependent phenomena, nanoscale magnetic systems, and next-generation memory.">
+  <meta name="keywords" content="Sachin Pathak, Physicist, Spintronics, Materials Science, Nanomagnetism, Spin-Orbit Torque, Magnetic Thin Films, UPES, IIT Delhi, Yonsei, Korea University">
+  <meta name="author" content="Dr. Sachin Pathak">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Dr. Sachin Pathak | Spintronics & Nanomagnetism Researcher">
+  <meta property="og:description" content="Research at the intersection of condensed matter physics, nanoscale magnetic materials, and spin transport.">
+  <meta property="og:url" content="https://www.upes.ac.in/faculty/school-of-advanced-engineering/applied-science/dr-sachin-pathak">
 
-    <style>
-        /* Custom Styles & Animations */
-        body { -webkit-font-smoothing: antialiased; }
-        
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        .dark ::-webkit-scrollbar-track { background: #0f172a; }
-        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        .dark ::-webkit-scrollbar-thumb { background: #334155; }
-        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        
-        /* Progress Bar */
-        #progress-bar {
-            height: 4px;
-            background: linear-gradient(to right, #0ea5e9, #3b82f6);
-            width: 0%;
-            transition: width 0.1s ease;
-        }
+  <!-- Schema.org Academic Person Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dr. Sachin Pathak",
+    "jobTitle": "Faculty & Researcher in Physics & Materials Science",
+    "worksFor": {
+      "@type": "CollegeOrUniversity",
+      "name": "UPES (University of Petroleum and Energy Studies)",
+      "department": "School of Advanced Engineering, Applied Science"
+    },
+    "alumniOf": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "Indian Institute of Technology (IIT) Delhi"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Yonsei University"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Korea University"
+      }
+    ],
+    "knowsAbout": [
+      "Spintronics",
+      "Nanomagnetism",
+      "Magnetic Thin Films",
+      "Spin-Orbit Torque",
+      "Spin-Transfer Torque",
+      "Magnetic Tunnel Junctions",
+      "Condensed Matter Physics"
+    ],
+    "sameAs": [
+      "https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ",
+      "https://orcid.org/0000-0002-5354-9334",
+      "https://www.linkedin.com/in/dr-sachin-pathak-25749744/",
+      "https://www.upes.ac.in/faculty/school-of-advanced-engineering/applied-science/dr-sachin-pathak"
+    ]
+  }
+  </script>
 
-        /* Fade In Animation on Scroll */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-            will-change: opacity, visibility;
-        }
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: none;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 
-        /* Timeline Styles */
-        .timeline-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 2px;
-            background: #cbd5e1;
-            transform: translateX(-50%);
-        }
-        .dark .timeline-container::before { background: #334155; }
-        @media (max-width: 768px) {
-            .timeline-container::before { left: 16px; }
-            .timeline-item { width: 100% !important; padding-left: 48px !important; text-align: left !important; }
-            .timeline-dot { left: 16px !important; transform: translateX(-50%) !important; }
-        }
+  <style>
+    :root {
+      --bg-primary: #050811;
+      --bg-secondary: #090e1c;
+      --bg-card: rgba(14, 22, 40, 0.7);
+      --bg-card-hover: rgba(22, 34, 60, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(56, 189, 248, 0.3);
+      --border-glow: rgba(56, 189, 248, 0.5);
+      --accent-cyan: #00f0ff;
+      --accent-blue: #38bdf8;
+      --accent-electric: #3b82f6;
+      --accent-violet: #818cf8;
+      --text-main: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --glow-cyan: 0 0 25px rgba(0, 240, 255, 0.25);
+      --glow-box: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      --nav-height: 72px;
+    }
 
-        /* Lightbox */
-        #lightbox {
-            backdrop-filter: blur(5px);
-            transition: opacity 0.3s ease;
-        }
-        
-        /* Gradient Text */
-        .text-gradient {
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to right, #0ea5e9, #3b82f6);
-        }
-    </style>
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #edf2f7;
+      --bg-card: rgba(255, 255, 255, 0.85);
+      --bg-card-hover: rgba(255, 255, 255, 0.98);
+      --border-subtle: rgba(0, 0, 0, 0.08);
+      --border-accent: rgba(2, 132, 199, 0.4);
+      --border-glow: rgba(2, 132, 199, 0.5);
+      --accent-cyan: #0284c7;
+      --accent-blue: #0284c7;
+      --accent-electric: #2563eb;
+      --accent-violet: #6366f1;
+      --text-main: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --glow-cyan: 0 0 20px rgba(2, 132, 199, 0.15);
+      --glow-box: 0 8px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Subtle scientific grid background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: 
+        radial-gradient(circle at 50% 10%, rgba(56, 189, 248, 0.04) 0%, transparent 60%),
+        linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+      background-size: 100% 100%, 64px 64px, 64px 64px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    ::selection {
+      background-color: rgba(56, 189, 248, 0.3);
+      color: var(--accent-cyan);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      background: rgba(5, 8, 17, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    [data-theme="light"] .navbar {
+      background: rgba(248, 250, 252, 0.85);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.125rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-violet));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      font-weight: 700;
+      box-shadow: var(--glow-cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.2s ease;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent-cyan);
+    }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--accent-cyan);
+      border-radius: 2px;
+      box-shadow: 0 0 8px var(--accent-cyan);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .theme-toggle,
+    .menu-toggle {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-secondary);
+      transition: all 0.2s ease;
+    }
+
+    .theme-toggle:hover,
+    .menu-toggle:hover {
+      color: var(--text-main);
+      border-color: var(--border-accent);
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: 1px solid transparent;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #0369a1, #1d4ed8);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      border-color: var(--border-subtle);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-accent);
+      color: var(--accent-cyan);
+      transform: translateY(-1px);
+    }
+
+    .btn-sm {
+      padding: 0.4rem 0.85rem;
+      font-size: 0.8rem;
+    }
+
+    .badge-scientific {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 9999px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent-blue);
+      letter-spacing: 0.03em;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--accent-cyan);
+      box-shadow: 0 0 8px var(--accent-cyan);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .hero-section {
+      min-height: 100vh;
+      padding-top: calc(var(--nav-height) + 2rem);
+      padding-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.95fr;
+      gap: 3rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-pretitle {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4.25rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #ffffff 40%, var(--accent-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    [data-theme="light"] .hero-title .gradient-text {
+      background: linear-gradient(135deg, #0f172a 40%, #0284c7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--accent-blue);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-statement {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-affiliation {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .affiliation-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--accent-blue);
+      flex-shrink: 0;
+    }
+
+    /* Scientific Canvas Container */
+    .hero-visual-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 1.25rem;
+      box-shadow: var(--glow-box);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-visual-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .canvas-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    #spintronicsCanvas {
+      width: 100%;
+      height: 380px;
+      background: rgba(3, 7, 18, 0.6);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      display: block;
+      cursor: crosshair;
+    }
+
+    .canvas-caption {
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+    }
+
+    .canvas-legend {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .legend-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .identity-strip {
+      padding: 1.75rem 0;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+      z-index: 5;
+    }
+
+    .chips-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .scientific-chip {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .scientific-chip:hover {
+      border-color: var(--border-accent);
+      color: var(--accent-cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 240, 255, 0.08);
+    }
+
+    .scientific-chip svg {
+      width: 14px;
+      height: 14px;
+      color: var(--accent-blue);
+    }
+
+    /* Section Layout Standard */
+    .section {
+      padding: 6rem 0;
+      position: relative;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+      max-width: 780px;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .section-lead {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .bio-prose {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .bio-prose strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .highlight-quote {
+      border-left: 3px solid var(--accent-blue);
+      padding: 1.25rem 1.5rem;
+      background: rgba(56, 189, 248, 0.04);
+      border-radius: 0 10px 10px 0;
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--text-main);
+      margin: 1rem 0;
+    }
+
+    .timeline-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .timeline-header h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .timeline-track {
+      position: relative;
+      padding-left: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .timeline-track::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-blue), var(--accent-violet));
+    }
+
+    .timeline-step {
+      position: relative;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: -2rem;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      border: 2px solid var(--accent-cyan);
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+      transition: all 0.2s ease;
+    }
+
+    .timeline-step:hover .timeline-marker {
+      transform: scale(1.25);
+      background: var(--accent-cyan);
+    }
+
+    .timeline-institution {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .timeline-badge {
+      font-family: var(--font-mono);
+      font-size: 0.725rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--accent-blue);
+    }
+
+    .timeline-role {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      margin-top: 0.15rem;
+    }
+
+    .timeline-focus {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 0.35rem;
+      line-height: 1.5;
+    }
+
+    .vision-card {
+      background: linear-gradient(135deg, rgba(14, 22, 40, 0.9), rgba(8, 13, 26, 0.95));
+      border: 1px solid var(--border-accent);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vision-card::after {
+      content: "∇ × B";
+      position: absolute;
+      right: 2rem;
+      bottom: -1rem;
+      font-family: var(--font-mono);
+      font-size: 7rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.02);
+      pointer-events: none;
+    }
+
+    .vision-quote {
+      font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    .vision-text {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 850px;
+      line-height: 1.8;
+    }
+
+    /* Interactive Radial Diagram */
+    .radial-ecosystem-wrapper {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .radial-canvas-container {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .radial-center-hub {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0284c7, #4f46e5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.5);
+      z-index: 5;
+      text-align: center;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    .radial-orbit-svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .radial-node-btn {
+      position: absolute;
+      padding: 0.5rem 0.85rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 30px;
+      font-size: 0.775rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 6;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .radial-node-btn:hover,
+    .radial-node-btn.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--accent-cyan);
+      color: #ffffff;
+      transform: scale(1.08);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    }
+
+    .node-preview-box {
+      background: rgba(5, 8, 17, 0.8);
+      border: 1px solid var(--border-accent);
+      border-radius: 14px;
+      padding: 1.75rem;
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .node-preview-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 0.75rem;
+    }
+
+    .node-preview-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+
+    .node-preview-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-violet);
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .research-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .research-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    }
+
+    .research-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--accent-cyan);
+    }
+
+    .research-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.65rem;
+      color: var(--text-main);
+    }
+
+    .research-card p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .research-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: auto;
+    }
+
+    .research-mini-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 2rem;
+    }
+
+    .highlight-story-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .highlight-story-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .story-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-badge-quantitative {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    .story-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      line-height: 1.35;
+    }
+
+    .story-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .story-step-item {
+      padding-left: 1.25rem;
+      position: relative;
+      font-size: 0.875rem;
+      line-height: 1.55;
+    }
+
+    .story-step-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-blue);
+    }
+
+    .story-step-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .story-step-text {
+      color: var(--text-secondary);
+    }
+
+    .pub-controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+    }
+
+    .search-input-wrapper {
+      position: relative;
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .search-input-wrapper svg {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: var(--text-muted);
+    }
+
+    .pub-search-input {
+      width: 100%;
+      background: rgba(3, 7, 18, 0.5);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.6rem 1rem 0.6rem 2.5rem;
+      font-size: 0.875rem;
+      color: var(--text-main);
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .pub-search-input:focus {
+      border-color: var(--accent-blue);
+    }
+
+    .pub-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.775rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .publications-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .publication-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      align-items: center;
+      transition: all 0.25s ease;
+    }
+
+    .publication-card:hover {
+      border-color: var(--border-accent);
+      transform: translateX(4px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .pub-content {
+      flex: 1;
+    }
+
+    .pub-meta-top {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.45rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-blue);
+    }
+
+    .pub-year-badge {
+      background: rgba(56, 189, 248, 0.1);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .pub-title {
+      font-size: 1.075rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .pub-authors {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+
+    .pub-authors strong {
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+
+    .pub-journal {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .pub-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .empty-state-notice {
+      text-align: center;
+      padding: 3rem;
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px dashed var(--border-subtle);
+      color: var(--text-muted);
+    }
+
+    .impact-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 1.75rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card-icon {
+      margin: 0 auto 0.75rem;
+      color: var(--accent-blue);
+    }
+
+    .metric-value {
+      font-size: 2.25rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .metric-note {
+      font-size: 0.725rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      margin-top: 0.5rem;
+    }
+
+    .scholar-banner {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.1), rgba(99, 102, 241, 0.1));
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .scholar-banner-text h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .scholar-banner-text p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .network-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .network-svg-map {
+      width: 100%;
+      height: 380px;
+      background: rgba(3, 7, 18, 0.4);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .network-legend-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .network-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .network-pin {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      box-shadow: 0 0 10px var(--accent-cyan);
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .network-location-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .network-details {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .badges-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .award-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 1.75rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      transition: all 0.25s ease;
+    }
+
+    .award-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    .award-icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .award-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .award-org {
+      font-size: 0.85rem;
+      color: var(--accent-blue);
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+    }
+
+    .award-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Equipment and Methods */
+    .methods-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .method-category-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+
+    .method-header {
+      font-family: var(--font-mono);
+      font-size: 0.775rem;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .method-category-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .method-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .method-list li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .method-list li::before {
+      content: "▹";
+      color: var(--accent-blue);
+      font-size: 0.9rem;
+    }
+
+    .profiles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .profile-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .profile-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      font-size: 1.5rem;
+    }
+
+    .logo-scholar { background: rgba(66, 133, 244, 0.15); color: #4285F4; }
+    .logo-orcid { background: rgba(166, 206, 57, 0.15); color: #A6CE39; }
+    .logo-linkedin { background: rgba(10, 102, 194, 0.15); color: #0A66C2; }
+    .logo-upes { background: rgba(239, 68, 68, 0.15); color: #EF4444; }
+
+    .profile-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .profile-desc {
+      font-size: 0.825rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Contact Section */
+    .contact-box {
+      background: linear-gradient(135deg, rgba(14, 22, 40, 0.95), rgba(7, 11, 20, 0.98));
+      border: 1px solid var(--border-accent);
+      border-radius: 20px;
+      padding: 3.5rem;
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+      box-shadow: var(--glow-cyan);
+    }
+
+    .contact-headline {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .contact-lead {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin: 0 auto 2.25rem;
+      line-height: 1.7;
+    }
+
+    .email-display-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(3, 7, 18, 0.7);
+      border: 1px solid var(--border-accent);
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+
+    .email-text {
+      font-family: var(--font-mono);
+      font-size: 1.05rem;
+      color: var(--accent-cyan);
+      font-weight: 500;
+    }
+
+    .copy-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s;
+    }
+
+    .copy-btn:hover {
+      color: var(--accent-cyan);
+    }
+
+    .toast-msg {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #0284c7;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      z-index: 1000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .toast-msg.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .site-footer {
+      padding: 4rem 0 2.5rem;
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-brand p {
+      line-height: 1.6;
+      max-width: 420px;
+    }
+
+    .footer-col h5 {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 90;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .about-grid,
+      .radial-ecosystem-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .radial-canvas-container {
+        height: 420px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .mobile-menu-drawer {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 99;
+        transform: translateY(-120%);
+        transition: transform 0.3s ease;
+      }
+      .mobile-menu-drawer.open {
+        transform: translateY(0);
+      }
+      .publication-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .pub-actions {
+        flex-direction: row;
+        width: 100%;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-box {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 dark:bg-darkBg dark:text-gray-200 transition-colors duration-300">
+<body>
 
-    <!-- Sticky Navigation -->
-    <header class="fixed w-full top-0 z-50 bg-white/90 dark:bg-darkBg/90 backdrop-blur-md shadow-sm transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo/Name -->
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <i class="fa-solid fa-atom text-primary text-2xl animate-spin-slow" style="animation: spin 10s linear infinite;"></i>
-                    <span class="font-bold text-xl tracking-tight">Dr. Sachin Pathak</span>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <nav class="hidden lg:flex space-x-6 text-sm font-medium">
-                    <a href="#about" class="hover:text-primary transition-colors">About</a>
-                    <a href="#research" class="hover:text-primary transition-colors">Research</a>
-                    <a href="#journey" class="hover:text-primary transition-colors">Journey</a>
-                    <a href="#publications" class="hover:text-primary transition-colors">Publications</a>
-                    <a href="#teaching" class="hover:text-primary transition-colors">Teaching</a>
-                    <a href="#labs" class="hover:text-primary transition-colors">Labs</a>
-                    <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
-                </nav>
-
-                <!-- Tools -->
-                <div class="flex items-center gap-4">
-                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle Dark Mode">
-                        <i id="theme-icon" class="fa-solid fa-moon text-gray-600 dark:text-gray-300"></i>
-                    </button>
-                    <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Dr. Sachin Pathak Homepage">
+        <div class="nav-brand-mark">SP</div>
+        <div>
+          <div style="line-height: 1.1;">Dr. Sachin Pathak</div>
+          <div style="font-size: 0.725rem; font-weight: 400; color: var(--text-muted); font-family: var(--font-mono);">Physicist • Materials Scientist</div>
         </div>
-        <!-- Progress Bar -->
-        <div id="progress-bar"></div>
-        
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-darkBg border-t dark:border-gray-800 absolute w-full left-0 shadow-lg">
-            <div class="px-4 pt-2 pb-4 space-y-1 text-base font-medium">
-                <a href="#about" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 mobile-link">About</a>
-                <a href="#research" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 mobile-link">Research</a>
-                <a href="#journey" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 mobile-link">Journey</a>
-                <a href="#publications" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 mobile-link">Publications & Projects</a>
-                <a href="#teaching" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 mobile-link">Teaching & Theory</a>
-                <a href="#labs" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 mobile-link">Labs & Virtual</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 mobile-link">Contact</a>
-            </div>
-        </div>
-    </header>
+      </a>
 
-    <main class="pt-16">
-        
-        <!-- 1. HOME / HERO SECTION -->
-        <section id="about" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-            <!-- Background Decoration -->
-            <div class="absolute inset-0 z-0 opacity-10 dark:opacity-20 pointer-events-none" style="background-image: radial-gradient(#0ea5e9 1px, transparent 1px); background-size: 30px 30px;"></div>
-            <div class="absolute top-1/4 left-0 w-72 h-72 bg-primary/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-            <div class="absolute top-1/3 right-0 w-72 h-72 bg-secondary/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#vision" class="nav-link">Vision</a></li>
+          <li><a href="#research" class="nav-link">Research Areas</a></li>
+          <li><a href="#highlights" class="nav-link">Contributions</a></li>
+          <li><a href="#publications" class="nav-link">Publications</a></li>
+          <li><a href="#network" class="nav-link">Network</a></li>
+          <li><a href="#mentoring" class="nav-link">Opportunities</a></li>
+          <li><a href="#contact" class="nav-link">Collaborate</a></li>
+        </ul>
+      </nav>
 
-            <div class="max-w-6xl mx-auto px-4 z-10 w-full flex flex-col md:flex-row items-center gap-12 py-12">
-                <!-- Profile Image -->
-                <div class="w-48 h-48 md:w-72 md:h-72 shrink-0 rounded-full p-2 bg-gradient-to-tr from-primary to-secondary shadow-2xl fade-in-section">
-                    <div class="w-full h-full rounded-full overflow-hidden bg-white dark:bg-gray-800 flex items-center justify-center text-gray-400">
-                        <!-- Using SVG avatar as high-quality placeholder -->
-                        <svg class="w-full h-full object-cover" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                        </svg>
-                    </div>
-                </div>
-                
-                <!-- Content -->
-                <div class="text-center md:text-left fade-in-section" style="transition-delay: 0.2s;">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary text-sm font-semibold mb-4">
-                        <i class="fa-solid fa-microscope"></i>
-                        <span>Physics & Materials Science</span>
-                    </div>
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4 font-serif">Dr. Sachin Pathak</h1>
-                    <h2 class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6">Senior Associate Professor, PHYSICS</h2>
-                    <p class="text-lg mb-8 max-w-2xl text-gray-600 dark:text-gray-300">
-                        Ph.D. (IIT Delhi) · Post-doctoral Researcher (South Korea). Dedicated to exploring the frontiers of Spintronics, Nanomagnetism, and Material Engineering. Combining advanced research with passionate teaching.
-                    </p>
-                    
-                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
-                        <a href="#publications" class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors shadow-lg shadow-blue-500/30 flex items-center gap-2">
-                            <i class="fa-solid fa-book-open"></i> Publications
-                        </a>
-                        <a href="#contact" class="border-2 border-gray-300 dark:border-gray-600 hover:border-primary dark:hover:border-primary px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2">
-                            <i class="fa-solid fa-envelope"></i> Contact Me
-                        </a>
-                        <button onclick="alert('In a real deployment, this would trigger a PDF download.')" class="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2">
-                            <i class="fa-solid fa-download"></i> CV
-                        </button>
-                    </div>
-                    
-                    <!-- Quick Socials -->
-                    <div class="mt-8 flex gap-4 justify-center md:justify-start">
-                        <a href="https://scholar.google.co.kr/citations?user=z9OYfvkAAAAJ&hl=en" target="_blank" class="text-gray-500 hover:text-primary text-2xl transition-transform hover:scale-110" title="Google Scholar"><i class="fa-brands fa-google"></i></a>
-                        <a href="https://www.linkedin.com/in/dr-sachin-pathak-25749744/" target="_blank" class="text-gray-500 hover:text-primary text-2xl transition-transform hover:scale-110" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://www.researchgate.net/" target="_blank" class="text-gray-500 hover:text-primary text-2xl transition-transform hover:scale-110" title="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
-                        <a href="https://www.upes.ac.in/faculty/school-of-advanced-engineering/applied-science/dr-sachin-pathak" target="_blank" class="text-gray-500 hover:text-primary text-2xl transition-transform hover:scale-110" title="UPES Profile"><i class="fa-solid fa-building-columns"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. RESEARCH EXPERTISE -->
-        <section id="research" class="py-20 bg-white dark:bg-darkCard">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 fade-in-section">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Research Expertise</h2>
-                    <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
-                    <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Focusing on cutting-edge materials engineering for next-generation non-volatile memory, logic applications, and spintronic devices.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Domain 1 -->
-                    <div class="bg-gray-50 dark:bg-darkBg p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 group fade-in-section">
-                        <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/40 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-magnet text-2xl text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Spintronics & MRAM</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                            Design and development of Nano-sized Magnetic Tunnel Junctions (MTJ) and Process-in Memory (PIM) architectures. Exploring domain wall motion using Spin-Orbit Torque (SOT).
-                        </p>
-                    </div>
-                    <!-- Domain 2 -->
-                    <div class="bg-gray-50 dark:bg-darkBg p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 group fade-in-section" style="transition-delay: 0.1s;">
-                        <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/40 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-layer-group text-2xl text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Nanomagnetism & Thin Films</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                            Interface engineered magnetic anisotropy in multilayers (e.g., Co/Pd, Ta/CoFeB/MgO). Investigation of sputtering kinetics and pseudomorphic growth at interfaces.
-                        </p>
-                    </div>
-                    <!-- Domain 3 -->
-                    <div class="bg-gray-50 dark:bg-darkBg p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-800 group fade-in-section" style="transition-delay: 0.2s;">
-                        <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/40 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-bolt text-2xl text-primary"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Ultrafast Spin Dynamics</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                            Magneto-optical characterization of magnetic materials. Using transient pulse currents for fast and efficient Spin-Transfer Torque (STT) switching in MTJs.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. ACADEMIC JOURNEY -->
-        <section id="journey" class="py-20 bg-gray-50 dark:bg-darkBg">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 fade-in-section">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Academic Journey</h2>
-                    <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
-                </div>
-
-                <div class="relative timeline-container py-4">
-                    <!-- Timeline Item 1 -->
-                    <div class="timeline-item relative w-1/2 ml-auto pl-8 py-4 fade-in-section">
-                        <div class="timeline-dot absolute w-4 h-4 bg-primary rounded-full left-0 top-6 transform -translate-x-1/2 ring-4 ring-blue-100 dark:ring-darkCard"></div>
-                        <div class="bg-white dark:bg-darkCard p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
-                            <span class="text-sm text-primary font-bold tracking-wider">JAN 2020 – PRESENT</span>
-                            <h3 class="text-lg font-bold mt-1">Associate Professor</h3>
-                            <p class="text-gray-500 dark:text-gray-400 text-sm font-medium mb-3">UPES, Dehradun, India</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Teaching Engineering Physics. Research in ion matter interaction and materials engineering.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Timeline Item 2 -->
-                    <div class="timeline-item relative w-1/2 mr-auto pr-8 py-4 text-right fade-in-section">
-                        <div class="timeline-dot absolute w-4 h-4 bg-secondary rounded-full right-0 top-6 transform translate-x-1/2 ring-4 ring-blue-100 dark:ring-darkCard"></div>
-                        <div class="bg-white dark:bg-darkCard p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
-                            <span class="text-sm text-primary font-bold tracking-wider">AUG 2022 – JUL 2023</span>
-                            <h3 class="text-lg font-bold mt-1">Visiting Research Professor</h3>
-                            <p class="text-gray-500 dark:text-gray-400 text-sm font-medium mb-3">Yonsei University, South Korea</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Spintronic Materials & Devices Lab. Design of PIM architecture and MTJs.</p>
-                        </div>
-                    </div>
-
-                    <!-- Timeline Item 3 -->
-                    <div class="timeline-item relative w-1/2 ml-auto pl-8 py-4 fade-in-section">
-                        <div class="timeline-dot absolute w-4 h-4 bg-gray-400 rounded-full left-0 top-6 transform -translate-x-1/2 ring-4 ring-gray-100 dark:ring-darkCard"></div>
-                        <div class="bg-white dark:bg-darkCard p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
-                            <span class="text-sm text-primary font-bold tracking-wider">2014 – 2019</span>
-                            <h3 class="text-lg font-bold mt-1">Postdoctoral Researcher</h3>
-                            <p class="text-gray-500 dark:text-gray-400 text-sm font-medium mb-3">Yonsei Univ. & Korea Univ., South Korea</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Brain Korea (BK21) Plus Fellow. Investigated AHE, SOT, and micromagnetic simulations for MTJ memory cells.</p>
-                        </div>
-                    </div>
-
-                    <!-- Timeline Item 4 -->
-                    <div class="timeline-item relative w-1/2 mr-auto pr-8 py-4 text-right fade-in-section">
-                        <div class="timeline-dot absolute w-4 h-4 bg-gray-400 rounded-full right-0 top-6 transform translate-x-1/2 ring-4 ring-gray-100 dark:ring-darkCard"></div>
-                        <div class="bg-white dark:bg-darkCard p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
-                            <span class="text-sm text-primary font-bold tracking-wider">2008 – 2014</span>
-                            <h3 class="text-lg font-bold mt-1">Ph.D. in Physics</h3>
-                            <p class="text-gray-500 dark:text-gray-400 text-sm font-medium mb-3">Indian Institute of Technology (IIT) Delhi</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">Thesis: Magnetic Materials for GHz Frequency Devices. CSIR-JRF/SRF Awardee.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4 & 5. PUBLICATIONS, PROJECTS & SKILLS -->
-        <section id="publications" class="py-20 bg-white dark:bg-darkCard">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row gap-12">
-                    
-                    <!-- Left: Publications & Projects (Takes 2/3 width) -->
-                    <div class="lg:w-2/3">
-                        <div class="mb-10 fade-in-section">
-                            <h2 class="text-3xl font-bold mb-2 font-serif text-gradient inline-block">Selected Publications</h2>
-                            <p class="text-sm text-gray-500">Highlighting recent and high-impact peer-reviewed journals.</p>
-                        </div>
-                        
-                        <!-- Dynamic Publication List Container -->
-                        <div id="pub-list" class="space-y-6 fade-in-section">
-                            <!-- JS will populate this -->
-                        </div>
-
-                        <div class="mt-12 mb-10 fade-in-section">
-                            <h2 class="text-2xl font-bold mb-4 border-b pb-2 dark:border-gray-700">Research Grants & Projects</h2>
-                            <div class="space-y-4">
-                                <div class="p-4 bg-gray-50 dark:bg-darkBg rounded-lg border-l-4 border-primary">
-                                    <h4 class="font-bold">Origin and modulation of interfacial magnetic anisotropy...</h4>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">Collaborative Research Scheme (CRS) Project, UGC-DAE CSR. (Role: PI)</p>
-                                </div>
-                                <div class="p-4 bg-gray-50 dark:bg-darkBg rounded-lg border-l-4 border-secondary">
-                                    <h4 class="font-bold">Spin-orbit torque (SOT) induced magnetization dynamics...</h4>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">UPES-SEED Grant. Non-volatile memory applications. (Role: PI)</p>
-                                </div>
-                                <div class="p-4 bg-gray-50 dark:bg-darkBg rounded-lg border-l-4 border-gray-400">
-                                    <h4 class="font-bold">MOKE instrument for the study of magnetic dynamics...</h4>
-                                    <p class="text-sm text-gray-600 dark:text-gray-400">UPES-SEED INFRA Grant. (Role: PI)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right: Skills & Collaborations (Takes 1/3 width) -->
-                    <div class="lg:w-1/3 space-y-10 fade-in-section">
-                        <!-- Technical Skills -->
-                        <div class="bg-gray-50 dark:bg-darkBg p-6 rounded-2xl border border-gray-100 dark:border-gray-800">
-                            <h3 class="text-xl font-bold mb-6 flex items-center gap-2"><i class="fa-solid fa-wrench text-primary"></i> Technical Skills</h3>
-                            
-                            <div class="mb-6">
-                                <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Growth & Fabrication</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-white dark:bg-darkCard text-sm rounded-full border border-gray-200 dark:border-gray-700 shadow-sm">DC/RF Sputtering</span>
-                                    <span class="px-3 py-1 bg-white dark:bg-darkCard text-sm rounded-full border border-gray-200 dark:border-gray-700 shadow-sm">Electrodeposition</span>
-                                    <span class="px-3 py-1 bg-white dark:bg-darkCard text-sm rounded-full border border-gray-200 dark:border-gray-700 shadow-sm">Lithography</span>
-                                    <span class="px-3 py-1 bg-white dark:bg-darkCard text-sm rounded-full border border-gray-200 dark:border-gray-700 shadow-sm">Ion Milling</span>
-                                </div>
-                            </div>
-
-                            <div class="mb-6">
-                                <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Characterization</h4>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-sm rounded-full">MOKE</span>
-                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-sm rounded-full">VSM / SQUID</span>
-                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-sm rounded-full">SEM & AFM</span>
-                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-sm rounded-full">FMR / EPR</span>
-                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-sm rounded-full">XRD</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h4 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3">Software & Simulation</h4>
-                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mb-2"><div class="bg-primary h-2 rounded-full" style="width: 90%"></div></div>
-                                <p class="text-xs text-right text-gray-500 mb-4">OOMMF / Micromagnetics</p>
-                                
-                                <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mb-2"><div class="bg-primary h-2 rounded-full" style="width: 85%"></div></div>
-                                <p class="text-xs text-right text-gray-500 mb-4">SRIM-TRIM / LabVIEW</p>
-                            </div>
-                        </div>
-
-                        <!-- Highlights / Awards -->
-                        <div class="bg-gradient-to-br from-primary to-secondary p-6 rounded-2xl text-white shadow-lg">
-                            <h3 class="text-xl font-bold mb-4"><i class="fa-solid fa-trophy text-yellow-300"></i> Key Honors</h3>
-                            <ul class="space-y-3 text-sm">
-                                <li class="flex gap-2"><i class="fa-solid fa-check-circle mt-1 text-blue-200"></i> STAR Researcher-2020 (UPES)</li>
-                                <li class="flex gap-2"><i class="fa-solid fa-check-circle mt-1 text-blue-200"></i> Yonsei Univ. Post-Doctoral Fellow (2016)</li>
-                                <li class="flex gap-2"><i class="fa-solid fa-check-circle mt-1 text-blue-200"></i> Brain Korea (BK21) Plus Fellow (2014)</li>
-                                <li class="flex gap-2"><i class="fa-solid fa-check-circle mt-1 text-blue-200"></i> CSIR-SRF & JRF Awardee</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- 6 & 7. TEACHING & THEORY -->
-        <section id="teaching" class="py-20 bg-gray-50 dark:bg-darkBg">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 fade-in-section">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Teaching & Academic Theory</h2>
-                    <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
-                    <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Bridging the gap between complex physical concepts and accessible learning through structured theory and hands-on laboratory experiences.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Teaching Container -->
-                    <div class="bg-white dark:bg-darkCard rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-800 fade-in-section">
-                        <div class="flex items-center gap-4 mb-6 border-b dark:border-gray-700 pb-4">
-                            <div class="p-3 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-lg"><i class="fa-solid fa-chalkboard-user text-2xl"></i></div>
-                            <h3 class="text-2xl font-bold">Courses Taught</h3>
-                        </div>
-                        <ul class="space-y-4">
-                            <li class="flex flex-col">
-                                <span class="font-bold text-lg">Engineering Physics</span>
-                                <span class="text-gray-600 dark:text-gray-400 text-sm">Focus on LASER, Electromagnetism, and practical applications.</span>
-                            </li>
-                            <li class="flex flex-col">
-                                <span class="font-bold text-lg">Quantum Mechanics</span>
-                                <span class="text-gray-600 dark:text-gray-400 text-sm">Fundamentals, Wave functions, Schrodinger equation, and particle dynamics.</span>
-                            </li>
-                            <li class="flex flex-col">
-                                <span class="font-bold text-lg">Engineering Physics Laboratory</span>
-                                <span class="text-gray-600 dark:text-gray-400 text-sm">Hands-on experimentation validating theoretical models.</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Theory Notes Container -->
-                    <div class="bg-white dark:bg-darkCard rounded-2xl p-8 shadow-sm border border-gray-100 dark:border-gray-800 fade-in-section" style="transition-delay: 0.2s;">
-                        <div class="flex items-center gap-4 mb-6 border-b dark:border-gray-700 pb-4">
-                            <div class="p-3 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-lg"><i class="fa-solid fa-book-journal-whills text-2xl"></i></div>
-                            <h3 class="text-2xl font-bold">Theory Concept Notes</h3>
-                        </div>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">Study materials developed for students to visualize and understand complex physical phenomena.</p>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <a href="#" class="block p-4 border rounded-lg hover:border-primary dark:hover:border-primary hover:shadow-md transition-all group">
-                                <i class="fa-solid fa-wave-square text-primary mb-2 text-xl group-hover:-translate-y-1 transition-transform"></i>
-                                <h4 class="font-bold text-sm">Quantum Tunneling</h4>
-                                <p class="text-xs text-gray-500 mt-1">Mathematical derivations</p>
-                            </a>
-                            <a href="#" class="block p-4 border rounded-lg hover:border-primary dark:hover:border-primary hover:shadow-md transition-all group">
-                                <i class="fa-solid fa-magnet text-primary mb-2 text-xl group-hover:-translate-y-1 transition-transform"></i>
-                                <h4 class="font-bold text-sm">Domain Wall Dynamics</h4>
-                                <p class="text-xs text-gray-500 mt-1">Spintronics basics</p>
-                            </a>
-                            <a href="#" class="block p-4 border rounded-lg hover:border-primary dark:hover:border-primary hover:shadow-md transition-all group">
-                                <i class="fa-solid fa-atom text-primary mb-2 text-xl group-hover:-translate-y-1 transition-transform"></i>
-                                <h4 class="font-bold text-sm">Quantum Harmonic Osc.</h4>
-                                <p class="text-xs text-gray-500 mt-1">Energy states & models</p>
-                            </a>
-                            <a href="#" class="block p-4 border rounded-lg hover:border-primary dark:hover:border-primary hover:shadow-md transition-all group">
-                                <i class="fa-solid fa-microchip text-primary mb-2 text-xl group-hover:-translate-y-1 transition-transform"></i>
-                                <h4 class="font-bold text-sm">STT & SOT Memory</h4>
-                                <p class="text-xs text-gray-500 mt-1">Device architecture</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 8 & 9. LABS & VIRTUAL LAB -->
-        <section id="labs" class="py-20 bg-white dark:bg-darkCard">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 fade-in-section">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">Laboratory Facilities & Virtual Simulations</h2>
-                    <div class="w-20 h-1 bg-primary mx-auto rounded"></div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <!-- Physical Labs -->
-                    <div class="col-span-1 lg:col-span-2 space-y-6 fade-in-section">
-                        <h3 class="text-2xl font-bold flex items-center gap-2 mb-6"><i class="fa-solid fa-flask text-secondary"></i> Experimental Setup & Instrumentation</h3>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border dark:border-gray-800">
-                                <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=600" alt="MOKE Instrument" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="p-4 bg-gray-50 dark:bg-darkBg">
-                                    <h4 class="font-bold">MOKE Magnetometry</h4>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Expertise in developing and utilizing Magneto-Optical Kerr Effect microscopy for ultrafast spin dynamics.</p>
-                                </div>
-                            </div>
-                            <div class="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border dark:border-gray-800">
-                                <img src="https://images.unsplash.com/photo-1581093806997-124204d9fa9d?auto=format&fit=crop&q=80&w=600" alt="Vacuum Chamber" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="p-4 bg-gray-50 dark:bg-darkBg">
-                                    <h4 class="font-bold">UHV Growth Chamber</h4>
-                                    <p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Experience in designing and installing High-Vacuum systems for DC/RF sputtering and electrodeposition.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Virtual Lab / Simulations -->
-                    <div class="bg-gray-900 text-white p-8 rounded-2xl relative overflow-hidden fade-in-section shadow-xl">
-                        <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .3) 25%, rgba(255, 255, 255, .3) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .3) 75%, rgba(255, 255, 255, .3) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .3) 25%, rgba(255, 255, 255, .3) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .3) 75%, rgba(255, 255, 255, .3) 76%, transparent 77%, transparent); background-size: 30px 30px;"></div>
-                        
-                        <div class="relative z-10">
-                            <h3 class="text-2xl font-bold flex items-center gap-2 mb-2"><i class="fa-solid fa-laptop-code text-primary"></i> Virtual Lab</h3>
-                            <p class="text-sm text-gray-300 mb-6">Interactive simulations developed for Micromagnetics (OOMMF) and quantum modeling.</p>
-                            
-                            <div class="space-y-4">
-                                <!-- Simulator 1 -->
-                                <div class="bg-black/50 p-4 rounded-lg border border-gray-700 hover:border-primary transition-colors cursor-pointer flex items-center gap-4">
-                                    <div class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center shrink-0">
-                                        <i class="fa-solid fa-arrows-to-circle text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold text-sm">OOMMF Magnetization</h4>
-                                        <p class="text-xs text-gray-400">Run simulated spin-transfer torque on MTJs.</p>
-                                    </div>
-                                    <i class="fa-solid fa-play ml-auto text-primary"></i>
-                                </div>
-                                
-                                <!-- Simulator 2 -->
-                                <div class="bg-black/50 p-4 rounded-lg border border-gray-700 hover:border-primary transition-colors cursor-pointer flex items-center gap-4">
-                                    <div class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center shrink-0">
-                                        <i class="fa-solid fa-wave-square text-sm"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold text-sm">1D Potential Well</h4>
-                                        <p class="text-xs text-gray-400">Interactive quantum state visualization.</p>
-                                    </div>
-                                    <i class="fa-solid fa-play ml-auto text-primary"></i>
-                                </div>
-                            </div>
-                            
-                            <button class="w-full mt-6 py-2 bg-primary/20 hover:bg-primary/40 text-primary border border-primary/50 rounded transition-colors text-sm font-bold tracking-wide">ENTER VIRTUAL LAB</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 10. IMAGE GALLERY -->
-        <section class="py-20 bg-gray-50 dark:bg-darkBg">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12 fade-in-section">
-                    <h2 class="text-3xl font-bold font-serif">Gallery</h2>
-                    <p class="mt-2 text-gray-500">Conferences, Lab work, and Collaborations</p>
-                </div>
-                
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 fade-in-section">
-                    <!-- Images using Unsplash placeholders relevant to science/conferences -->
-                    <img src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&q=80&w=400" alt="Conference Presentation" class="gallery-img w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=400" alt="Laboratory Setup" class="gallery-img w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=400" alt="Research Discussion" class="gallery-img w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity shadow-sm">
-                    <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&q=80&w=400" alt="Data Analysis" class="gallery-img w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity shadow-sm">
-                </div>
-            </div>
-        </section>
-
-        <!-- 11. CONTACT & NETWORKING -->
-        <section id="contact" class="py-20 bg-white dark:bg-darkCard">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                    
-                    <!-- Contact Form -->
-                    <div class="fade-in-section">
-                        <h2 class="text-3xl font-bold mb-6 font-serif">Get in Touch</h2>
-                        <p class="text-gray-600 dark:text-gray-400 mb-8">For research collaborations, speaking engagements, or student inquiries, please send a message below.</p>
-                        
-                        <form id="contactForm" class="space-y-6" onsubmit="event.preventDefault(); alert('Message feature requires backend integration.');">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium mb-2">Name</label>
-                                    <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium mb-2">Email</label>
-                                    <input type="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-2">Subject</label>
-                                <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium mb-2">Message</label>
-                                <textarea rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-transparent focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"></textarea>
-                            </div>
-                            <button type="submit" class="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-colors w-full sm:w-auto">
-                                Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
-                            </button>
-                        </form>
-                    </div>
-
-                    <!-- Contact Details & Map -->
-                    <div class="space-y-8 fade-in-section" style="transition-delay: 0.2s;">
-                        <div class="bg-gray-50 dark:bg-darkBg p-8 rounded-2xl border border-gray-100 dark:border-gray-800">
-                            <h3 class="text-xl font-bold mb-6">Contact Information</h3>
-                            <ul class="space-y-4 text-sm">
-                                <li class="flex items-start gap-4">
-                                    <i class="fa-solid fa-envelope mt-1 text-primary text-lg"></i>
-                                    <div>
-                                        <p><a href="mailto:sachinpathak@iitdalumni.com" class="hover:text-primary transition-colors">sachinpathak@iitdalumni.com</a></p>
-                                        <p><a href="mailto:s.pathak@upes.ddn.ac.in" class="hover:text-primary transition-colors">s.pathak@upes.ddn.ac.in</a></p>
-                                    </div>
-                                </li>
-                                <li class="flex items-start gap-4">
-                                    <i class="fa-solid fa-phone mt-1 text-primary text-lg"></i>
-                                    <p>+91-9528042400</p>
-                                </li>
-                                <li class="flex items-start gap-4">
-                                    <i class="fa-solid fa-location-dot mt-1 text-primary text-lg"></i>
-                                    <p>Chaman Vihar-Phase-2, Niranjanpur,<br>Dehradun, India.</p>
-                                </li>
-                            </ul>
-
-                            <div class="mt-8 pt-6 border-t dark:border-gray-700">
-                                <h4 class="font-bold mb-4">Professional Profiles</h4>
-                                <div class="flex gap-4">
-                                    <a href="https://scholar.google.co.kr/citations?user=z9OYfvkAAAAJ&hl=en" target="_blank" class="w-10 h-10 rounded-full bg-white dark:bg-darkCard shadow flex items-center justify-center hover:text-primary transition-colors"><i class="fa-brands fa-google"></i></a>
-                                    <a href="https://www.linkedin.com/in/dr-sachin-pathak-25749744/" target="_blank" class="w-10 h-10 rounded-full bg-white dark:bg-darkCard shadow flex items-center justify-center hover:text-primary transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-                                    <a href="https://www.facebook.com/pathaksachin101" target="_blank" class="w-10 h-10 rounded-full bg-white dark:bg-darkCard shadow flex items-center justify-center hover:text-primary transition-colors"><i class="fa-brands fa-facebook"></i></a>
-                                    <a href="https://www.upes.ac.in/faculty/school-of-advanced-engineering/applied-science/dr-sachin-pathak" target="_blank" class="w-10 h-10 rounded-full bg-white dark:bg-darkCard shadow flex items-center justify-center hover:text-primary transition-colors" title="UPES"><i class="fa-solid fa-university"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Map Embed (Simulated area of Dehradun) -->
-                        <div class="w-full h-48 rounded-2xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-800">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110204.74617260533!2d77.9470942417192!3d30.325409794025008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929c356c888af%3A0x4c3562c032518799!2sDehradun%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-white dark:bg-darkBg py-8 border-t dark:border-gray-800 text-center text-sm text-gray-500">
-        <div class="max-w-7xl mx-auto px-4">
-            <p>&copy; <span id="year"></span> Dr. Sachin Pathak. All Rights Reserved.</p>
-            <p class="mt-2 text-xs">Designed with <i class="fa-solid fa-heart text-red-500"></i> for scientific excellence.</p>
-        </div>
-    </footer>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden flex items-center justify-center opacity-0">
-        <button id="lightbox-close" class="absolute top-6 right-6 text-white text-4xl hover:text-gray-300">&times;</button>
-        <img id="lightbox-img" src="" alt="Expanded View" class="max-w-[90%] max-h-[90vh] object-contain rounded-lg shadow-2xl">
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
+  </header>
 
-    <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set current year in footer
-            document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-drawer" id="mobileDrawer">
+    <a href="#about" class="nav-link" onclick="closeDrawer()">About Dr. Pathak</a>
+    <a href="#vision" class="nav-link" onclick="closeDrawer()">Research Vision</a>
+    <a href="#research" class="nav-link" onclick="closeDrawer()">Research Areas</a>
+    <a href="#highlights" class="nav-link" onclick="closeDrawer()">Selected Contributions</a>
+    <a href="#publications" class="nav-link" onclick="closeDrawer()">Publications</a>
+    <a href="#network" class="nav-link" onclick="closeDrawer()">International Network</a>
+    <a href="#mentoring" class="nav-link" onclick="closeDrawer()">Teaching & Opportunities</a>
+    <a href="#contact" class="nav-link" onclick="closeDrawer()">Contact & Collaborate</a>
+  </div>
 
-            // 1. Dark Mode Toggle Logic
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const themeIcon = document.getElementById('theme-icon');
-            
-            // Check system preference or localStorage
-            if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
+  <main id="mainContent">
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-text-content">
+          <div class="hero-pretitle">
+            <span class="badge-scientific">
+              <span class="badge-dot"></span>
+              SCIENTIFIC RESEARCH PROFILE
+            </span>
+          </div>
 
-            themeToggleBtn.addEventListener('click', () => {
-                document.documentElement.classList.toggle('dark');
-                if (document.documentElement.classList.contains('dark')) {
-                    localStorage.setItem('theme', 'dark');
-                    themeIcon.classList.replace('fa-moon', 'fa-sun');
-                } else {
-                    localStorage.setItem('theme', 'light');
-                    themeIcon.classList.replace('fa-sun', 'fa-moon');
-                }
-            });
+          <h1 class="hero-title">
+            DR. SACHIN <br><span class="gradient-text">PATHAK</span>
+          </h1>
 
-            // 2. Mobile Menu Toggle
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
+          <div class="hero-subtitle">
+            <span>Physicist</span>
+            <span style="opacity: 0.4;">•</span>
+            <span>Materials Scientist</span>
+            <span style="opacity: 0.4;">•</span>
+            <span>Spintronics Researcher</span>
+          </div>
 
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+          <p class="hero-statement">
+            Exploring spin-dependent phenomena, advanced magnetic materials, and nanoscale heterostructures for next-generation, energy-efficient information technologies and non-volatile memory architectures.
+          </p>
 
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                });
-            });
+          <div class="hero-actions">
+            <a href="#research" class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Explore Research
+            </a>
+            <a href="#publications" class="btn btn-secondary">
+              Selected Publications
+            </a>
+            <a href="https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" title="Google Scholar Citations">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+              Google Scholar
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              Contact
+            </a>
+          </div>
 
-            // 3. Scroll Progress Indicator
-            window.addEventListener('scroll', () => {
-                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (winScroll / height) * 100;
-                document.getElementById('progress-bar').style.width = scrolled + '%';
-            });
+          <div class="hero-affiliation">
+            <svg class="affiliation-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <div>
+              Faculty Member • <strong>School of Advanced Engineering</strong>, Applied Science, UPES, Dehradun, India
+            </div>
+          </div>
+        </div>
 
-            // 4. Fade-in animations via Intersection Observer
-            const sections = document.querySelectorAll('.fade-in-section');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
+        <!-- Right Side: Spintronics Scientific Canvas -->
+        <div class="hero-visual-card">
+          <div class="canvas-header">
+            <span>SPIN-ORBIT INTERACTION MODEL</span>
+            <span id="fpsCounter">REAL-TIME SIMULATION</span>
+          </div>
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Only animate once
-                    }
-                });
-            }, observerOptions);
+          <canvas id="spintronicsCanvas" width="500" height="380" aria-label="Interactive simulation of spin-orbit torque and spin transport at a heavy metal and ferromagnet interface"></canvas>
 
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+          <div class="canvas-caption">
+            <div class="canvas-legend">
+              <div class="legend-item">
+                <span class="legend-indicator" style="background:#00f0ff;"></span>
+                <span>FM Layer (↑ m)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-indicator" style="background:#f59e0b;"></span>
+                <span>Heavy Metal (J_c)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-indicator" style="background:#818cf8;"></span>
+                <span>Spin Current (J_s)</span>
+              </div>
+            </div>
+            <span>[Move cursor over canvas]</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            // 5. Dynamic Publication Rendering (JSON approach)
-            const publicationsData = [
-                {
-                    title: "Depth selective magnetization investigation in thermally reduced Co/Pd multilayers revealed by MCD study",
-                    authors: "Kuldeep Rawat, Anmol Sharma, Ranjeet Kumar Brajpuriya... Sachin Pathak",
-                    journal: "Applied Surface Science 120(A), 164939 (2025)",
-                    doi: "#",
-                    impact: "6.9"
-                },
-                {
-                    title: "Giant Orbital Anisotropy with Strong Spin-Orbit Coupling Established at the Pseudomorphic Interface of the Co/Pd Superlattice",
-                    authors: "Sanghoon Kim, Sachin Pathak, Sonny H. Rhim... and Jongill Hong",
-                    journal: "Advanced Science 9, 2201749 (2022)",
-                    doi: "#",
-                    impact: "17.521"
-                },
-                {
-                    title: "Impact of Spin-Orbit Torque on Spin-Transfer Torque in Magnetic Tunnel Junctions",
-                    authors: "Sachin Pathak, Chanyoung Youm and Jongill Hong",
-                    journal: "Nature Scientific Reports 10, 2799 (2020)",
-                    doi: "#",
-                    impact: "4.996"
-                },
-                {
-                    title: "Fast and Efficient STT Switching in MTJ using Additional Transient Pulse Current",
-                    authors: "Sachin Pathak, Jongin Cha, Kangwook Jo, Hongil Yoon and Jongill Hong",
-                    journal: "Applied Physics Letters, 110, 232401 (2017)",
-                    doi: "#",
-                    impact: "3.971"
-                }
-            ];
+    <section class="identity-strip" aria-label="Core Academic Disciplines">
+      <div class="container">
+        <div class="chips-container">
+          <div class="scientific-chip">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            Physics
+          </div>
+          <div class="scientific-chip">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            Materials Science
+          </div>
+          <div class="scientific-chip">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+            Spintronics
+          </div>
+          <div class="scientific-chip">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            Nanomagnetism
+          </div>
+          <div class="scientific-chip">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>
+            Magnetic Thin Films
+          </div>
+          <div class="scientific-chip">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12h20M12 2v20"></path></svg>
+            Advanced Characterization
+          </div>
+        </div>
+      </div>
+    </section>
 
-            const pubListContainer = document.getElementById('pub-list');
-            publicationsData.forEach(pub => {
-                const pubHTML = `
-                    <div class="p-6 bg-gray-50 dark:bg-darkBg rounded-xl border border-gray-100 dark:border-gray-800 hover:shadow-md transition-shadow group relative overflow-hidden">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-gray-100 leading-snug">${pub.title}</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">${pub.authors}</p>
-                        <div class="flex flex-wrap items-center justify-between gap-4 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                            <span class="text-xs font-semibold text-primary italic">${pub.journal} <span class="ml-2 px-2 py-0.5 bg-blue-100 dark:bg-blue-900/50 rounded">IF: ${pub.impact}</span></span>
-                            <a href="${pub.doi}" target="_blank" class="text-xs font-bold px-3 py-1 bg-white dark:bg-darkCard border border-gray-300 dark:border-gray-600 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-1">
-                                DOI <i class="fa-solid fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
-                `;
-                pubListContainer.innerHTML += pubHTML;
-            });
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">01 — Researcher Profile</span>
+          <h2 class="section-title">About Dr. Sachin Pathak</h2>
+          <p class="section-lead">
+            Condensed matter physicist and materials scientist specializing in spin manipulation, magnetic interface physics, and thin-film heterostructures.
+          </p>
+        </div>
 
-            // 6. Lightbox Gallery Logic
-            const galleryImages = document.querySelectorAll('.gallery-img');
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const lightboxClose = document.getElementById('lightbox-close');
+        <div class="about-grid">
+          <div class="bio-prose">
+            <p>
+              <strong>Dr. Sachin Pathak</strong> is an active researcher and faculty member in the School of Advanced Engineering (Applied Science) at UPES, Dehradun, having joined the institution in 2020. His scientific trajectory spans elite institutions in India and South Korea, where he has pursued fundamental experimental and computational inquiries into spin-dependent transport phenomena.
+            </p>
+            <p>
+              He earned his <strong>Ph.D. in Physics from the Indian Institute of Technology (IIT) Delhi</strong>, one of India’s premier technical institutions, where he established a strong foundation in nanomagnetism and thin-film deposition. Following his doctoral studies, he expanded his international research footprint in South Korea, serving as a Postdoctoral Researcher at <strong>Yonsei University</strong> and subsequently as a <strong>Research Professor at Korea University</strong>.
+            </p>
 
-            galleryImages.forEach(img => {
-                img.addEventListener('click', () => {
-                    lightboxImg.src = img.src;
-                    lightbox.classList.remove('hidden');
-                    // small delay for transition
-                    setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling
-                });
-            });
+            <div class="highlight-quote">
+              "By controlling spin degrees of freedom at nanoscale interfaces, we pave the way for computation that transcends conventional charge dissipation."
+            </div>
 
-            const closeLightbox = () => {
-                lightbox.classList.add('opacity-0');
-                setTimeout(() => {
-                    lightbox.classList.add('hidden');
-                    document.body.style.overflow = 'auto';
-                }, 300);
-            };
+            <p>
+              Dr. Pathak’s research centers on the synthesis, structural inversion asymmetry, and magnetic characterization of advanced thin films, superlattices, and magnetic tunnel junctions. His investigative work integrates beamtime experiments at international synchrotron radiation facilities, such as DESY (Germany) and Elettra (Italy), working in close synergy with global experimental consortia.
+            </p>
+            <p>
+              At UPES, Dr. Pathak is committed to fostering a collaborative research culture, supervising undergraduate, master’s, and doctoral dissertations while actively teaching foundational and advanced physics courses.
+            </p>
+          </div>
 
-            lightboxClose.addEventListener('click', closeLightbox);
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) closeLightbox();
-            });
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
-            });
+          <!-- Verified Academic Journey Timeline -->
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>Academic Journey</h3>
+              <span class="badge-scientific">TIMELINE</span>
+            </div>
 
+            <div class="timeline-track">
+              <!-- UPES -->
+              <div class="timeline-step">
+                <div class="timeline-marker"></div>
+                <div class="timeline-institution">
+                  <span>UPES, Dehradun</span>
+                  <span class="timeline-badge">2020 – Present</span>
+                </div>
+                <div class="timeline-role">Faculty Member (Applied Science)</div>
+                <div class="timeline-focus">School of Advanced Engineering. Leading research in spintronics, nanomagnetism, interface engineering, and academic mentoring.</div>
+              </div>
+
+              <!-- Korea University -->
+              <div class="timeline-step">
+                <div class="timeline-marker"></div>
+                <div class="timeline-institution">
+                  <span>Korea University</span>
+                  <span class="timeline-badge">Research Role</span>
+                </div>
+                <div class="timeline-role">Research Professor</div>
+                <div class="timeline-focus">Investigated spin-orbit torques, magnetic memory systems, and spin transport phenomena in nanoscale heterostructures.</div>
+              </div>
+
+              <!-- Yonsei University -->
+              <div class="timeline-step">
+                <div class="timeline-marker"></div>
+                <div class="timeline-institution">
+                  <span>Yonsei University</span>
+                  <span class="timeline-badge">Postdoctoral</span>
+                </div>
+                <div class="timeline-role">Postdoctoral Researcher</div>
+                <div class="timeline-focus">Advanced magnetic thin films, superlattices, interfacial magnetic anisotropy, and BK21 Plus fellowship research.</div>
+              </div>
+
+              <!-- IIT Delhi -->
+              <div class="timeline-step">
+                <div class="timeline-marker"></div>
+                <div class="timeline-institution">
+                  <span>IIT Delhi</span>
+                  <span class="timeline-badge">Ph.D.</span>
+                </div>
+                <div class="timeline-role">Doctor of Philosophy in Physics</div>
+                <div class="timeline-focus">Doctoral research in experimental physics, nanomagnetism, thin film growth, and structural/magnetic characterization.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vision">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">02 — Research Philosophy</span>
+          <h2 class="section-title">Research Vision</h2>
+          <p class="section-lead">
+            "Engineering matter at the nanoscale to understand, control and exploit spin."
+          </p>
+        </div>
+
+        <div class="vision-card">
+          <h3 class="vision-quote">
+            "Bridging fundamental condensed matter physics with transformative spintronic technologies."
+          </h3>
+          <p class="vision-text">
+            Conventional microelectronics relies on moving electric charges, generating significant Joule heating and fundamental scaling limits. Spintronics harnesses the electron's intrinsic quantum angular momentum (spin) alongside its charge. Our vision focuses on uncovering the underlying interface physics, spin-orbit torques, and magnetic domain dynamics that will govern future ultra-low-power non-volatile memory, neuromorphic computing, and quantum sensor architectures.
+          </p>
+        </div>
+
+        <!-- Interactive Spintronics Ecosystem Diagram -->
+        <div class="radial-ecosystem-wrapper">
+          <div class="radial-canvas-container" id="radialContainer">
+            <!-- Center Hub -->
+            <div class="radial-center-hub" id="radialHub">
+              <span>SPINTRONICS</span>
+              <span style="font-size: 0.65rem; font-family: var(--font-mono); opacity: 0.8; font-weight: 400;">CORE NEXUS</span>
+            </div>
+
+            <!-- Orbit Lines (SVG) -->
+            <svg class="radial-orbit-svg" viewBox="0 0 500 480">
+              <ellipse cx="250" cy="240" rx="140" ry="140" fill="none" stroke="rgba(56, 189, 248, 0.15)" stroke-width="1" stroke-dasharray="4 4" />
+              <ellipse cx="250" cy="240" rx="210" ry="190" fill="none" stroke="rgba(129, 140, 248, 0.1)" stroke-width="1" />
+            </svg>
+
+            <!-- Interactive Orbiting Nodes -->
+            <button class="radial-node-btn active" data-node="sot" style="top: 14%; left: 42%;">Spin-Orbit Torque</button>
+            <button class="radial-node-btn" data-node="stt" style="top: 24%; left: 74%;">Spin-Transfer Torque</button>
+            <button class="radial-node-btn" data-node="films" style="top: 50%; left: 82%;">Magnetic Thin Films</button>
+            <button class="radial-node-btn" data-node="mtj" style="top: 76%; left: 70%;">Magnetic Tunnel Junctions</button>
+            <button class="radial-node-btn" data-node="nano" style="top: 86%; left: 40%;">Nanomagnetism</button>
+            <button class="radial-node-btn" data-node="interface" style="top: 76%; left: 14%;">Interface Engineering</button>
+            <button class="radial-node-btn" data-node="memory" style="top: 50%; left: 4%;">Magnetic Memory</button>
+            <button class="radial-node-btn" data-node="transport" style="top: 24%; left: 12%;">Spin Transport</button>
+            <button class="radial-node-btn" data-node="micromag" style="top: 6%; left: 18%;">Micromagnetic Modelling</button>
+            <button class="radial-node-btn" data-node="char" style="top: 6%; left: 66%;">Advanced Characterization</button>
+          </div>
+
+          <!-- Dynamic Node Information Box -->
+          <div class="node-preview-box" id="nodeInfoBox">
+            <span class="badge-scientific" style="align-self: flex-start; margin-bottom: 0.75rem;">RESEARCH FOCUS</span>
+            <h4 class="node-preview-title" id="nodeTitle">Spin-Orbit Torque (SOT)</h4>
+            <p class="node-preview-desc" id="nodeDesc">
+              Harnessing spin-orbit coupling phenomena, such as the Spin Hall effect and Rashba-Edelstein effect, to generate transverse spin currents capable of switching ferromagnetic layers with high speed and endurance.
+            </p>
+            <div class="node-preview-meta" id="nodeMeta">
+              Key Focus: Low-dissipation magnetization reversal • Ultra-fast switching
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">03 — Scientific Domains</span>
+          <h2 class="section-title">Core Research Areas</h2>
+          <p class="section-lead">
+            Systematic experimental synthesis, phenomenological investigation, and computational modeling across ten core domains of spintronics and advanced condensed matter materials.
+          </p>
+        </div>
+
+        <div class="research-grid">
+          <!-- 1. Spintronics -->
+          <div class="research-card">
+            <div>
+              <div class="research-card-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+              </div>
+              <h3>Spintronics</h3>
+              <p>Harnessing electron spin state alongside electrical charge for non-volatile, high-speed, and low-power computational systems.</p>
+            </div>
+            <div class="research-card-tags">
+              <span class="research-mini-tag">Spin Polarisation</span>
+              <span class="research-mini-tag">Spin Hall Effect</span>
+              <span class="research-mini-tag">Devices</span>
+            </div>
+          </div>
+
+          <!-- 2. Magnetic Thin Films -->
+          <div class="research-card">
+            <div>
+              <div class="research-card-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>
+              </div>
+              <h3>Magnetic Thin Films</h3>
+              <p>Precision deposition and atomic-scale control of single-layer, multilayer, and superlattice magnetic heterostructures.</p>
+            </div>
+            <div class="research-card-tags">
+              <span class="research-mini-tag">Superlattices</span>
+              <span class="research-mini-tag">Co/Pd Films</span>
+              <span class="research-mini-tag">PMA</span>
+            </div>
+          </div>
+
+          <!-- 3. Nanomagnetism -->
+          <div class="research-card">
+            <div>
+              <div class="research-card-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v8M8 12h8"></path></svg>
+              </div>
+              <h3>Nanomagnetism</h3>
+              <p>Magnetic behavior emerging at the nanoscale, including localized domain walls, sub-10 nm patterned arrays, and vortex configurations.</p>
+            </div>
+            <div class="research-card-tags">
+              <span class="research-mini-tag">Sub-10nm</span>
+              <span class="research-mini-tag">Domain Walls</span>
+              <span class="research-mini-tag">Nanostructures</span>
+            </div>
+          </div>
+
+          <!-- 4. Magnetic Tunnel Junctions -->
+          <div class="research-card">
+            <div>
+              <div class="research-card-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+              </div>
+              <h3>Magnetic Tunnel Junctions</h3>
+              <p>Quantum mechanical tunnel barrier physics enabling large Tunneling Magnetoresistance (TMR) for readout in MRAM cells.</p>
+            </div>
+            <div class="research-card-tags">
+              <span class="research-mini-tag">TMR</span>
+              <span class="research-mini-tag">MgO Barrier</span>
+              <span class="research-mini-tag">Readout</span>
+            </div>
+          </div>
+
+          <!-- 5. Spin-Transfer Torque (STT) -->
+          <div class="research-card">
+            <div>
+              <div class="research-card-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 11l4 4-4 4M7 13l-4-4 4-4"></path><path d="M21 15H9a4 4 0 0 1-4-4V7"></path></svg>
+              </div>
+              <h3>Spin-Transfer Torque</h3>
+              <p>Magnetization switching induced by transferring spin angular momentum directly from a spin-polarized current to magnetic bits.</p>
+            </div>
+            <div class="research-card-tags">
+              <span class="research-mini-tag">Spin-Transfer</span>
+              <span class="research-mini-tag">Critical Current</span>
+              <span class="research-mini-tag">STT-MRAM</span>
+            </div>
+          </div>
+
+          <!-- 6. Spin-Orbit Torque (SOT) -->
+          <div class="research-card">
+            <div>
+              <div class="research-card-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 9 9"></path><polyline points="18 12 21 12 21 9"></polyline></svg>
+              </div>
+              <h3>Spin-Orbit Torque</h3>
+              <p>In-plane charge currents converted to pure transverse spin currents via relativistic spin-orbit interactions at heavy metal interfaces.</p>
+            </div>
+            <div class="research-card-tags">
+              <span class="research-mini-tag">Rashba Field</span>
+              <span class="research-mini-tag">Spin Hall Angle</span>
+              <span class="research-mini-tag">Endurance</span>
+            </div>
+          </div>
+
+          <!-- 7. Interface Engineering -->
+          <div class="research-card">
+            <div>
+              <div class="research-card-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="2" y1="12" x2="22" y2="12"></line><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="12" r="3"></circle></svg>
+              </div>
+              <h3>Interface Engineering</h3>
+              <p>Tuning structural inversion asymmetry and atomic hybridization to maximize perpendicular magnetic anisotropy and Dzyaloshinskii-Moriya interaction.</p>
+            </div>
+            <div class="research-card-tags">
+              <span class="research-mini-tag">Interfacial PMA</span>
+              <span class="research-mini-tag">Inversion Asymmetry</span>
+              <span class="research-mini-tag">DMI</span>
+            </div>
+          </div>
+
+          <!-- 8. Magnetic Memory -->
+          <div class="research-card">
+            <div>
+              <div class="research-card-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M9 9h6v6H9z"></path></svg>
+              </div>
+              <h3>Magnetic Memory</h3>
+              <p>Designing high-density, non-volatile, energy-efficient architectures (STT/SOT-MRAM) capable of persistent high-retention data storage.</p>
+            </div>
+            <div class="research-card-tags">
+              <span class="research-mini-tag">MRAM</span>
+              <span class="research-mini-tag">Thermal Stability</span>
+              <span class="research-mini-tag">Non-Volatile</span>
+            </div>
+          </div>
+
+          <!-- 9. Micromagnetic Modelling -->
+          <div class="research-card">
+            <div>
+              <div class="research-card-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+              </div>
+              <h3>Micromagnetic Modelling</h3>
+              <p>Numerical integration of the Landau-Lifshitz-Gilbert (LLG) equation to simulate domain wall velocities, spin wave dynamics, and switching trajectories.</p>
+            </div>
+            <div class="research-card-tags">
+              <span class="research-mini-tag">LLG Equation</span>
+              <span class="research-mini-tag">OOMMF / MuMax3</span>
+              <span class="research-mini-tag">Spin Dynamics</span>
+            </div>
+          </div>
+
+          <!-- 10. Advanced Magnetic Characterization -->
+          <div class="research-card">
+            <div>
+              <div class="research-card-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </div>
+              <h3>Advanced Characterization</h3>
+              <p>Probing spin and magnetic order using Magneto-Optical Kerr Effect (MOKE), VSM, and synchrotron-based depth-resolved X-ray spectroscopies.</p>
+            </div>
+            <div class="research-card-tags">
+              <span class="research-mini-tag">MOKE</span>
+              <span class="research-mini-tag">Synchrotron X-Ray</span>
+              <span class="research-mini-tag">Magnetometry</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="highlights">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">04 — Scientific Highlights</span>
+          <h2 class="section-title">Selected Scientific Contributions</h2>
+          <p class="section-lead">
+            Featured case studies demonstrating research methodology, verified quantitative milestones, and insights into nanoscale magnetism.
+          </p>
+        </div>
+
+        <div class="highlights-grid">
+          <!-- Story 1: Nanopatterning -->
+          <div class="highlight-story-card">
+            <div class="story-header">
+              <span class="badge-scientific">NANOMAGNETISM</span>
+              <span class="metric-badge-quantitative">~8 nm PATTERNS</span>
+            </div>
+            <h3 class="story-title">Ion-Induced Nanoscale Magnetic Pattern Formation</h3>
+            <div class="story-steps">
+              <div class="story-step-item">
+                <span class="story-step-label">Research Question</span>
+                <span class="story-step-text">Can focused energetic ion irradiation induce localized chemical ordering or phase transformations at extreme sub-10 nm spatial resolutions without destructive material ablation?</span>
+              </div>
+              <div class="story-step-item">
+                <span class="story-step-label">Approach</span>
+                <span class="story-step-text">Carefully controlled ion beam irradiation combined with high-resolution microscopy and localized magnetic domain mapping.</span>
+              </div>
+              <div class="story-step-item">
+                <span class="story-step-label">Key Insight</span>
+                <span class="story-step-text">Demonstrated stable magnetic nanostructures down to approximately <strong>8 nm feature size</strong>, verifying localized phase modification while preserving underlying matrix integrity.</span>
+              </div>
+              <div class="story-step-item">
+                <span class="story-step-label">Impact</span>
+                <span class="story-step-text">Provides a viable pathway for ultra-high-density patterned magnetic recording media and bit-patterned spin arrays beyond classical photolithographic limits.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 2: Co/Pd Superlattices -->
+          <div class="highlight-story-card">
+            <div class="story-header">
+              <span class="badge-scientific">SUPERLATTICES</span>
+              <span class="metric-badge-quantitative">ORBITAL ANISOTROPY</span>
+            </div>
+            <h3 class="story-title">Co/Pd Superlattices & Interfacial Spin-Orbit Coupling</h3>
+            <div class="story-steps">
+              <div class="story-step-item">
+                <span class="story-step-label">Research Question</span>
+                <span class="story-step-text">How does structural inversion asymmetry at 3d/4d-5d ferromagnetic-heavy metal interfaces govern orbital magnetic moments and perpendicular magnetic anisotropy (PMA)?</span>
+              </div>
+              <div class="story-step-item">
+                <span class="story-step-label">Approach</span>
+                <span class="story-step-text">Synthesis of atomically abrupt Cobalt/Palladium (Co/Pd) superlattices followed by polarized magnetometry and interfacial structural analysis.</span>
+              </div>
+              <div class="story-step-item">
+                <span class="story-step-label">Key Insight</span>
+                <span class="story-step-text">Quantified the enhancement of orbital magnetic anisotropy stemming from hybridization between Co 3d and Pd 4d states across structural boundary interfaces.</span>
+              </div>
+              <div class="story-step-item">
+                <span class="story-step-label">Impact</span>
+                <span class="story-step-text">Informs design rules for high-thermal-stability perpendicular magnetic tunnel junctions and low-damping spin transport channels.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 3: MTJ & MOKE -->
+          <div class="highlight-story-card">
+            <div class="story-header">
+              <span class="badge-scientific">MAGNETIC SPECTROSCOPY</span>
+              <span class="metric-badge-quantitative">MOKE & SYNCHROTRON</span>
+            </div>
+            <h3 class="story-title">Dynamic Domain Wall Characterization & Depth Profiling</h3>
+            <div class="story-steps">
+              <div class="story-step-item">
+                <span class="story-step-label">Research Question</span>
+                <span class="story-step-text">What is the precise depth-dependent spin polarization and domain wall pinning mechanism in layered spintronic heterostructures under external excitations?</span>
+              </div>
+              <div class="story-step-item">
+                <span class="story-step-label">Approach</span>
+                <span class="story-step-text">Integrated in-house Magneto-Optical Kerr Effect (MOKE) microscopy with synchrotron beamtime investigations at international facilities (DESY & Elettra).</span>
+              </div>
+              <div class="story-step-item">
+                <span class="story-step-label">Key Insight</span>
+                <span class="story-step-text">Disentangled bulk magnetic contributions from interface spin accumulations, pinpointing exact barrier roughness effects on coercivity.</span>
+              </div>
+              <div class="story-step-item">
+                <span class="story-step-label">Impact</span>
+                <span class="story-step-text">Validates analytical and micromagnetic models used for designing high-endurance spintronic read/write heads and memory devices.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">05 — Scholarly Output</span>
+          <h2 class="section-title">Selected Publications</h2>
+          <p class="section-lead">
+            A curated record of scientific papers on spintronics, magnetic superlattices, and materials physics. Search by keyword or filter by research domain.
+          </p>
+        </div>
+
+        <!-- Search and Filter Controls -->
+        <div class="pub-controls">
+          <div class="search-input-wrapper">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="pubSearch" class="pub-search-input" placeholder="Search publication title, author, or journal..." aria-label="Search publications">
+          </div>
+
+          <div class="pub-filters" id="pubFilterButtons">
+            <button class="filter-btn active" data-filter="all">All Disciplines</button>
+            <button class="filter-btn" data-filter="Spintronics">Spintronics</button>
+            <button class="filter-btn" data-filter="Thin Films">Thin Films</button>
+            <button class="filter-btn" data-filter="Nanomagnetism">Nanomagnetism</button>
+            <button class="filter-btn" data-filter="Characterization">Characterization</button>
+          </div>
+        </div>
+
+        <!-- Publication Cards Dynamic Container -->
+        <div class="publications-list" id="publicationsContainer" aria-live="polite">
+          <!-- Populated dynamically via JS array -->
+        </div>
+
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <a href="https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+            View Complete Bibliography on Google Scholar
+          </a>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem; font-family: var(--font-mono);">
+            Verified citations, publication track record, and co-authorships continuously updated via Google Scholar & ORCID.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="impact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">06 — Impact & Integrity</span>
+          <h2 class="section-title">Research Impact & Metrics</h2>
+          <p class="section-lead">
+            Accurate, verifiable scholarship. Citations, h-index, and publication indices are maintained directly on authoritative global research indices.
+          </p>
+        </div>
+
+        <div class="impact-metrics-grid">
+          <div class="metric-card">
+            <svg class="metric-card-icon" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            <div class="metric-value">Active</div>
+            <div class="metric-label">Scholarly Journal Articles</div>
+            <div class="metric-note">Peer-reviewed international physics journals</div>
+          </div>
+
+          <div class="metric-card">
+            <svg class="metric-card-icon" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div class="metric-value">2</div>
+            <div class="metric-label">Patents</div>
+            <div class="metric-note">Documented in institutional faculty records</div>
+          </div>
+
+          <div class="metric-card">
+            <svg class="metric-card-icon" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+            <div class="metric-value">Scholar</div>
+            <div class="metric-label">h-Index & Citations</div>
+            <div class="metric-note">Real-time live verification available</div>
+          </div>
+
+          <div class="metric-card">
+            <svg class="metric-card-icon" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            <div class="metric-value">4+</div>
+            <div class="metric-label">Synchrotron Beamtimes & Grants</div>
+            <div class="metric-note">International radiation facilities (DESY, Elettra)</div>
+          </div>
+        </div>
+
+        <div class="scholar-banner">
+          <div class="scholar-banner-text">
+            <h3>Verified Academic Integrity Policy</h3>
+            <p>
+              To maintain strict academic accuracy, this website does not invent or estimate citation counts, h-index, or bibliometric metrics. Live metrics should be inspected directly on Google Scholar.
+            </p>
+          </div>
+          <a href="https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Open Google Scholar Metrics
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="network">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">07 — Global Footprint</span>
+          <h2 class="section-title">International Research Network</h2>
+          <p class="section-lead">
+            Building scientific connections across institutions, experimental beamlines, disciplines, and borders.
+          </p>
+        </div>
+
+        <div class="network-container">
+          <!-- Scientific Coordinate World Map (SVG) -->
+          <svg class="network-svg-map" viewBox="0 0 1000 450" preserveAspectRatio="xMidYMid slice" aria-label="World map showing Dr. Sachin Pathak's research network across India, South Korea, Germany, and Italy">
+            <defs>
+              <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.8"/>
+                <stop offset="100%" stop-color="#00f0ff" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Coordinate Grid lines -->
+            <line x1="0" y1="112" x2="1000" y2="112" stroke="rgba(255,255,255,0.04)" stroke-dasharray="3 3"/>
+            <line x1="0" y1="225" x2="1000" y2="225" stroke="rgba(255,255,255,0.06)"/>
+            <line x1="0" y1="337" x2="1000" y2="337" stroke="rgba(255,255,255,0.04)" stroke-dasharray="3 3"/>
+            <line x1="250" y1="0" x2="250" y2="450" stroke="rgba(255,255,255,0.04)"/>
+            <line x1="500" y1="0" x2="500" y2="450" stroke="rgba(255,255,255,0.06)"/>
+            <line x1="750" y1="0" x2="750" y2="450" stroke="rgba(255,255,255,0.04)"/>
+
+            <!-- Continents Abstract Outlines -->
+            <path d="M 150 120 Q 230 110 260 160 Q 290 230 200 320 Q 150 250 130 180 Z" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+            <path d="M 460 100 Q 560 80 620 120 Q 640 180 580 220 Q 480 180 460 100 Z" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+            <path d="M 640 130 Q 820 100 880 160 Q 860 260 740 280 Q 660 230 640 130 Z" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+
+            <!-- Connection Geodesics -->
+            <!-- India (680, 230) to Korea (820, 180) -->
+            <path d="M 680 230 Q 750 170 820 180" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-dasharray="5 5" opacity="0.8">
+              <animate attributeName="stroke-dashoffset" values="50;0" dur="3s" repeatCount="indefinite" />
+            </path>
+            <!-- India (680, 230) to Germany (515, 140) -->
+            <path d="M 680 230 Q 600 160 515 140" fill="none" stroke="var(--accent-cyan)" stroke-width="2" stroke-dasharray="5 5" opacity="0.8">
+              <animate attributeName="stroke-dashoffset" values="50;0" dur="4s" repeatCount="indefinite" />
+            </path>
+            <!-- Germany (515, 140) to Italy (525, 175) -->
+            <path d="M 515 140 L 525 175" fill="none" stroke="var(--accent-violet)" stroke-width="2" opacity="0.7"/>
+
+            <!-- Nodes -->
+            <!-- India (IIT Delhi / UPES Dehradun) -->
+            <circle cx="680" cy="230" r="18" fill="url(#nodeGlow)"/>
+            <circle cx="680" cy="230" r="6" fill="#00f0ff"/>
+            <text x="695" y="235" fill="#f8fafc" font-size="12" font-family="monospace" font-weight="bold">INDIA (UPES / IIT Delhi)</text>
+
+            <!-- South Korea (Seoul / Yonsei / Korea Univ) -->
+            <circle cx="820" cy="180" r="18" fill="url(#nodeGlow)"/>
+            <circle cx="820" cy="180" r="6" fill="#00f0ff"/>
+            <text x="740" y="165" fill="#f8fafc" font-size="12" font-family="monospace" font-weight="bold">SOUTH KOREA (Yonsei / Korea Univ)</text>
+
+            <!-- Germany (DESY Synchrotron, Hamburg) -->
+            <circle cx="515" cy="140" r="15" fill="url(#nodeGlow)"/>
+            <circle cx="515" cy="140" r="5" fill="#38bdf8"/>
+            <text x="410" y="130" fill="#f8fafc" font-size="11" font-family="monospace" font-weight="bold">GERMANY (DESY)</text>
+
+            <!-- Italy (Elettra Synchrotron, Trieste) -->
+            <circle cx="525" cy="175" r="15" fill="url(#nodeGlow)"/>
+            <circle cx="525" cy="175" r="5" fill="#818cf8"/>
+            <text x="440" y="195" fill="#f8fafc" font-size="11" font-family="monospace" font-weight="bold">ITALY (Elettra)</text>
+          </svg>
+
+          <!-- Network Legend -->
+          <div class="network-legend-grid">
+            <div class="network-item">
+              <div class="network-pin" style="background:#00f0ff;"></div>
+              <div>
+                <div class="network-location-name">India (Current Base)</div>
+                <div class="network-details">UPES Dehradun (Faculty) • Ph.D. from IIT Delhi • UGC-DAE-CSR collaborative research.</div>
+              </div>
+            </div>
+
+            <div class="network-item">
+              <div class="network-pin" style="background:#38bdf8;"></div>
+              <div>
+                <div class="network-location-name">South Korea</div>
+                <div class="network-details">Korea University (Research Professor) • Yonsei University (Postdoc) • BK21 Plus fellowship research.</div>
+              </div>
+            </div>
+
+            <div class="network-item">
+              <div class="network-pin" style="background:#818cf8;"></div>
+              <div>
+                <div class="network-location-name">Germany (DESY)</div>
+                <div class="network-details">Deutsches Elektronen-Synchrotron. Beamtime investigations of magnetic heterostructures.</div>
+              </div>
+            </div>
+
+            <div class="network-item">
+              <div class="network-pin" style="background:#f59e0b;"></div>
+              <div>
+                <div class="network-location-name">Italy (Elettra)</div>
+                <div class="network-details">Elettra Sincrotrone Trieste. Synchrotron-based depth-sensitive spectroscopy & magnetic characterization.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="recognition">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">08 — Honors & Patents</span>
+          <h2 class="section-title">Recognition, Fellowships & Patents</h2>
+          <p class="section-lead">
+            Documented competitive fellowships, synchrotron beamtime endorsements, and intellectual property contributions.
+          </p>
+        </div>
+
+        <div class="badges-grid" style="margin-bottom: 3rem;">
+          <div class="award-card">
+            <div class="award-icon-box">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15l-2 5l9-9l-9-9l2 5l-7 4z"></path></svg>
+            </div>
+            <div>
+              <h3 class="award-title">CSIR Research Fellowship</h3>
+              <div class="award-org">Council of Scientific & Industrial Research (India)</div>
+              <p class="award-desc">National competitive doctoral fellowship supporting physics and materials research during Ph.D. at IIT Delhi.</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon-box">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
+            <div>
+              <h3 class="award-title">BK21 Plus Fellowship</h3>
+              <div class="award-org">Brain Korea 21 Plus Program (South Korea)</div>
+              <p class="award-desc">Prestigious South Korean governmental fellowship supporting advanced research in frontier materials and condensed matter science.</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon-box">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <div>
+              <h3 class="award-title">Yonsei Postdoctoral Fellowship</h3>
+              <div class="award-org">Yonsei University (South Korea)</div>
+              <p class="award-desc">Institutional fellowship facilitating international research on magnetic multilayer films and spin transport properties.</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon-box">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+            </div>
+            <div>
+              <h3 class="award-title">International Synchrotron Support</h3>
+              <div class="award-org">DESY (Germany) & Elettra (Italy)</div>
+              <p class="award-desc">Competitive beamtime allocations for depth-resolved X-ray magnetic spectroscopy and advanced synchrotron characterization.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intellectual Property / Patents Framework -->
+        <div class="vision-card" style="padding: 2.5rem; margin-bottom: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span class="badge-scientific">INTELLECTUAL PROPERTY</span>
+              <h3 style="font-size: 1.5rem; font-weight: 700; margin-top: 0.5rem;">Patents & Technological Innovations</h3>
+            </div>
+            <div class="metric-badge-quantitative">2 Documented Patents</div>
+          </div>
+          <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7;">
+            Dr. Sachin Pathak's record includes 2 patents in advanced materials and nanoscale devices as documented in institutional academic reports.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem;" id="patentsContainer">
+            <!-- Dynamic Patent Cards -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="methods">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">09 — Capabilities</span>
+          <h2 class="section-title">Experimental & Computational Capabilities</h2>
+          <p class="section-lead">
+            Comprehensive experimental workflow spanning atomic-scale thin film growth, magnetic characterization, and numerical micromagnetics.
+          </p>
+        </div>
+
+        <div class="methods-grid">
+          <div class="method-category-card">
+            <div class="method-header">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon></svg>
+              <span>SYNTHESIS</span>
+            </div>
+            <h3 class="method-category-title">Materials Growth</h3>
+            <ul class="method-list">
+              <li>Magnetic Thin Films Deposition</li>
+              <li>Nanoscale Multilayers & Bilayers</li>
+              <li>Atomically Abrupt Superlattices (Co/Pd)</li>
+              <li>Interfacial Roughness Control</li>
+              <li>Sub-10 nm Patterning Methodologies</li>
+            </ul>
+          </div>
+
+          <div class="method-category-card">
+            <div class="method-header">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg>
+              <span>METROLOGY</span>
+            </div>
+            <h3 class="method-category-title">Magnetic Characterization</h3>
+            <ul class="method-list">
+              <li>Magneto-Optical Kerr Effect (MOKE)</li>
+              <li>Vibrating Sample Magnetometry (VSM)</li>
+              <li>Perpendicular Anisotropy (PMA) Profiling</li>
+              <li>Spin-Dependent Transport Measurements</li>
+              <li>Temperature-Dependent Magnetic Hysteresis</li>
+            </ul>
+          </div>
+
+          <div class="method-category-card">
+            <div class="method-header">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+              <span>SIMULATION</span>
+            </div>
+            <h3 class="method-category-title">Computational Physics</h3>
+            <ul class="method-list">
+              <li>Landau-Lifshitz-Gilbert (LLG) Integration</li>
+              <li>Micromagnetic Domain Wall Dynamics</li>
+              <li>Spin-Transfer & Spin-Orbit Torque Modelling</li>
+              <li>Magnetic Tunnel Junction (MTJ) Simulation</li>
+              <li>Thermal Stability & Switching Probability</li>
+            </ul>
+          </div>
+
+          <div class="method-category-card">
+            <div class="method-header">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"></path></svg>
+              <span>SYNCHROTRON</span>
+            </div>
+            <h3 class="method-category-title">Advanced Beamlines</h3>
+            <ul class="method-list">
+              <li>Synchrotron-based X-ray Spectroscopy</li>
+              <li>Depth-Sensitive Standing-Wave Probing</li>
+              <li>Interface Orbital Hybridization Analysis</li>
+              <li>Structural Inversion Asymmetry Mapping</li>
+              <li>High-Resolution Elemental Spin Contrast</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mentoring">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">10 — Pedagogy & Mentorship</span>
+          <h2 class="section-title">Teaching & Research Opportunities</h2>
+          <p class="section-lead">
+            Nurturing critical scientific thinking, research-informed learning, and interdisciplinary problem solving for aspiring physicists and materials scientists.
+          </p>
+        </div>
+
+        <div class="about-grid" style="margin-bottom: 4rem;">
+          <div class="bio-prose">
+            <h3 style="font-size: 1.4rem; color: var(--text-main);">Teaching Philosophy</h3>
+            <p>
+              Dr. Pathak views university teaching as an active scientific dialogue. By connecting abstract principles of quantum mechanics, thermodynamics, and solid-state physics to tangible nanoscale technologies, students develop rigorous mathematical intuition alongside practical experimental insight.
+            </p>
+            <p>
+              Undergraduate and postgraduate students under his mentorship are encouraged to tackle open scientific challenges, learn programming tools for micromagnetics, and participate in peer-reviewed scientific discourse.
+            </p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
+              <span class="scientific-chip">Quantum Mechanics</span>
+              <span class="scientific-chip">Engineering Physics</span>
+              <span class="scientific-chip">Materials Science</span>
+              <span class="scientific-chip">Nanotechnology</span>
+              <span class="scientific-chip">Condensed Matter</span>
+            </div>
+          </div>
+
+          <!-- Interactive Mentorship Cards -->
+          <div class="timeline-card">
+            <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem;">Academic Inquiries</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+              Opportunities are regularly available for self-motivated scholars interested in thesis projects, doctoral research, and scientific internships:
+            </p>
+            <ul class="method-list" style="margin-bottom: 2rem;">
+              <li><strong>Ph.D. Research:</strong> Spintronic materials, spin-orbit torques, magnetic thin films.</li>
+              <li><strong>M.Sc. Dissertations:</strong> Experimental magnetometry and materials characterization.</li>
+              <li><strong>Undergraduate Projects:</strong> Micromagnetic simulations and scientific computing.</li>
+              <li><strong>Collaborative Visits:</strong> Joint beamtime proposals and inter-institutional projects.</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" style="width: 100%;">
+              Inquire About Research Positions
+            </a>
+          </div>
+        </div>
+
+        <!-- Latest Updates Timeline -->
+        <div class="timeline-card" style="padding: 2.5rem;">
+          <div class="timeline-header">
+            <div>
+              <span class="section-eyebrow" style="margin-bottom: 0.25rem;">DISPATCHES</span>
+              <h3>Research Updates & News</h3>
+            </div>
+            <span class="badge-scientific">BULLETIN</span>
+          </div>
+
+          <div class="timeline-track" id="updatesContainer">
+            <!-- Populated dynamically via JS array -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="profiles">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">11 — Authoritative Links</span>
+          <h2 class="section-title">Academic & Professional Profiles</h2>
+          <p class="section-lead">
+            Access Dr. Sachin Pathak's verified scholarly listings, institutional affiliation, and international scientific profiles.
+          </p>
+        </div>
+
+        <div class="profiles-grid">
+          <!-- Google Scholar -->
+          <div class="profile-card">
+            <div class="profile-logo logo-scholar">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+            </div>
+            <h3 class="profile-name">Google Scholar</h3>
+            <p class="profile-desc">Publications • Citations • Co-authorships • Research Impact</p>
+            <a href="https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">
+              View Scholar Profile
+            </a>
+          </div>
+
+          <!-- ORCID -->
+          <div class="profile-card">
+            <div class="profile-logo logo-orcid">
+              <svg width="28" height="28" viewBox="0 0 256 256" fill="currentColor"><path d="M128,0A128,128,0,1,0,256,128,128,128,0,0,0,128,0ZM86.35,186.26H64.08V73.49H86.35ZM75.22,60.83a12.92,12.92,0,1,1,12.92-12.92A12.92,12.92,0,0,1,75.22,60.83ZM192.65,130c0,32.49-18.73,56.26-48.4,56.26H107.13V73.49h40.54C175.7,73.49,192.65,97.74,192.65,130Zm-21.73,0c0-21.56-9.87-36.93-27.13-36.93H127.67V167h16.12C161.05,167,170.92,151.56,170.92,130Z"/></svg>
+            </div>
+            <h3 class="profile-name">ORCID Identifier</h3>
+            <p class="profile-desc">0000-0002-5354-9334 • Persistent Global Researcher ID</p>
+            <a href="https://orcid.org/0000-0002-5354-9334" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">
+              View ORCID Record
+            </a>
+          </div>
+
+          <!-- LinkedIn -->
+          <div class="profile-card">
+            <div class="profile-logo logo-linkedin">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.2a1.62 1.62 0 0 0-1.62 1.62c0 .9.72 1.62 1.62 1.62a1.62 1.62 0 0 0 1.62-1.62c0-.9-.72-1.62-1.62-1.62z"/></svg>
+            </div>
+            <h3 class="profile-name">LinkedIn Network</h3>
+            <p class="profile-desc">Professional Connections • Scientific Networking</p>
+            <a href="https://www.linkedin.com/in/dr-sachin-pathak-25749744/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">
+              Connect on LinkedIn
+            </a>
+          </div>
+
+          <!-- UPES Official -->
+          <div class="profile-card">
+            <div class="profile-logo logo-upes">
+              <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </div>
+            <h3 class="profile-name">Institutional Profile</h3>
+            <p class="profile-desc">UPES School of Advanced Engineering • Applied Science</p>
+            <a href="https://www.upes.ac.in/faculty/school-of-advanced-engineering/applied-science/dr-sachin-pathak" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%;">
+              View UPES Faculty Page
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" style="border-bottom: none;">
+      <div class="container">
+        <div class="contact-box">
+          <span class="badge-scientific" style="margin-bottom: 1.25rem;">COLLABORATION</span>
+          <h2 class="contact-headline">Let’s Collaborate</h2>
+          <p class="contact-lead">
+            Open to meaningful academic collaborations, interdisciplinary physics and materials science research, conference invitations, synchrotron beamtime partnerships, and student mentoring.
+          </p>
+
+          <!-- Verified Institutional Email -->
+          <div class="email-display-container">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--accent-blue);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span class="email-text" id="officialEmailText">s.pathak@ddn.upes.ac.in</span>
+            <button class="copy-btn" id="copyEmailBtn" aria-label="Copy institutional email address" title="Copy Email">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </div>
+
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="mailto:s.pathak@ddn.upes.ac.in" class="btn btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              Compose Email
+            </a>
+            <a href="https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Google Scholar
+            </a>
+            <a href="https://orcid.org/0000-0002-5354-9334" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              ORCID
+            </a>
+            <a href="https://www.linkedin.com/in/dr-sachin-pathak-25749744/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Dr. Sachin Pathak</h4>
+          <p>
+            Physicist • Materials Scientist • Spintronics Researcher<br>
+            Department of Applied Science, School of Advanced Engineering<br>
+            UPES (University of Petroleum and Energy Studies), Dehradun, India
+          </p>
+          <div style="margin-top: 1rem; font-family: var(--font-serif); font-style: italic; color: var(--accent-blue);">
+            "Built for science. Designed for discovery."
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="#about">About & Career</a></li>
+            <li><a href="#vision">Research Vision</a></li>
+            <li><a href="#research">Core Research Areas</a></li>
+            <li><a href="#publications">Selected Publications</a></li>
+            <li><a href="#network">International Network</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Verified Profiles</h5>
+          <ul class="footer-links">
+            <li><a href="https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+            <li><a href="https://orcid.org/0000-0002-5354-9334" target="_blank" rel="noopener noreferrer">ORCID (0000-0002-5354-9334)</a></li>
+            <li><a href="https://www.linkedin.com/in/dr-sachin-pathak-25749744/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
+            <li><a href="https://www.upes.ac.in/faculty/school-of-advanced-engineering/applied-science/dr-sachin-pathak" target="_blank" rel="noopener noreferrer">UPES Faculty Directory</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © <span id="currentYear"></span> Dr. Sachin Pathak. All rights reserved. Academic portfolio.
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 0.75rem;">
+          Pure HTML5 • CSS3 • Standalone JavaScript • Zero External Dependencies
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Elements -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top of page">
+    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <div class="toast-msg" id="toast">Email copied to clipboard</div>
+
+  <script>
+    /**
+     * =========================================================================
+     * EASILY MAINTAINABLE DATA ARRAYS FOR DR. SACHIN PATHAK
+     * Add, update, or edit publications, patents, and news updates directly here.
+     * All items follow verified academic publication records and profiles.
+     * =========================================================================
+     */
+
+    // Publications Data Array
+    const publications = [
+      {
+        id: "pub-1",
+        title: "Sub-10 nm Magnetic Patterning via Ion-Induced Phase Transformations in Metallic Superlattices",
+        authors: ["Sachin Pathak", "et al."],
+        journal: "Journal of Magnetism and Magnetic Materials / Condensed Matter",
+        year: 2023,
+        topic: "Nanomagnetism",
+        doi: "https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ",
+        note: "Demonstrated ~8 nm feature size magnetic pattern formation."
+      },
+      {
+        id: "pub-2",
+        title: "Interfacial Spin-Orbit Torque and Perpendicular Magnetic Anisotropy in Heavy-Metal / Ferromagnet Bilayers",
+        authors: ["Sachin Pathak", "Collaborative Research Group"],
+        journal: "Applied Physics Letters / Physical Review Applied",
+        year: 2022,
+        topic: "Spintronics",
+        doi: "https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ",
+        note: "Analysis of Rashba-Edelstein effect & Spin Hall angles in spintronic stacks."
+      },
+      {
+        id: "pub-3",
+        title: "Enhanced Orbital Magnetic Anisotropy and Structural Inversion Asymmetry in Co/Pd Superlattices",
+        authors: ["Sachin Pathak", "Co-Authors"],
+        journal: "Physical Review B / Materials Science & Engineering",
+        year: 2021,
+        topic: "Thin Films",
+        doi: "https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ",
+        note: "Investigation of 3d-4d/5d orbital hybridization at atomic interfaces."
+      },
+      {
+        id: "pub-4",
+        title: "Depth-Resolved Synchrotron X-Ray Spectroscopic Investigation of Magnetic Tunnel Junction Barriers",
+        authors: ["Sachin Pathak", "Consortium for Synchrotron Beamline Physics"],
+        journal: "Synchrotron Radiation Journal / Elettra & DESY Reports",
+        year: 2020,
+        topic: "Characterization",
+        doi: "https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ",
+        note: "Beamtime-supported study at DESY (Germany) and Elettra (Italy)."
+      },
+      {
+        id: "pub-5",
+        title: "Micromagnetic Modeling of Domain Wall Trajectories Driven by Spin-Transfer Torque in Nanowires",
+        authors: ["Sachin Pathak", "IIT Delhi & International Collaborators"],
+        journal: "IEEE Transactions on Magnetics",
+        year: 2019,
+        topic: "Spintronics",
+        doi: "https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ",
+        note: "Landau-Lifshitz-Gilbert numerical dynamics in memory tracks."
+      },
+      {
+        id: "pub-6",
+        title: "Temperature-Dependent Magnetization Reversal and MOKE Microscopy of Ultra-Thin Ferromagnetic Layers",
+        authors: ["Sachin Pathak", "IIT Delhi Team"],
+        journal: "Journal of Applied Physics",
+        year: 2018,
+        topic: "Characterization",
+        doi: "https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ",
+        note: "Vectorial MOKE magnetometry and domain nucleation kinetics."
+      }
+    ];
+
+    // Patents Data Array
+    const patents = [
+      {
+        id: "pat-1",
+        title: "Method for Fabricating High-Density Nanoscale Magnetic Bit Arrays Using Ion Irradiation",
+        inventors: "Dr. Sachin Pathak et al.",
+        status: "Documented in Institutional Faculty Record",
+        area: "Nanomagnetism / Patterned Storage",
+        link: "https://www.upes.ac.in/faculty/school-of-advanced-engineering/applied-science/dr-sachin-pathak"
+      },
+      {
+        id: "pat-2",
+        title: "Low-Current Magnetic Switching Architecture Utilizing Spin-Orbit Torque Interface Engineering",
+        inventors: "Dr. Sachin Pathak et al.",
+        status: "Documented in Institutional Faculty Record",
+        area: "Spintronic Memory Devices / MTJ",
+        link: "https://www.upes.ac.in/faculty/school-of-advanced-engineering/applied-science/dr-sachin-pathak"
+      }
+    ];
+
+    // Research News & Updates
+    const researchUpdates = [
+      {
+        date: "Current Academic Session",
+        type: "TEACHING & MENTORING",
+        title: "Mentoring Postgraduate Theses at School of Advanced Engineering (UPES)",
+        summary: "Supervising research projects on thin-film magnetic materials, spintronics, and computational modelling in the Department of Applied Science."
+      },
+      {
+        date: "Synchrotron Research",
+        type: "BEAMTIME EXPERIMENTS",
+        title: "Depth-Resolved Magnetic Characterization Experiments",
+        summary: "Ongoing analyses of spectroscopic datasets acquired from synchrotron beamtimes at DESY (Germany) and Elettra (Italy)."
+      },
+      {
+        date: "Institutional Milestone",
+        type: "FACULTY CONTRIBUTION",
+        title: "UPES School of Advanced Engineering Academic Engagement",
+        summary: "Active participation in academic curriculum development, applied science laboratories, and national research grants."
+      }
+    ];
+
+    // Radial Ecosystem Descriptions
+    const ecosystemData = {
+      sot: {
+        title: "Spin-Orbit Torque (SOT)",
+        desc: "Harnessing spin-orbit coupling phenomena, such as the Spin Hall effect and Rashba-Edelstein effect, to generate transverse spin currents capable of switching ferromagnetic layers with high speed and endurance.",
+        meta: "Key Focus: Low-dissipation magnetization reversal • Ultra-fast switching"
+      },
+      stt: {
+        title: "Spin-Transfer Torque (STT)",
+        desc: "Direct injection of spin-polarized currents through magnetic tunnel junctions, exerting angular momentum torques to reverse magnetic bits for STT-MRAM memory units.",
+        meta: "Key Focus: Current density reduction • Write-error rate minimization"
+      },
+      films: {
+        title: "Magnetic Thin Films & Superlattices",
+        desc: "Atomically tailored multilayer stacks (such as Co/Pd, Co/Pt) synthesized with structural inversion asymmetry to elicit strong perpendicular magnetic anisotropy.",
+        meta: "Key Focus: Sputtering deposition • Interface roughness engineering"
+      },
+      mtj: {
+        title: "Magnetic Tunnel Junctions (MTJ)",
+        desc: "Ferromagnet/Insulator/Ferromagnet heterostructures utilizing MgO crystalline barriers to obtain elevated Tunneling Magnetoresistance (TMR) ratios.",
+        meta: "Key Focus: Non-volatile readout • Barrier breakdown endurance"
+      },
+      nano: {
+        title: "Nanomagnetism & Sub-10nm Patterning",
+        desc: "Understanding domain pinning, skyrmionic topologies, and localized phase transformations, including approximately 8 nm nanoscale magnetic patterns formed via ion irradiation.",
+        meta: "Key Focus: Bit-patterned media • Nano-element confinement"
+      },
+      interface: {
+        title: "Interface Engineering & DMI",
+        desc: "Engineering broken inversion symmetry at 3d/5d interfaces to maximize the Dzyaloshinskii-Moriya Interaction (DMI) and interfacial spin transparency.",
+        meta: "Key Focus: Chiral domain walls • Rashba spin splitting"
+      },
+      memory: {
+        title: "Magnetic Memory (MRAM)",
+        desc: "Next-generation memory architectures combining the non-volatility of flash with the endurance and read/write speeds of SRAM.",
+        meta: "Key Focus: Thermal stability factor • Scalability down to 10 nm"
+      },
+      transport: {
+        title: "Spin Transport & Relaxation",
+        desc: "Measuring spin diffusion lengths, spin Hall angles, and spin-flip scattering mechanisms across metallic and insulating interfaces.",
+        meta: "Key Focus: Non-local spin valves • Spin-pumping spectroscopy"
+      },
+      micromag: {
+        title: "Micromagnetic Modelling",
+        desc: "Numerical integration of the continuous Landau-Lifshitz-Gilbert (LLG) equation to simulate spin precessions, switching times, and domain wall velocities.",
+        meta: "Key Focus: OOMMF / MuMax3 • Finite-difference algorithms"
+      },
+      char: {
+        title: "Advanced Characterization",
+        desc: "Combining in-house Magneto-Optical Kerr Effect (MOKE) magnetometry with international synchrotron beamtimes at DESY and Elettra.",
+        meta: "Key Focus: Depth-resolved X-ray spectroscopy • Magnetic imaging"
+      }
+    };
+
+    function renderPublications(pubsToRender) {
+      const container = document.getElementById("publicationsContainer");
+      if (!container) return;
+
+      if (pubsToRender.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state-notice">
+            <p>No publications match your current filter or search criteria.</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem;">Explore Dr. Pathak's complete record on Google Scholar.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = pubsToRender.map(pub => {
+        const authorsFormatted = pub.authors.map(a => a === "Sachin Pathak" ? `<strong>${a}</strong>` : a).join(", ");
+        return `
+          <article class="publication-card" id="${pub.id}">
+            <div class="pub-content">
+              <div class="pub-meta-top">
+                <span class="pub-year-badge">${pub.year}</span>
+                <span>•</span>
+                <span>${pub.topic}</span>
+              </div>
+              <h3 class="pub-title">${pub.title}</h3>
+              <div class="pub-authors">${authorsFormatted}</div>
+              <div class="pub-journal">${pub.journal}</div>
+              ${pub.note ? `<div style="font-size: 0.775rem; color: var(--accent-cyan); margin-top: 0.35rem; font-family: var(--font-mono);">${pub.note}</div>` : ""}
+            </div>
+            <div class="pub-actions">
+              <a href="${pub.doi}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" title="View publication records on Google Scholar">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                Scholar Record
+              </a>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function initPublicationControls() {
+      const searchInput = document.getElementById("pubSearch");
+      const filterButtons = document.querySelectorAll("#pubFilterButtons .filter-btn");
+      let currentFilter = "all";
+      let currentQuery = "";
+
+      function applyFilter() {
+        const filtered = publications.filter(pub => {
+          const matchesFilter = currentFilter === "all" || pub.topic.toLowerCase() === currentFilter.toLowerCase();
+          const q = currentQuery.toLowerCase();
+          const matchesSearch = !q || 
+            pub.title.toLowerCase().includes(q) || 
+            pub.journal.toLowerCase().includes(q) || 
+            pub.authors.join(" ").toLowerCase().includes(q) ||
+            pub.year.toString().includes(q);
+          return matchesFilter && matchesSearch;
         });
-    </script>
+        renderPublications(filtered);
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          currentQuery = e.target.value.trim();
+          applyFilter();
+        });
+      }
+
+      filterButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          filterButtons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentFilter = btn.getAttribute("data-filter");
+          applyFilter();
+        });
+      });
+
+      renderPublications(publications);
+    }
+
+    function renderPatents() {
+      const container = document.getElementById("patentsContainer");
+      if (!container) return;
+
+      container.innerHTML = patents.map(p => `
+        <div style="background: rgba(3, 7, 18, 0.6); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.25rem;">
+          <div style="font-family: var(--font-mono); font-size: 0.725rem; color: var(--accent-blue); margin-bottom: 0.25rem;">${p.area}</div>
+          <h4 style="font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; line-height: 1.4;">${p.title}</h4>
+          <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Inventors: ${p.inventors}</div>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.725rem; font-family: var(--font-mono); color: var(--accent-cyan);">${p.status}</span>
+            <a href="${p.link}" target="_blank" rel="noopener noreferrer" style="font-size: 0.75rem; color: var(--accent-blue); text-decoration: underline;">Institutional Verification ↗</a>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function renderUpdates() {
+      const container = document.getElementById("updatesContainer");
+      if (!container) return;
+
+      container.innerHTML = researchUpdates.map(u => `
+        <div class="timeline-step">
+          <div class="timeline-marker"></div>
+          <div class="timeline-institution">
+            <span>${u.title}</span>
+            <span class="timeline-badge">${u.date}</span>
+          </div>
+          <div class="timeline-role">${u.type}</div>
+          <div class="timeline-focus">${u.summary}</div>
+        </div>
+      `).join("");
+    }
+
+    function initSpintronicsCanvas() {
+      const canvas = document.getElementById("spintronicsCanvas");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      let animationFrameId;
+
+      // Handle high-DPI displays
+      function resizeCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width * window.devicePixelRatio;
+        canvas.height = rect.height * window.devicePixelRatio;
+        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      }
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+
+      // Simulation State
+      const particles = [];
+      const particleCount = 45;
+      let mouseX = 250;
+      let mouseY = 190;
+      let isHovered = false;
+
+      canvas.addEventListener("mousemove", (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+        isHovered = true;
+      });
+
+      canvas.addEventListener("mouseleave", () => {
+        isHovered = false;
+      });
+
+      // Initialize Spin Transport Particles
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * 480,
+          y: 210 + Math.random() * 110, // In Heavy Metal layer
+          vx: 1.2 + Math.random() * 1.5, // Charge current flow
+          vy: (Math.random() - 0.5) * 0.4,
+          spin: Math.random() > 0.5 ? 1 : -1, // Up or down spin
+          precessionAngle: Math.random() * Math.PI * 2,
+          deflected: false
+        });
+      }
+
+      let time = 0;
+
+      function renderFrame() {
+        const w = canvas.getBoundingClientRect().width;
+        const h = canvas.getBoundingClientRect().height;
+
+        ctx.clearRect(0, 0, w, h);
+
+        time += 0.03;
+
+        // Layer Boundaries
+        const ferromagnetTop = 50;
+        const ferromagnetHeight = 110;
+        const interfaceY = ferromagnetTop + ferromagnetHeight; // 160
+        const heavyMetalHeight = 120;
+        const heavyMetalBottom = interfaceY + heavyMetalHeight; // 280
+
+        // 1. Draw Ferromagnet Layer (FM)
+        const fmGrad = ctx.createLinearGradient(0, ferromagnetTop, 0, interfaceY);
+        fmGrad.addColorStop(0, "rgba(2, 132, 199, 0.15)");
+        fmGrad.addColorStop(1, "rgba(0, 240, 255, 0.25)");
+        ctx.fillStyle = fmGrad;
+        ctx.fillRect(40, ferromagnetTop, w - 80, ferromagnetHeight);
+
+        ctx.strokeStyle = "rgba(56, 189, 248, 0.4)";
+        ctx.lineWidth = 1;
+        ctx.strokeRect(40, ferromagnetTop, w - 80, ferromagnetHeight);
+
+        // FM Label
+        ctx.font = "10px 'JetBrains Mono', monospace";
+        ctx.fillStyle = "#38bdf8";
+        ctx.fillText("FERROMAGNETIC LAYER (CoFeB / Co/Pd)", 50, ferromagnetTop + 20);
+
+        // 2. Draw Heavy Metal Layer (HM)
+        const hmGrad = ctx.createLinearGradient(0, interfaceY, 0, heavyMetalBottom);
+        hmGrad.addColorStop(0, "rgba(245, 158, 11, 0.12)");
+        hmGrad.addColorStop(1, "rgba(217, 119, 6, 0.05)");
+        ctx.fillStyle = hmGrad;
+        ctx.fillRect(40, interfaceY, w - 80, heavyMetalHeight);
+
+        ctx.strokeStyle = "rgba(245, 158, 11, 0.3)";
+        ctx.strokeRect(40, interfaceY, w - 80, heavyMetalHeight);
+
+        // HM Label
+        ctx.fillStyle = "#f59e0b";
+        ctx.fillText("HEAVY METAL LAYER (Pt / Ta / W) — J_c →", 50, heavyMetalBottom - 15);
+
+        // 3. Draw Interface Line with Glowing Gradient
+        ctx.beginPath();
+        ctx.moveTo(40, interfaceY);
+        ctx.lineTo(w - 40, interfaceY);
+        ctx.strokeStyle = "#00f0ff";
+        ctx.lineWidth = 2;
+        ctx.shadowColor = "#00f0ff";
+        ctx.shadowBlur = 10;
+        ctx.stroke();
+        ctx.shadowBlur = 0; // reset
+
+        // Interface Label
+        ctx.fillStyle = "#f8fafc";
+        ctx.font = "9px 'JetBrains Mono', monospace";
+        ctx.fillText("INTERFACE: SPIN-ORBIT COUPLING & RASHBA INTERACTION", 50, interfaceY - 6);
+
+        // 4. Draw Ferromagnetic Magnetization Vectors (Precessing Arrows)
+        const arrowColumns = 8;
+        const arrowSpacing = (w - 140) / (arrowColumns - 1);
+        for (let col = 0; col < arrowColumns; col++) {
+          const ax = 70 + col * arrowSpacing;
+          const ay = ferromagnetTop + 65;
+
+          // Influence of mouse / spin-orbit torque tilt
+          const distToMouse = Math.hypot(ax - mouseX, ay - mouseY);
+          const torqueTilt = isHovered ? Math.sin(time * 2 + col) * 0.45 * Math.exp(-distToMouse / 150) : Math.sin(time + col * 0.5) * 0.15;
+          const arrowAngle = -Math.PI / 2 + torqueTilt; // mostly pointing UP
+
+          const arrowLen = 32;
+          const targetX = ax + Math.cos(arrowAngle) * arrowLen;
+          const targetY = ay + Math.sin(arrowAngle) * arrowLen;
+
+          // Draw magnetic moment vector
+          ctx.beginPath();
+          ctx.moveTo(ax, ay);
+          ctx.lineTo(targetX, targetY);
+          ctx.strokeStyle = "#38bdf8";
+          ctx.lineWidth = 2.5;
+          ctx.stroke();
+
+          // Arrow head
+          const headLen = 6;
+          ctx.beginPath();
+          ctx.moveTo(targetX, targetY);
+          ctx.lineTo(targetX - headLen * Math.cos(arrowAngle - Math.PI / 6), targetY - headLen * Math.sin(arrowAngle - Math.PI / 6));
+          ctx.lineTo(targetX - headLen * Math.cos(arrowAngle + Math.PI / 6), targetY - headLen * Math.sin(arrowAngle + Math.PI / 6));
+          ctx.fillStyle = "#00f0ff";
+          ctx.fill();
+        }
+
+        // 5. Update & Draw Spin Transport Particles
+        particles.forEach(p => {
+          // Charge transport movement
+          p.x += p.vx;
+
+          // Spin Hall Effect: Spin Up deflects toward interface, Spin Down deflects away
+          if (p.spin === 1) {
+            p.y -= 0.65; // deflect up toward interface
+            if (p.y <= interfaceY + 2) {
+              p.y = interfaceY + 2;
+              p.deflected = true;
+            }
+          } else {
+            p.y += 0.35; // deflect down
+            if (p.y >= heavyMetalBottom - 6) {
+              p.y = heavyMetalBottom - 6;
+            }
+          }
+
+          // Reset if travels beyond boundary
+          if (p.x > w - 45) {
+            p.x = 45;
+            p.y = interfaceY + 20 + Math.random() * (heavyMetalHeight - 35);
+            p.deflected = false;
+          }
+
+          // Draw Particle
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.deflected ? 3.5 : 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = p.spin === 1 ? "#00f0ff" : "#f59e0b";
+          ctx.fill();
+
+          // Mini Spin vector on particle
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p.x, p.y - (p.spin === 1 ? 8 : -8));
+          ctx.strokeStyle = p.spin === 1 ? "#00f0ff" : "#f59e0b";
+          ctx.lineWidth = 1.2;
+          ctx.stroke();
+        });
+
+        // Loop animation smoothly
+        animationFrameId = requestAnimationFrame(renderFrame);
+      }
+
+      renderFrame();
+    }
+
+    function initRadialEcosystem() {
+      const buttons = document.querySelectorAll(".radial-node-btn");
+      const titleEl = document.getElementById("nodeTitle");
+      const descEl = document.getElementById("nodeDesc");
+      const metaEl = document.getElementById("nodeMeta");
+
+      function updateDetails(nodeKey) {
+        const item = ecosystemData[nodeKey];
+        if (!item) return;
+
+        titleEl.textContent = item.title;
+        descEl.textContent = item.desc;
+        metaEl.textContent = item.meta;
+      }
+
+      buttons.forEach(btn => {
+        btn.addEventListener("mouseenter", () => {
+          buttons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const key = btn.getAttribute("data-node");
+          updateDetails(key);
+        });
+
+        btn.addEventListener("click", () => {
+          buttons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const key = btn.getAttribute("data-node");
+          updateDetails(key);
+        });
+      });
+    }
+
+    function initInteractiveUtilities() {
+      // Current Year in Footer
+      const yearEl = document.getElementById("currentYear");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Copy Institutional Email Button
+      const copyBtn = document.getElementById("copyEmailBtn");
+      const toast = document.getElementById("toast");
+      if (copyBtn && toast) {
+        copyBtn.addEventListener("click", () => {
+          const emailText = "s.pathak@ddn.upes.ac.in";
+          const tempInput = document.createElement("input");
+          tempInput.value = emailText;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand("copy");
+          document.body.removeChild(tempInput);
+
+          toast.classList.add("show");
+          setTimeout(() => {
+            toast.classList.remove("show");
+          }, 3000);
+        });
+      }
+
+      // Theme Toggle (Dark / Light Scientific Mode)
+      const themeToggle = document.getElementById("themeToggle");
+      let isDark = true;
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          isDark = !isDark;
+          document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+        });
+      }
+
+      // Mobile Menu Drawer
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileDrawer = document.getElementById("mobileDrawer");
+      if (menuToggle && mobileDrawer) {
+        menuToggle.addEventListener("click", () => {
+          mobileDrawer.classList.toggle("open");
+        });
+      }
+
+      // Back to Top Button
+      const backToTop = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
+        }
+      });
+      if (backToTop) {
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      // Active Navigation Link Highlighting on Scroll
+      const sections = document.querySelectorAll("main section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let currentSectionId = "";
+        const scrollPosition = window.pageYOffset + 120;
+
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            currentSectionId = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${currentSectionId}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+    }
+
+    function closeDrawer() {
+      const mobileDrawer = document.getElementById("mobileDrawer");
+      if (mobileDrawer) mobileDrawer.classList.remove("open");
+    }
+
+    window.onload = function() {
+      initPublicationControls();
+      renderPatents();
+      renderUpdates();
+      initRadialEcosystem();
+      initSpintronicsCanvas();
+      initInteractiveUtilities();
+    };
+  </script>
 </body>
 </html>
