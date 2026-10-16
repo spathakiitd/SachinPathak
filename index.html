@@ -1773,7 +1773,7 @@
           <span class="section-eyebrow">SCHOLARLY WORKS & INTELLECTUAL PROPERTY</span>
           <h1 class="section-title">Publications, Book Chapters & Patents</h1>
           <p class="section-lead" style="max-width: 860px;">
-            Complete verified bibliography of <strong>Dr. Sachin Pathak</strong> encompassing 56 peer-reviewed journal articles, 8 book chapters, 3 patents (US, KR & IN), and conference proceedings. Every paper includes direct DOI linking to the publisher article and summaries highlighting key scientific contributions.
+            Complete verified bibliography of <strong>Dr. Sachin Pathak</strong> encompassing 56 peer-reviewed journal articles, 8 book chapters, 3 patents (US, KR & IN), and conference proceedings. Each entry includes complete citation details and scientific highlights summarizing the core contributions.
           </p>
 
           <!-- Repository Metrics Strip -->
@@ -1824,7 +1824,7 @@
           <div class="pub-controls-bar">
             <div class="search-input-wrapper">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-              <input type="text" id="fullPubSearch" class="pub-search-input" placeholder="Search by paper title, author, journal, topic, or DOI..." aria-label="Search all publications">
+              <input type="text" id="fullPubSearch" class="pub-search-input" placeholder="Search by paper title, author, journal, topic, or keyword..." aria-label="Search all publications">
             </div>
 
             <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
@@ -3426,13 +3426,13 @@
         if (item.role === "corresponding") roleBadge = `<span class="pub-author-role-badge">Corresponding Author (*CA)</span>`;
         if (item.role === "first") roleBadge = `<span class="pub-author-role-badge" style="color:var(--accent-cyan); border-color:var(--accent-cyan);">First / Equal Contributor (*FA)</span>`;
 
-        // Direct DOI / Patent external action button
+        // Action button for patent official registry records only (all DOI links removed)
         let actionBtn = "";
-        if (item.doiUrl) {
+        if (item.type === "patent" && item.doiUrl) {
           actionBtn = `
-            <a href="${item.doiUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-doi" title="Open verified journal article / document directly via DOI">
+            <a href="${item.doiUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-doi" title="View Patent Record">
               <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              <span>${item.type === 'patent' ? 'View Patent Record ↗' : (item.doi ? `DOI: ${item.doi} ↗` : 'Publisher Link ↗')}</span>
+              <span>View Patent Record ↗</span>
             </a>
           `;
         }
@@ -3468,11 +3468,9 @@
 
             <div class="pub-footer-actions">
               <div class="pub-id-string">
-                ${item.doi ? `Direct DOI: https://doi.org/${item.doi}` : (item.patentNo || 'Verified Research Record')}
+                ${item.doi ? `DOI: ${item.doi}` : (item.patentNo || 'Verified Research Record')}
               </div>
-              <div style="display:flex; gap:0.5rem; align-items:center;">
-                ${actionBtn}
-              </div>
+              ${actionBtn ? `<div style="display:flex; gap:0.5rem; align-items:center;">${actionBtn}</div>` : ""}
             </div>
           </article>
         `;
