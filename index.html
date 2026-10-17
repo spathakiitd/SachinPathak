@@ -12,7 +12,7 @@
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Dr. Sachin Pathak | Spintronics & Nanomagnetism Researcher">
-  <meta property="og:description" content="Materials Engineering for Spintronic Devices — Comprehensive publications, patents, and research portal.">
+  <meta property="og:description" content="Materials Engineering for Spintronic Devices — Comprehensive publications, patents, teaching, and research portal.">
   <meta property="og:url" content="https://www.upes.ac.in/faculty/school-of-advanced-engineering/applied-science/dr-sachin-pathak">
 
   <!-- Schema.org Academic Person Structured Data -->
@@ -48,7 +48,8 @@
       "Nanomagnetism",
       "Magnetic Thin Films",
       "MOKE Microscopy",
-      "Micromagnetic Modelling (OOMMF)"
+      "Micromagnetic Modelling (OOMMF)",
+      "Quantum Mechanics & Engineering Physics Pedagogy"
     ],
     "sameAs": [
       "https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ",
@@ -173,7 +174,7 @@
       left: 0;
       width: 100%;
       height: var(--nav-height);
-      background: rgba(5, 8, 17, 0.85);
+      background: rgba(5, 8, 17, 0.88);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border-subtle);
@@ -182,7 +183,7 @@
     }
 
     [data-theme="light"] .navbar {
-      background: rgba(248, 250, 252, 0.9);
+      background: rgba(248, 250, 252, 0.92);
     }
 
     .nav-container {
@@ -220,7 +221,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.1rem;
+      gap: 1rem;
       list-style: none;
     }
 
@@ -230,7 +231,7 @@
       color: var(--text-secondary);
       transition: all 0.2s ease;
       position: relative;
-      padding: 0.35rem 0.2rem;
+      padding: 0.35rem 0.25rem;
       cursor: pointer;
     }
 
@@ -251,54 +252,84 @@
       box-shadow: 0 0 8px var(--accent-cyan);
     }
 
-    /* Highlighted Publications Tab */
-    .nav-link-publications {
-      display: inline-flex;
+    /* Unified Rectangular Rounded-Corner Box Format for Featured Tabs */
+    .nav-portal-btn {
+      display: inline-flex !important;
       align-items: center;
-      gap: 0.4rem;
-      font-weight: 700 !important;
-      color: #fff !important;
-      background: linear-gradient(135deg, rgba(2, 132, 199, 0.25), rgba(99, 102, 241, 0.25));
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      padding: 0.35rem 0.85rem !important;
-      border-radius: 20px;
-      transition: all 0.25s ease;
-    }
-
-    .nav-link-publications:hover,
-    .nav-link-publications.active {
-      background: linear-gradient(135deg, #0284c7, #4f46e5);
-      border-color: var(--accent-cyan);
-      box-shadow: 0 0 16px rgba(0, 240, 255, 0.35);
-      transform: translateY(-1px);
-    }
-
-    .nav-link-publications .pub-count-pill {
-      background: rgba(255, 255, 255, 0.2);
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      padding: 0.1rem 0.45rem;
-      border-radius: 12px;
-    }
-
-    .nav-link-lab {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      color: var(--accent-cyan) !important;
-      font-weight: 600;
+      gap: 0.45rem;
+      font-size: 0.825rem !important;
+      font-weight: 600 !important;
+      color: var(--text-main) !important;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.28);
       padding: 0.35rem 0.75rem !important;
-      background: rgba(0, 240, 255, 0.08);
-      border: 1px solid rgba(0, 240, 255, 0.25);
-      border-radius: 20px;
-      transition: all 0.2s ease;
+      border-radius: 8px; /* Rectangular box with rounded corners */
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      height: 32px;
+      box-sizing: border-box;
     }
 
-    .nav-link-lab:hover {
-      background: rgba(0, 240, 255, 0.16);
+    .nav-portal-btn:hover {
+      background: rgba(56, 189, 248, 0.18);
       border-color: var(--accent-cyan);
-      box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+      color: var(--accent-cyan) !important;
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.22);
       transform: translateY(-1px);
+    }
+
+    .nav-portal-btn.active {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.35), rgba(99, 102, 241, 0.3));
+      border-color: var(--accent-cyan);
+      color: #ffffff !important;
+      box-shadow: 0 0 14px rgba(0, 240, 255, 0.3);
+    }
+
+    .nav-portal-btn .pub-count-pill {
+      background: rgba(56, 189, 248, 0.2);
+      color: var(--accent-cyan);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 5px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .nav-portal-btn.active .pub-count-pill {
+      background: var(--accent-cyan);
+      color: #050811;
+    }
+
+    .nav-portal-btn svg {
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-portal-btn:hover svg {
+      transform: translate(1px, -1px);
+    }
+
+    [data-theme="light"] .nav-portal-btn {
+      background: rgba(2, 132, 199, 0.08);
+      border-color: rgba(2, 132, 199, 0.25);
+      color: var(--text-main) !important;
+    }
+
+    [data-theme="light"] .nav-portal-btn:hover {
+      background: rgba(2, 132, 199, 0.15);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan) !important;
+      box-shadow: 0 2px 10px rgba(2, 132, 199, 0.2);
+    }
+
+    [data-theme="light"] .nav-portal-btn.active {
+      background: rgba(2, 132, 199, 0.2);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan) !important;
     }
 
     .nav-actions {
@@ -640,12 +671,6 @@
       box-shadow: 0 4px 12px rgba(0, 240, 255, 0.08);
     }
 
-    .scientific-chip svg {
-      width: 14px;
-      height: 14px;
-      color: var(--accent-blue);
-    }
-
     .section {
       padding: 6rem 0;
       position: relative;
@@ -654,7 +679,7 @@
 
     .section-header {
       margin-bottom: 3.5rem;
-      max-width: 820px;
+      max-width: 840px;
     }
 
     .section-eyebrow {
@@ -682,7 +707,6 @@
       line-height: 1.65;
     }
 
-    /* Publication Repository Header & View Banner */
     .publications-portal-header {
       padding: 5rem 0 2rem;
       background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
@@ -720,7 +744,6 @@
       line-height: 1.3;
     }
 
-    /* Category Sub-Tabs in Publications Portal */
     .pub-category-tabs {
       display: flex;
       flex-wrap: wrap;
@@ -768,7 +791,6 @@
       font-weight: 700;
     }
 
-    /* Search & Year Filtering Controls */
     .pub-controls-bar {
       display: flex;
       flex-wrap: wrap;
@@ -933,7 +955,6 @@
       font-style: italic;
     }
 
-    /* Highlighted Work Summary Box inside card */
     .pub-highlight-box {
       background: rgba(0, 240, 255, 0.04);
       border-left: 3px solid var(--accent-cyan);
@@ -1381,7 +1402,88 @@
       color: var(--text-secondary);
     }
 
-    /* Mentorship and Research Grants styling */
+    .teaching-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+      margin-top: 2rem;
+    }
+
+    .teaching-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 1.85rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+
+    .teaching-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+    }
+
+    .teaching-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .teaching-icon-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-cyan);
+    }
+
+    .teaching-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.25rem;
+    }
+
+    .teaching-pill {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-secondary);
+    }
+
+    .pedagogy-cycle {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin: 2.5rem 0;
+    }
+
+    .pedagogy-step {
+      background: rgba(14, 22, 40, 0.5);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.35rem;
+      position: relative;
+    }
+
+    .pedagogy-step-num {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent-cyan);
+      margin-bottom: 0.4rem;
+    }
+
     .grants-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1411,59 +1513,7 @@
       margin-bottom: 0.65rem;
     }
 
-    /* Profiles & Network */
-    .profiles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .profile-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .profile-card:hover {
-      border-color: var(--border-accent);
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .profile-logo {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-      font-size: 1.5rem;
-    }
-
-    .logo-scholar { background: rgba(66, 133, 244, 0.15); color: #4285F4; }
-    .logo-orcid { background: rgba(166, 206, 57, 0.15); color: #A6CE39; }
-    .logo-linkedin { background: rgba(10, 102, 194, 0.15); color: #0A66C2; }
-    .logo-upes { background: rgba(239, 68, 68, 0.15); color: #EF4444; }
-
-    .profile-name {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 0.35rem;
-    }
-
-    .profile-desc {
-      font-size: 0.825rem;
-      color: var(--text-secondary);
-      margin-bottom: 1.5rem;
-    }
-
+    /* Contact Box */
     .contact-box {
       background: linear-gradient(135deg, rgba(14, 22, 40, 0.95), rgba(7, 11, 20, 0.98));
       border: 1px solid var(--border-accent);
@@ -1589,6 +1639,7 @@
 
     .footer-links a:hover {
       color: var(--accent-cyan);
+      cursor: pointer;
     }
 
     .footer-bottom {
@@ -1660,7 +1711,7 @@
         padding: 1.5rem;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.85rem;
         z-index: 99;
         transform: translateY(-120%);
         transition: transform 0.3s ease;
@@ -1696,18 +1747,24 @@
           <li><a onclick="switchAppView('overview', 'research')" class="nav-link" id="navResearch">Research</a></li>
           <li><a onclick="switchAppView('overview', 'highlights')" class="nav-link" id="navHighlights">Highlights</a></li>
           
-          <!-- Direct Dedicated Publications Tab -->
+          <!-- Unified Rounded-Corner Box Tabs: Publications, SPInsLab, Teaching -->
           <li>
-            <a onclick="switchAppView('publications')" class="nav-link nav-link-publications" id="navPublicationsTab" title="View Full Publications, Chapters & Patents Repository">
+            <a onclick="switchAppView('publications')" class="nav-link nav-portal-btn" id="navPublicationsTab" title="View Full Publications, Chapters & Patents Repository">
               <span>Publications</span>
               <span class="pub-count-pill" id="totalPubCountPill">70</span>
             </a>
           </li>
 
-          <!-- SPInsLab Virtual Lab Portal Link -->
           <li>
-            <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-lab" title="SPInsLab — Physics Virtual Lab">
+            <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" id="navLabTab" title="SPInsLab — Physics Virtual Lab">
               <span>SPInsLab</span>
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" id="navTeaching" title="Teaching & Coursework Portal">
+              <span>Teaching</span>
               <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </a>
           </li>
@@ -1729,12 +1786,19 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
   <div class="mobile-menu-drawer" id="mobileDrawer">
     <a onclick="switchAppView('overview'); closeDrawer()" class="nav-link">Main Profile Overview</a>
-    <a onclick="switchAppView('publications'); closeDrawer()" class="nav-link nav-link-publications" style="justify-content: space-between;">
+    <a onclick="switchAppView('publications'); closeDrawer()" class="nav-link nav-portal-btn" style="justify-content: space-between;">
       <span>Publications & Patents Catalog</span>
       <span class="pub-count-pill">70 Records</span>
+    </a>
+    <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" onclick="closeDrawer()" style="justify-content: space-between;">
+      <span>SPInsLab (Physics Virtual Lab)</span>
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+    </a>
+    <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" onclick="closeDrawer()" style="justify-content: space-between;">
+      <span>Teaching & Coursework</span>
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
     </a>
     <a onclick="switchAppView('overview', 'about'); closeDrawer()" class="nav-link">About Dr. Pathak</a>
     <a onclick="switchAppView('overview', 'vision'); closeDrawer()" class="nav-link">Research Vision</a>
@@ -1742,6 +1806,10 @@
     <a onclick="switchAppView('overview', 'highlights'); closeDrawer()" class="nav-link">Selected Contributions</a>
     <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-lab" onclick="closeDrawer()" style="justify-content: space-between;">
       <span>SPInsLab (Physics Virtual Lab)</span>
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+    </a>
+    <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="nav-link" onclick="closeDrawer()" style="justify-content: space-between;">
+      <span>Teaching & Coursework</span>
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
     </a>
     <a onclick="switchAppView('overview', 'mentorship'); closeDrawer()" class="nav-link">Ph.D. Mentoring & Grants</a>
@@ -1773,7 +1841,7 @@
           <span class="section-eyebrow">SCHOLARLY WORKS & INTELLECTUAL PROPERTY</span>
           <h1 class="section-title">Publications, Book Chapters & Patents</h1>
           <p class="section-lead" style="max-width: 860px;">
-            Complete verified bibliography of <strong>Dr. Sachin Pathak</strong> encompassing 56 peer-reviewed journal articles, 8 book chapters, 3 patents (US, KR & IN), and conference proceedings. Each entry includes complete citation details and scientific highlights summarizing the core contributions.
+            Complete verified bibliography of <strong>Dr. Sachin Pathak</strong> encompassing 56 peer-reviewed journal articles, 8 book chapters, 3 patents (US, KR & IN), and conference proceedings. Each entry includes complete citation details and scientific highlights summarizing core contributions.
           </p>
 
           <!-- Repository Metrics Strip -->
@@ -1894,9 +1962,8 @@
               <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                 SPInsLab Virtual Lab ↗
               </a>
-              <a href="https://scholar.google.co.kr/citations?user=z9OYfvkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" title="Google Scholar Citations">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
-                Google Scholar
+              <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                Teaching & Courses ↗
               </a>
               <a href="#contact" class="btn btn-secondary">Contact</a>
             </div>
@@ -1954,7 +2021,6 @@
         </div>
       </section>
 
-      <!-- ABOUT SECTION -->
       <section class="section" id="about">
         <div class="container">
           <div class="section-header">
@@ -1979,7 +2045,7 @@
               </div>
 
               <p>
-                Dr. Pathak's work integrates thin film growth (sputtering, electrodeposition, thermal evaporation), advanced characterization (MOKE magnetometry, VSM, SQUID, synchrotron radiation spectroscopy), and micromagnetic simulations (OOMMF). At UPES, he leads research grants funded by UGC-DAE CSR and internal SEED funds, and mentors doctoral scholars in nanomagnetism and sensor physics.
+                Dr. Pathak's work integrates thin film growth (sputtering, electrodeposition, thermal evaporation), advanced characterization (MOKE magnetometry, VSM, SQUID, synchrotron radiation spectroscopy), and micromagnetic simulations (OOMMF). At UPES, he leads research grants funded by UGC-DAE CSR and internal SEED funds, mentors doctoral scholars, and guides undergraduate and postgraduate students in experimental and computational physics.
               </p>
             </div>
 
@@ -2045,7 +2111,6 @@
         </div>
       </section>
 
-      <!-- RESEARCH VISION SECTION -->
       <section class="section" id="vision">
         <div class="container">
           <div class="section-header">
@@ -2103,7 +2168,6 @@
         </div>
       </section>
 
-      <!-- CORE RESEARCH DOMAINS -->
       <section class="section" id="research">
         <div class="container">
           <div class="section-header">
@@ -2170,7 +2234,6 @@
         </div>
       </section>
 
-      <!-- SCIENTIFIC HIGHLIGHTS -->
       <section class="section" id="highlights">
         <div class="container">
           <div class="section-header">
@@ -2239,223 +2302,137 @@
         </div>
       </section>
 
-      <section class="section" id="mentorship">
+      <section class="section" id="teaching">
         <div class="container">
           <div class="section-header">
-            <span class="section-eyebrow">05 — Academic Leadership</span>
-            <h2 class="section-title">Research Mentorship & Funded Grants</h2>
+            <span class="section-eyebrow">05 — Academic Pedagogy</span>
+            <h2 class="section-title">Teaching Philosophy & Curriculum</h2>
             <p class="section-lead">
-              Advancing frontiers through doctoral supervision, postgraduate M.Sc. theses, undergraduate research dissertations, and sponsored research projects.
+              Cultivating curiosity-driven inquiry, strong mathematical fundamentals, and hands-on experimental mastery in physics and modern engineering materials.
             </p>
           </div>
 
-          <div class="about-grid">
-            <div class="timeline-card">
-              <div class="timeline-header">
-                <h3>Supervised Researchers & Students</h3>
-                <span class="badge-scientific">PH.D. • M.SC. • B.SC.</span>
+          <!-- Teaching Philosophy Statement -->
+          <div class="vision-card" style="padding: 2.5rem; margin-bottom: 2.5rem;">
+            <h3 class="vision-quote" style="font-size: 1.45rem; margin-bottom: 1rem;">
+              "Connecting theoretical rigor with experimental discovery in the lecture hall and laboratory."
+            </h3>
+            <p class="vision-text" style="font-size: 1rem; line-height: 1.75;">
+              My teaching approach blends foundational principles of quantum mechanics and electromagnetism with modern, real-world technological challenges. By actively integrating virtual simulations from <strong>SPInsLab</strong> alongside laboratory instrumentation, students develop intuitive problem-solving abilities, learn to question physical models critically, and transition seamlessly into frontier research.
+            </p>
+          </div>
+
+          <!-- Pedagogical Framework Flow -->
+          <div class="pedagogy-cycle">
+            <div class="pedagogy-step">
+              <div class="pedagogy-step-num">01</div>
+              <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--text-main);">Conceptual Foundations</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
+                Demystifying abstract equations through physical intuition, symmetry arguments, and clear mathematical derivations.
+              </p>
+            </div>
+            <div class="pedagogy-step">
+              <div class="pedagogy-step-num">02</div>
+              <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--text-main);">Virtual Simulation</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
+                Engaging interactive SPInsLab modules to visualize wave-particle duality, spin precession, and domain wall dynamics in real time.
+              </p>
+            </div>
+            <div class="pedagogy-step">
+              <div class="pedagogy-step-num">03</div>
+              <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--text-main);">Experimental Inquiry</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
+                Hands-on measurement in the Engineering Physics Laboratory using optical interferometry, Hall effect, and Kerr magnetometry.
+              </p>
+            </div>
+            <div class="pedagogy-step">
+              <div class="pedagogy-step-num">04</div>
+              <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--text-main);">Research Translation</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
+                Empowering students to publish dissertations, formulate novel hypotheses, and explore next-generation materials science.
+              </p>
+            </div>
+          </div>
+
+          <!-- Courses Grid -->
+          <h3 style="font-size: 1.35rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem;">Primary Courses & Academic Disciplines</h3>
+          <div class="teaching-grid">
+            <div class="teaching-card">
+              <div>
+                <div class="teaching-card-header">
+                  <div class="teaching-icon-badge">⚛️</div>
+                  <div>
+                    <h4 style="font-size: 1.05rem; font-weight: 700;">Engineering Physics</h4>
+                    <span style="font-size: 0.775rem; color: var(--accent-cyan); font-family: var(--font-mono);">Theory & Principles</span>
+                  </div>
+                </div>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+                  Core instruction covering Laser Physics, Maxwell's Electromagnetism, Quantum Mechanics, Wave Optics, and Semiconductor Physics for engineering undergraduates.
+                </p>
               </div>
-              <div class="timeline-track">
-                <!-- Doctoral (Ph.D.) Level -->
-                <div style="font-family: var(--font-mono); font-size: 0.725rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: -0.5rem;">
-                  ◈ Doctoral (Ph.D.) Supervision
-                </div>
-
-                <div class="timeline-step">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-institution">
-                    <span>Dr. Kuldeep Rawat</span>
-                    <span class="timeline-badge" style="color:var(--accent-emerald);">Ph.D. Awarded (2025)</span>
-                  </div>
-                  <div class="timeline-role">Advisor: Dr. Sachin Pathak (Co-Advisor: Dr. AK Gupta)</div>
-                  <div class="timeline-focus">Thesis: Development of HM/Co/HM multilayers with perpendicular magnetic anisotropy (PMA) through thermal annealing. Multiple publications in Applied Surface Science.</div>
-                </div>
-
-                <div class="timeline-step">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-institution">
-                    <span>Dr. Anmol Sharma</span>
-                    <span class="timeline-badge" style="color:var(--accent-emerald);">Ph.D. Awarded (2025)</span>
-                  </div>
-                  <div class="timeline-role">Advisor: Dr. Sachin Pathak (Co-Advisor: Dr. RK Brajpuriya)</div>
-                  <div class="timeline-focus">Thesis: Tailoring magnetic properties in multilayer thin films through interface engineering. Lead author in Scientific Reports, J. Alloys & Compounds, and Surfaces & Interfaces.</div>
-                </div>
-
-                <div class="timeline-step">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-institution">
-                    <span>Sakshi Bagwari</span>
-                    <span class="timeline-badge" style="color:var(--accent-amber);">Ph.D. Ongoing (2025 – Present)</span>
-                  </div>
-                  <div class="timeline-role">Advisor: Dr. Sachin Pathak (Co-Advisor: Dr. RK Brajpuriya)</div>
-                  <div class="timeline-focus">Doctoral Research: Magnetic Materials for High-Sensitivity Magnetic Field Sensors.</div>
-                </div>
-
-                <!-- Master of Science (M.Sc.) Level -->
-                <div style="font-family: var(--font-mono); font-size: 0.725rem; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.75rem; margin-bottom: -0.5rem;">
-                  ◈ Master of Science (M.Sc.) Theses
-                </div>
-
-                <div class="timeline-step">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-institution">
-                    <span>Arnab Tripathi</span>
-                    <span class="timeline-badge" style="color:var(--accent-emerald);">M.Sc. Completed (2026)</span>
-                  </div>
-                  <div class="timeline-role">Advisor: Dr. Sachin Pathak</div>
-                  <div class="timeline-focus">Thesis: Thermally Induced Interdiffusion and Interface Periodicity in [NiFe/Ta]10 Multilayers for Spintronic Applications.</div>
-                </div>
-
-                <div class="timeline-step">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-institution">
-                    <span>Quneey Kaur</span>
-                    <span class="timeline-badge" style="color:var(--accent-amber);">M.Sc. Ongoing (2026 – Present)</span>
-                  </div>
-                  <div class="timeline-role">Advisor: Dr. Sachin Pathak</div>
-                  <div class="timeline-focus">Research: Reduction of CoO to Metallic Co in Pd/Co/Pd Multilayers: Structural and Magnetic Investigations for Spintronic Devices.</div>
-                </div>
-
-                <div class="timeline-step">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-institution">
-                    <span>Prakhar Trivedi</span>
-                    <span class="timeline-badge" style="color:var(--accent-amber);">M.Sc. Ongoing (2026 – Present)</span>
-                  </div>
-                  <div class="timeline-role">Advisor: Dr. Sachin Pathak</div>
-                  <div class="timeline-focus">Research: Engineering Magnetic Anisotropy and Interfacial Effects in Hf/Co/Hf Thin Films for Spintronic Applications.</div>
-                </div>
-
-                <!-- Bachelor of Science (B.Sc.) Level -->
-                <div style="font-family: var(--font-mono); font-size: 0.725rem; font-weight: 700; color: var(--accent-violet); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.75rem; margin-bottom: -0.5rem;">
-                  ◈ Bachelor of Science (B.Sc.) Dissertation
-                </div>
-
-                <div class="timeline-step">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-institution">
-                    <span>Tanya Singh</span>
-                    <span class="timeline-badge" style="color:var(--accent-emerald);">B.Sc. Completed (2020)</span>
-                  </div>
-                  <div class="timeline-role">Advisor: Dr. Sachin Pathak</div>
-                  <div class="timeline-focus">Dissertation: Computer simulations for magneto-resistive spin-valve sensors.</div>
-                </div>
+              <div class="teaching-pills">
+                <span class="teaching-pill">LASER Physics</span>
+                <span class="teaching-pill">Electromagnetism</span>
+                <span class="teaching-pill">Quantum Mechanics</span>
               </div>
             </div>
 
-            <!-- Grants Grid -->
+            <div class="teaching-card">
+              <div>
+                <div class="teaching-card-header">
+                  <div class="teaching-icon-badge">🔬</div>
+                  <div>
+                    <h4 style="font-size: 1.05rem; font-weight: 700;">Engineering Physics Laboratory</h4>
+                    <span style="font-size: 0.775rem; color: var(--accent-cyan); font-family: var(--font-mono);">Experimental Practicum</span>
+                  </div>
+                </div>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+                  Hands-on laboratory sessions training students in error analysis, optical grating spectroscopy, Hall coefficient measurement, dielectric constants, and magnetic hysteresis.
+                </p>
+              </div>
+              <div class="teaching-pills">
+                <span class="teaching-pill">Hall Effect</span>
+                <span class="teaching-pill">Optics & Interferometry</span>
+                <span class="teaching-pill">Instrumentation</span>
+              </div>
+            </div>
+
+            <div class="teaching-card">
+              <div>
+                <div class="teaching-card-header">
+                  <div class="teaching-icon-badge">🧲</div>
+                  <div>
+                    <h4 style="font-size: 1.05rem; font-weight: 700;">Spintronics & Magnetic Materials</h4>
+                    <span style="font-size: 0.775rem; color: var(--accent-cyan); font-family: var(--font-mono);">Advanced Electives</span>
+                  </div>
+                </div>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+                  Specialized course modules exploring Giant Magnetoresistance (GMR), Spin-Orbit Torque, Perpendicular Magnetic Anisotropy, MRAM devices, and micromagnetic simulation.
+                </p>
+              </div>
+              <div class="teaching-pills">
+                <span class="teaching-pill">SOT-MRAM</span>
+                <span class="teaching-pill">Thin-Film Physics</span>
+                <span class="teaching-pill">OOMMF Modelling</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pedagogical Certifications Banner -->
+          <div style="background: rgba(14, 22, 40, 0.6); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 1.75rem; margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.25rem;">
             <div>
-              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Funded Research Projects</h3>
-              <div class="grants-grid">
-                <div class="grant-card">
-                  <div>
-                    <span class="grant-role-badge">Principal Investigator (PI)</span>
-                    <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">UGC-DAE CSR Collaborative Scheme</h4>
-                    <p style="font-size:0.825rem; color:var(--text-secondary); line-height:1.5;">Origin and modulation of interfacial magnetic anisotropy in HM/CoFeB/MgO heterostructures for magnetic memory applications (CRS/2022-23/01/675).</p>
-                  </div>
-                  <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:0.75rem;">Grant: 135,000 INR • UGC-DAE CSR</div>
-                </div>
-
-                <div class="grant-card">
-                  <div>
-                    <span class="grant-role-badge">Principal Investigator (PI)</span>
-                    <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">UPES-SEED Grant 2025</h4>
-                    <p style="font-size:0.825rem; color:var(--text-secondary); line-height:1.5;">Spin-orbit torque (SOT) induced magnetization dynamics in PMA materials for non-volatile memory and logic applications (UPES/R&D-SOAE/25062025/17).</p>
-                  </div>
-                  <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:0.75rem;">Grant: 417,000 INR • UPES</div>
-                </div>
-
-                <div class="grant-card">
-                  <div>
-                    <span class="grant-role-badge">Principal Investigator (PI)</span>
-                    <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">UPES-SEED INFRA Grant 2024</h4>
-                    <p style="font-size:0.825rem; color:var(--text-secondary); line-height:1.5;">MOKE instrument for the study of magnetic dynamics in nanostructures (UPES/R&D-SEED-INFRA/18032024/012).</p>
-                  </div>
-                  <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:0.75rem;">Grant: 130,390 INR • Equipment Build</div>
-                </div>
-
-                <div class="grant-card">
-                  <div>
-                    <span class="grant-role-badge" style="background:rgba(129,140,248,0.15); color:var(--accent-violet);">Co-Principal Investigator</span>
-                    <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">UPES-SEED Energy & Materials Grants</h4>
-                    <p style="font-size:0.825rem; color:var(--text-secondary); line-height:1.5;">CNTs reinforced polymer coatings (450,000 INR), Py nanostructures on curved surfaces (427,000 INR), Piezoelectric harvesters (205,000 INR).</p>
-                  </div>
-                  <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-blue); margin-top:0.75rem;">Multiple Active Interdisciplinary Grants</div>
-                </div>
-              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan); font-weight: 600; text-transform: uppercase;">Verified Pedagogical Credentials</div>
+              <div style="font-size: 1.05rem; font-weight: 700; margin-top: 0.25rem;">Certified Online & Virtual Instruction Specialist</div>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                Completed specialized educator certifications: <em>Virtual Teacher Specialization</em>, <em>Foundation of Virtual Instruction</em>, <em>Learning to Teach Online</em>, and <em>Hardware of a Quantum Computer</em>.
+              </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- INTERNATIONAL RESEARCH NETWORK -->
-      <section class="section" id="network">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-eyebrow">06 — Global Collaborations</span>
-            <h2 class="section-title">International Research Network</h2>
-            <p class="section-lead">
-              Building scientific bridges across elite synchrotron facilities, research universities, and experimental centers.
-            </p>
-          </div>
-
-          <div style="background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:16px; padding:2.5rem;">
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.75rem;">
-              <div>
-                <h4 style="color:var(--accent-cyan); font-weight:700; margin-bottom:0.5rem;">🇮🇳 India</h4>
-                <p style="font-size:0.85rem; color:var(--text-secondary);">UPES Dehradun (Faculty) • Ph.D. from IIT Delhi • UGC-DAE CSR Indore Beamline & User Experiments.</p>
-              </div>
-              <div>
-                <h4 style="color:var(--accent-blue); font-weight:700; margin-bottom:0.5rem;">🇰🇷 South Korea</h4>
-                <p style="font-size:0.85rem; color:var(--text-secondary);">Yonsei University (SMDL, Brain Korea BK21 Plus) • Korea University (Center for Spin-Orbitronic Materials).</p>
-              </div>
-              <div>
-                <h4 style="color:var(--accent-violet); font-weight:700; margin-bottom:0.5rem;">🇩🇪 Germany (DESY)</h4>
-                <p style="font-size:0.85rem; color:var(--text-secondary);">Deutsches Elektronen-Synchrotron (Hamburg). Synchrotron beamtime spectroscopic probing of magnetic multilayers.</p>
-              </div>
-              <div>
-                <h4 style="color:var(--accent-amber); font-weight:700; margin-bottom:0.5rem;">🇮🇹 Italy (Elettra)</h4>
-                <p style="font-size:0.85rem; color:var(--text-secondary);">Elettra Sincrotrone Trieste. Synchrotron-based depth-sensitive spectroscopy & magnetic domain analyses.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT SECTION -->
-      <section class="section" id="contact" style="border-bottom: none;">
-        <div class="container">
-          <div class="contact-box">
-            <span class="badge-scientific" style="margin-bottom: 1.25rem;">COLLABORATION</span>
-            <h2 class="contact-headline">Let’s Collaborate</h2>
-            <p class="contact-lead">
-              Open to meaningful academic collaborations, student mentorship, synchrotron beamtime partnerships, conference invitations, and joint funding initiatives in physics and spintronics.
-            </p>
-
-            <div class="email-display-container">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--accent-blue);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span class="email-text" id="officialEmailText">s.pathak@upes.ddn.ac.in</span>
-              <button class="copy-btn" id="copyEmailBtn" aria-label="Copy institutional email address" title="Copy Email">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              </button>
-            </div>
-
-            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-              <a href="mailto:s.pathak@upes.ddn.ac.in" class="btn btn-primary">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                Compose Email
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                Open Teaching Portal ↗
               </a>
-              <button onclick="switchAppView('publications')" class="btn btn-secondary">
-                View Publications (70)
-              </button>
-              <a href="https://scholar.google.co.kr/citations?user=z9OYfvkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                Google Scholar
-              </a>
-              <a href="https://orcid.org/0000-0002-5354-9334" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                ORCID
-              </a>
-              <a href="https://www.linkedin.com/in/dr-sachin-pathak-25749744/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                LinkedIn
+              <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                SPInsLab Virtual Modules ↗
               </a>
             </div>
           </div>
@@ -2486,6 +2463,7 @@
             <li><a onclick="switchAppView('overview', 'vision')">Research Vision</a></li>
             <li><a onclick="switchAppView('publications')">Publications, Chapters & Patents (70)</a></li>
             <li><a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" style="color:var(--accent-cyan); font-weight:600;">SPInsLab (Physics Virtual Lab) ↗</a></li>
+            <li><a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-blue); font-weight:600;">Teaching & Curriculum ↗</a></li>
             <li><a onclick="switchAppView('overview', 'mentorship')">Ph.D. Supervision & Grants</a></li>
           </ul>
         </div>
@@ -2524,7 +2502,7 @@
      * COMPREHENSIVE SCHOLARLY DATASET FOR DR. SACHIN PATHAK
      * Direct from Curriculum Vitae & Google Scholar.
      * Contains 56 Journal Articles, 8 Book Chapters, 3 Patents & 3 Proceedings.
-     * All items include valid DOI/Patent external resolver URLs.
+     * All items display bibliographic metadata cleanly without active DOI links.
      * =========================================================================
      */
     const masterScholarlyWorks = [
@@ -2538,7 +2516,6 @@
         year: 2026,
         if: "4.7",
         doi: "10.1038/s41598-026-21579-x",
-        doiUrl: "https://doi.org/10.1038/s41598-026-21579-x",
         topic: "Spintronics & Neuromorphic Computing",
         role: "co-author",
         highlight: "Investigates skyrmion and domain wall motion on inclined sawtooth energy landscapes for low-energy biomimetic artificial neurons."
@@ -2552,7 +2529,6 @@
         year: 2026,
         if: "6.7",
         doi: "10.1016/j.jallcom.2026.189026",
-        doiUrl: "https://doi.org/10.1016/j.jallcom.2026.189026",
         topic: "Magnetic Multilayers & Ion Matter Interaction",
         role: "co-author",
         highlight: "Probes oxygen-ion-induced microstructural transformation and depth-resolved magnetization retention in Pt/Co/Pt PMA heterostructures."
@@ -2566,7 +2542,6 @@
         year: 2026,
         if: null,
         doi: "10.1016/j.nxbe.2026.100032",
-        doiUrl: "https://doi.org/10.1016/j.nxbe.2026.100032",
         topic: "Materials Science & Bioengineering",
         role: "co-author",
         highlight: "Critical analysis of biocompatibility, surface functionalization, and toxicity of graphene derivatives for nanomedical platforms."
@@ -2580,7 +2555,6 @@
         year: 2026,
         if: "3.9",
         doi: "10.1007/s10853-026-10720-x",
-        doiUrl: "https://doi.org/10.1007/s10853-026-10720-x",
         topic: "Nanophosphors & Luminescence",
         role: "co-author",
         highlight: "Optically stimulated luminescence dosimetric optimization using engineered defect states in synthesized zinc oxide nanophosphors."
@@ -2594,7 +2568,6 @@
         year: 2025,
         if: "6.9",
         doi: "10.1016/j.apsusc.2025.164939",
-        doiUrl: "https://doi.org/10.1016/j.apsusc.2025.164939",
         topic: "Thin Films & MCD Spectroscopy",
         role: "corresponding",
         highlight: "Depth-resolved Magnetic Circular Dichroism (MCD) resolving layer-specific magnetization in vacuum-annealed Co/Pd multilayer systems."
@@ -2608,7 +2581,6 @@
         year: 2025,
         if: null,
         doi: "10.1016/j.nxmate.2025.100511",
-        doiUrl: "https://doi.org/10.1016/j.nxmate.2025.100511",
         topic: "Photocatalysis & 2D Materials",
         role: "corresponding",
         highlight: "Demonstrates enhanced charge carrier separation dynamics in green synthesized rGO nanocomposites for water remediation."
@@ -2622,7 +2594,6 @@
         year: 2025,
         if: "6.3",
         doi: "10.1016/j.surfin.2025.107618",
-        doiUrl: "https://doi.org/10.1016/j.surfin.2025.107618",
         topic: "Nanomagnetism & Domain Walls",
         role: "corresponding",
         highlight: "Statistical scaling analysis of domain wall roughness exponent and pinning regime dependence on superlattice repetition number."
@@ -2636,7 +2607,6 @@
         year: 2025,
         if: "6.3",
         doi: "10.1016/j.apsusc.2024.162952",
-        doiUrl: "https://doi.org/10.1016/j.apsusc.2024.162952",
         topic: "Magnetic Thin Films & PMA",
         role: "corresponding",
         highlight: "Uncovers thermal annealing phase transformations in Ta capping/buffer architectures that significantly amplify perpendicular magnetic anisotropy."
@@ -2650,7 +2620,6 @@
         year: 2025,
         if: "6.3",
         doi: "10.1016/j.apsusc.2024.163469",
-        doiUrl: "https://doi.org/10.1016/j.apsusc.2024.163469",
         topic: "Interface Engineering & Domain Dynamics",
         role: "corresponding",
         highlight: "Atomic-scale engineering of Ta/CoFeB/MgO interfaces yielding enhanced domain wall creep velocities and reduced pinning potential."
@@ -2664,7 +2633,6 @@
         year: 2025,
         if: "8.1",
         doi: "10.1016/j.jpowsour.2025.236953",
-        doiUrl: "https://doi.org/10.1016/j.jpowsour.2025.236953",
         topic: "Energy Storage & Supercapacitors",
         role: "corresponding",
         highlight: "Morphology-engineered 2D nanosheets demonstrating high specific capacitance and cycling retention for supercapacitor electrodes."
@@ -2678,7 +2646,6 @@
         year: 2025,
         if: "8.9",
         doi: "10.1016/j.est.2024.114979",
-        doiUrl: "https://doi.org/10.1016/j.est.2024.114979",
         topic: "Energy Storage Materials",
         role: "corresponding",
         highlight: "State-of-the-art review on intercalation kinetics, phase changes, and defect states across 2D transition metal oxide architectures."
@@ -2692,7 +2659,6 @@
         year: 2024,
         if: "1.4",
         doi: "10.1016/j.nimb.2024.165437",
-        doiUrl: "https://doi.org/10.1016/j.nimb.2024.165437",
         topic: "Ion Beam Nanopatterning",
         role: "corresponding",
         highlight: "Energetic ion beam irradiation creating controlled noble metal nanostructures through non-thermal surface diffusion mechanisms."
@@ -2706,7 +2672,6 @@
         year: 2024,
         if: "2.8",
         doi: "10.1016/j.physb.2023.415453",
-        doiUrl: "https://doi.org/10.1016/j.physb.2023.415453",
         topic: "2D Nanomaterials Physics",
         role: "co-author",
         highlight: "Integrated experimental rheology and continuum modeling of reversible shear-thickening in liquid dispersions of 2D MoS2."
@@ -2720,7 +2685,6 @@
         year: 2023,
         if: "2.78",
         doi: "10.1007/s10854-023-10565-x",
-        doiUrl: "https://doi.org/10.1007/s10854-023-10565-x",
         topic: "Carbon Nanotubes & Field Emission",
         role: "co-author",
         highlight: "Probes defect engineering via MeV ion bombardment for tailoring field emission turn-on fields in aligned MWCNTs."
@@ -2734,7 +2698,6 @@
         year: 2023,
         if: "7.14",
         doi: "10.1016/j.ijhydene.2023.03.354",
-        doiUrl: "https://doi.org/10.1016/j.ijhydene.2023.03.354",
         topic: "Electrocatalysis & HER",
         role: "co-author",
         highlight: "Heterojunction synergy between MoSe2 and ZnO enabling low overpotential and elevated exchange current density in water splitting."
@@ -2748,7 +2711,6 @@
         year: 2023,
         if: "3.27",
         doi: "10.1063/5.0135898",
-        doiUrl: "https://doi.org/10.1063/5.0135898",
         topic: "Surface Physics & Fractal Analysis",
         role: "co-author",
         highlight: "Power spectral density and statistical fractal modeling of morphological evolution in irradiated dielectric thin films."
@@ -2762,7 +2724,6 @@
         year: 2023,
         if: "5.10",
         doi: "10.1016/j.jddst.2023.104213",
-        doiUrl: "https://doi.org/10.1016/j.jddst.2023.104213",
         topic: "Magnetic Nanoparticles & Biomedicine",
         role: "co-author",
         highlight: "Magnetic nanoparticle conjugate design showing targeted drug delivery kinetics and hyperthermia compatibility."
@@ -2776,7 +2737,6 @@
         year: 2022,
         if: "17.521",
         doi: "10.1002/advs.202201749",
-        doiUrl: "https://doi.org/10.1002/advs.202201749",
         topic: "Spintronics & Interface Physics",
         role: "first",
         highlight: "★ FEATURED BREAKTHROUGH: Colossal orbital magnetic anisotropy (~0.23 meV/atom) achieved at atomically pseudomorphic interfaces of Co/Pd superlattices via proton beam processing."
@@ -2790,7 +2750,6 @@
         year: 2022,
         if: "7.39",
         doi: "10.1016/j.apsusc.2021.151724",
-        doiUrl: "https://doi.org/10.1016/j.apsusc.2021.151724",
         topic: "SERS & Graphene Hybrids",
         role: "co-author",
         highlight: "Electromagnetic and chemical enhancement synergy in graphene/Ag nanoparticle hybrids for ultra-trace molecular detection."
@@ -2804,7 +2763,6 @@
         year: 2022,
         if: "2.44",
         doi: "10.1016/j.physb.2021.413491",
-        doiUrl: "https://doi.org/10.1016/j.physb.2021.413491",
         topic: "Computational Materials Physics",
         role: "co-author",
         highlight: "DFT and Fowler-Nordheim calculations detailing the work function drop at chemically functionalized open CNT tips."
@@ -2818,7 +2776,6 @@
         year: 2022,
         if: "2.66",
         doi: "10.1016/j.mee.2021.111871",
-        doiUrl: "https://doi.org/10.1016/j.mee.2021.111871",
         topic: "Microelectronics & Silicides",
         role: "co-author",
         highlight: "Phase transformation and interface stability of nickel silicides for low-resistance contact metallization in advanced CMOS."
@@ -2832,7 +2789,6 @@
         year: 2021,
         if: "3.42",
         doi: "10.1016/j.matlet.2021.130474",
-        doiUrl: "https://doi.org/10.1016/j.matlet.2021.130474",
         topic: "Thin Films & Sputtering Kinetics",
         role: "co-author",
         highlight: "Angular dependence of ripple formation and non-linear erosion kinetics in heavy-ion bombarded platinum films."
@@ -2846,7 +2802,6 @@
         year: 2021,
         if: "10.380",
         doi: "10.1021/acsami.1c03975",
-        doiUrl: "https://doi.org/10.1021/acsami.1c03975",
         topic: "Spintronic Terahertz & Topological Insulators",
         role: "co-author",
         highlight: "Observation of colossal spin-to-charge conversion at topological insulator Bi2Se3/ferromagnet interfaces emitting broadband THz radiation."
@@ -2860,7 +2815,6 @@
         year: 2021,
         if: "7.39",
         doi: "10.1016/j.apsusc.2021.149343",
-        doiUrl: "https://doi.org/10.1016/j.apsusc.2021.149343",
         topic: "Ion Matter Interactions",
         role: "co-author",
         highlight: "Experimental and inelastic thermal spike modeling of electronic sputtering yields in BaF2 thin films under swift heavy ions."
@@ -2874,7 +2828,6 @@
         year: 2021,
         if: "7.39",
         doi: "10.1016/j.apsusc.2020.148338",
-        doiUrl: "https://doi.org/10.1016/j.apsusc.2020.148338",
         topic: "Surface Nanopatterning",
         role: "co-author",
         highlight: "Morphological self-organization and nanoscale ripple engineering in Pt films using low-energy heavy ions."
@@ -2888,7 +2841,6 @@
         year: 2020,
         if: "4.996",
         doi: "10.1038/s41598-020-59728-6",
-        doiUrl: "https://doi.org/10.1038/s41598-020-59728-6",
         topic: "Spintronic Devices & MTJ",
         role: "first",
         highlight: "★ SEMINAL WORK: Micromagnetic analysis proving SOT assists STT switching by breaking symmetry, lowering threshold write current and eliminating incubation delay."
@@ -2902,7 +2854,6 @@
         year: 2020,
         if: "4.11",
         doi: "10.1016/j.vacuum.2020.109721",
-        doiUrl: "https://doi.org/10.1016/j.vacuum.2020.109721",
         topic: "Laser Ablation & 2D Materials",
         role: "co-author",
         highlight: "Green synthesis of oxygen-rich hydrophilic graphene oxide via continuous laser ablation in liquid media."
@@ -2916,7 +2867,6 @@
         year: 2020,
         if: "3.41",
         doi: "10.1016/j.mseb.2020.114776",
-        doiUrl: "https://doi.org/10.1016/j.mseb.2020.114776",
         topic: "Magnetic Ferrites & Gas Sensors",
         role: "co-author",
         highlight: "Cation distribution tuning in Zn-substituted MgFe2O4 nanoparticles leading to enhanced LPG gas sensitivity and magnetic permeability."
@@ -2930,7 +2880,6 @@
         year: 2020,
         if: null,
         doi: "10.1016/j.matpr.2020.01.492",
-        doiUrl: "https://doi.org/10.1016/j.matpr.2020.01.492",
         topic: "CVD Graphene Growth",
         role: "co-author",
         highlight: "Optimization of carbon segregation and cooling rates for continuous few-layer graphene on polycrystalline nickel foils."
@@ -2944,7 +2893,6 @@
         year: 2020,
         if: "6.37",
         doi: "10.1016/j.jallcom.2020.153847",
-        doiUrl: "https://doi.org/10.1016/j.jallcom.2020.153847",
         topic: "EM Wave Absorption",
         role: "co-author",
         highlight: "Ultralight polymer/TiO2 aerogel scaffold achieving >99.9% electromagnetic reflection loss in the microwave X-band (8-12 GHz)."
@@ -2958,7 +2906,6 @@
         year: 2019,
         if: "2.51",
         doi: "10.4191/kcers.2019.56.5.06",
-        doiUrl: "https://doi.org/10.4191/kcers.2019.56.5.06",
         topic: "Magnetic Materials",
         role: "co-author",
         highlight: "Investigation of B-site Cr3+ substitution on superexchange interactions and magnetic saturation in Zn-ferrites."
@@ -2972,7 +2919,6 @@
         year: 2018,
         if: "5.53",
         doi: "10.1016/j.ceramint.2018.08.087",
-        doiUrl: "https://doi.org/10.1016/j.ceramint.2018.08.087",
         topic: "Spinels & Magnetism",
         role: "co-author",
         highlight: "Crossover from hard ferrimagnetism to soft superparamagnetism driven by Zn composition in cobalt nanoferrites."
@@ -2986,7 +2932,6 @@
         year: 2017,
         if: "3.97",
         doi: "10.1063/1.4996387",
-        doiUrl: "https://doi.org/10.1063/1.4996387",
         topic: "Nanopatterning & Proton Irradiation",
         role: "first",
         highlight: "★ FEATURED BREAKTHROUGH: Patterning isolated 10 nm magnetic bits in paramagnetic Co3O4/Pd without material ablation or cross-talk (potential >3 Tb/in²)."
@@ -3000,7 +2945,6 @@
         year: 2017,
         if: "3.97",
         doi: "10.1063/1.4984959",
-        doiUrl: "https://doi.org/10.1063/1.4984959",
         topic: "STT-MRAM & Fast Switching",
         role: "first",
         highlight: "★ PATENTED DISCOVERY: Application of an overshooting transient (OST) pulse reduces MTJ write time by 80% and power consumption by 20%."
@@ -3014,7 +2958,6 @@
         year: 2016,
         if: "1.49",
         doi: "10.7567/JJAP.55.090303",
-        doiUrl: "https://doi.org/10.7567/JJAP.55.090303",
         topic: "Semiconductor Spintronics",
         role: "co-author",
         highlight: "Probes crystalline orientation effects and spin accumulation efficiency across germanium/MgO/CoFeB tunneling interfaces."
@@ -3028,7 +2971,6 @@
         year: 2015,
         if: "2.88",
         doi: "10.1063/1.4913886",
-        doiUrl: "https://doi.org/10.1063/1.4913886",
         topic: "MOKE & Magnetic Nanostructures",
         role: "first",
         highlight: "Vectorial Magneto-Optical Kerr Effect study of domain nucleation, pinning, and propagation through bifurcated Y-junction magnetic nanowires."
@@ -3042,7 +2984,6 @@
         year: 2014,
         if: "4.00",
         doi: "10.1016/j.jpcs.2014.03.013",
-        doiUrl: "https://doi.org/10.1016/j.jpcs.2014.03.013",
         topic: "Nanoscale Heat Transport",
         role: "co-author",
         highlight: "Lock-in infrared thermography revealing significant phonon-boundary scattering in 1D metallic nanowires."
@@ -3056,7 +2997,6 @@
         year: 2014,
         if: "2.88",
         doi: "10.1063/1.4892015",
-        doiUrl: "https://doi.org/10.1063/1.4892015",
         topic: "Nanotubes & OOMMF Simulations",
         role: "corresponding",
         highlight: "Experimental and OOMMF micromagnetic proof of flux-closure vortex state formation in hollow magnetic cobalt nanotubules."
@@ -3070,7 +3010,6 @@
         year: 2014,
         if: "2.88",
         doi: "10.1063/1.4862808",
-        doiUrl: "https://doi.org/10.1063/1.4862808",
         topic: "MOKE Instrumentation Design",
         role: "corresponding",
         highlight: "★ INSTRUMENTATION DESIGN: Custom polar MOKE magnetometer developed without boring holes in electromagnet pole pieces, preserving field uniformity."
@@ -3084,7 +3023,6 @@
         year: 2012,
         if: "2.88",
         doi: "10.1063/1.3672856",
-        doiUrl: "https://doi.org/10.1063/1.3672856",
         topic: "Ordered Nanomagnet Arrays",
         role: "first",
         highlight: "MOKE magnetometry of electrodeposited Co nanowires in AAO templates detailing inter-wire magnetostatic dipolar interactions."
@@ -3098,7 +3036,6 @@
         year: 2012,
         if: "1.9",
         doi: "10.5185/amlett.2012.icnano.340",
-        doiUrl: "https://doi.org/10.5185/amlett.2012.icnano.340",
         topic: "ESR & Spin Dynamics",
         role: "first",
         highlight: "X-band electron spin resonance probing magnetic anisotropy fields and dipolar coupling in vertically aligned cobalt nanowires."
@@ -3112,7 +3049,6 @@
         year: 2011,
         if: null,
         doi: "10.1142/S179329201100287X",
-        doiUrl: "https://doi.org/10.1142/S179329201100287X",
         topic: "Nanotubules & Electrodeposition",
         role: "first",
         highlight: "Controlled template electrodeposition synthesis yielding hollow magnetic nanotubules with low demagnetizing factors."
@@ -3128,7 +3064,6 @@
         year: 2013,
         if: null,
         doi: "10.1063/1.4791056",
-        doiUrl: "https://doi.org/10.1063/1.4791056",
         topic: "Magnetization Dynamics",
         role: "first",
         highlight: "DAE-SSPS conference proceeding detailing high-frequency spin precession modes in electrodeposited 1D nanostructures."
@@ -3142,7 +3077,6 @@
         year: 2011,
         if: null,
         doi: "10.1063/1.3601802",
-        doiUrl: "https://doi.org/10.1063/1.3601802",
         topic: "FMR Spectroscopy",
         role: "co-author",
         highlight: "Ferromagnetic resonance investigations extracting gyromagnetic ratio and effective demagnetizing field of dense Ni arrays."
@@ -3156,7 +3090,6 @@
         year: 2009,
         if: null,
         doi: "10.1109/IWPSD.2009.5379893",
-        doiUrl: "https://doi.org/10.1109/IWPSD.2009.5379893",
         topic: "Semiconductor & Nanomaterials",
         role: "co-author",
         highlight: "Early synthesis report establishing template-assisted electrodeposition inside track-etched polycarbonate membranes."
@@ -3172,7 +3105,6 @@
         year: 2024,
         isbn: "9783527356225",
         doi: "10.1002/9783527845347.ch5",
-        doiUrl: "https://doi.org/10.1002/9783527845347.ch5",
         topic: "Thin Film Sputtering",
         role: "co-author",
         highlight: "Comprehensive treatise on ion beam sputtering mechanisms, plasma kinematics, and atomically controlled deposition."
@@ -3186,7 +3118,6 @@
         year: 2024,
         isbn: "9783527356225",
         doi: "10.1002/9783527845347.ch8",
-        doiUrl: "https://doi.org/10.1002/9783527845347.ch8",
         topic: "Magnetoresistive Thin Films",
         role: "first",
         highlight: "Technological handbook on precision sputtering parameters for GMR and TMR read-head stacks."
@@ -3200,7 +3131,6 @@
         year: 2024,
         isbn: "9789819579129",
         doi: "10.1007/978-981-97-5791-2",
-        doiUrl: "https://doi.org/10.1007/978-981-97-5791-2",
         topic: "Advanced Nanomaterials",
         role: "first",
         highlight: "Radiation-hardened and anti-corrosive functional nanomaterials engineered for space payloads and marine environments."
@@ -3214,7 +3144,6 @@
         year: 2024,
         isbn: "9789361353826",
         doi: null,
-        doiUrl: "https://scholar.google.co.kr/citations?user=z9OYfvkAAAAJ&hl=en",
         topic: "Hydrogen Storage & Catalysis",
         role: "co-author",
         highlight: "Thermodynamics and phase hysteresis of hydride formation across palladium alloy nanocrystals."
@@ -3228,7 +3157,6 @@
         year: 2024,
         isbn: "978303192583-2",
         doi: "10.1007/978-3-031-92584-9-13",
-        doiUrl: "https://doi.org/10.1007/978-3-031-92584-9-13",
         topic: "Optoelectronics",
         role: "co-author",
         highlight: "Defect passivated wide bandgap oxide semiconductor nanostructures tailored for photodetectors and UV emitters."
@@ -3242,7 +3170,6 @@
         year: 2024,
         isbn: "9780443138959",
         doi: "10.1016/C2022-0-02566-6",
-        doiUrl: "https://doi.org/10.1016/C2022-0-02566-6",
         topic: "Environmental Sensors",
         role: "co-author",
         highlight: "MEMS-integrated electrochemical sensors for detecting heavy metal toxins and volatile organic compounds."
@@ -3256,7 +3183,6 @@
         year: 2024,
         isbn: "978-0-443-21834-7",
         doi: "10.1016/C2023-0-00047-4",
-        doiUrl: "https://doi.org/10.1016/C2023-0-00047-4",
         topic: "Raman Metrology",
         role: "co-author",
         highlight: "Defect-mode D-band, G-band, and 2D-band Raman diagnostic fingerprints in graphene, CNTs, and diamond-like carbon."
@@ -3270,7 +3196,6 @@
         year: 2013,
         isbn: "978-953-51-1186-3",
         doi: "10.5772/56615",
-        doiUrl: "https://doi.org/10.5772/56615",
         topic: "FMR Techniques",
         role: "co-author",
         highlight: "Cavity and coplanar waveguide FMR measurement protocols for 1D magnetic nanowires and patterned thin films."
@@ -3351,11 +3276,6 @@
       }
     }
 
-    /**
-     * =========================================================================
-     * DYNAMIC RENDERING & FILTERING ENGINE FOR PUBLICATIONS REPOSITORY
-     * =========================================================================
-     */
     let currentCategory = "all";
     let searchQuery = "";
     let selectedYear = "all";
@@ -3366,10 +3286,8 @@
       if (!container) return;
 
       const filtered = masterScholarlyWorks.filter(item => {
-        // Category filter
         const matchCategory = currentCategory === "all" || item.type === currentCategory;
 
-        // Year filter
         let matchYear = true;
         if (selectedYear !== "all") {
           if (selectedYear === "older") {
@@ -3379,12 +3297,10 @@
           }
         }
 
-        // Role filter
         let matchRole = true;
         if (selectedRole === "corresponding") matchRole = item.role === "corresponding";
         if (selectedRole === "first") matchRole = item.role === "first";
 
-        // Search text
         let matchSearch = true;
         if (searchQuery) {
           const q = searchQuery.toLowerCase();
@@ -3412,10 +3328,8 @@
       }
 
       container.innerHTML = filtered.map(item => {
-        // Format authors: bold "Sachin Pathak"
         const formattedAuthors = item.authors.replace(/Sachin Pathak\*?/g, '<strong>$&</strong>');
 
-        // Badges setup
         let typeBadge = `<span class="pub-type-badge badge-journal">Journal Article</span>`;
         if (item.type === "book") typeBadge = `<span class="pub-type-badge badge-book">Book Chapter</span>`;
         if (item.type === "patent") typeBadge = `<span class="pub-type-badge badge-patent">Patent / IP</span>`;
@@ -3426,7 +3340,6 @@
         if (item.role === "corresponding") roleBadge = `<span class="pub-author-role-badge">Corresponding Author (*CA)</span>`;
         if (item.role === "first") roleBadge = `<span class="pub-author-role-badge" style="color:var(--accent-cyan); border-color:var(--accent-cyan);">First / Equal Contributor (*FA)</span>`;
 
-        // Action button for patent official registry records only (all DOI links removed)
         let actionBtn = "";
         if (item.type === "patent" && item.doiUrl) {
           actionBtn = `
@@ -3477,9 +3390,7 @@
       }).join("");
     }
 
-    // Set up filter and category handlers
     function initPublicationsFilterSystem() {
-      // Sub-tab category buttons
       const catBtns = document.querySelectorAll("#repoCategoryTabs .pub-cat-btn");
       catBtns.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -3490,7 +3401,6 @@
         });
       });
 
-      // Search input
       const searchInput = document.getElementById("fullPubSearch");
       if (searchInput) {
         searchInput.addEventListener("input", (e) => {
@@ -3499,7 +3409,6 @@
         });
       }
 
-      // Year filter select
       const yearSelect = document.getElementById("yearFilterSelect");
       if (yearSelect) {
         yearSelect.addEventListener("change", (e) => {
@@ -3508,7 +3417,6 @@
         });
       }
 
-      // Author role select
       const roleSelect = document.getElementById("roleFilterSelect");
       if (roleSelect) {
         roleSelect.addEventListener("change", (e) => {
@@ -3518,11 +3426,6 @@
       }
     }
 
-    /**
-     * =========================================================================
-     * INTERACTIVE SPINTRONICS CANVO & ORBITAL ECOSYSTEM LOGIC
-     * =========================================================================
-     */
     const ecosystemData = {
       sot: {
         title: "Spin-Orbit Torque (SOT)",
@@ -3766,17 +3669,10 @@
       renderFrame();
     }
 
-    /**
-     * =========================================================================
-     * UTILITY FUNCTIONS & INITIALIZATION
-     * =========================================================================
-     */
     function initUtilities() {
-      // Year in Footer
       const yearEl = document.getElementById("currentYear");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // Copy Institutional Email Button
       const copyBtn = document.getElementById("copyEmailBtn");
       const toast = document.getElementById("toast");
       if (copyBtn && toast) {
@@ -3794,7 +3690,6 @@
         });
       }
 
-      // Theme toggle
       const themeToggle = document.getElementById("themeToggle");
       let isDark = true;
       if (themeToggle) {
@@ -3804,7 +3699,6 @@
         });
       }
 
-      // Mobile Menu Toggle
       const menuToggle = document.getElementById("menuToggle");
       const mobileDrawer = document.getElementById("mobileDrawer");
       if (menuToggle && mobileDrawer) {
@@ -3813,7 +3707,6 @@
         });
       }
 
-      // Back to top button
       const backToTop = document.getElementById("backToTop");
       window.addEventListener("scroll", () => {
         if (window.scrollY > 400) {
