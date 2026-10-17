@@ -221,12 +221,12 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.75rem;
       list-style: none;
     }
 
     .nav-link {
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       font-weight: 500;
       color: var(--text-secondary);
       transition: all 0.2s ease;
@@ -252,10 +252,11 @@
       box-shadow: 0 0 8px var(--accent-cyan);
     }
 
-    /* Unified Rectangular Rounded-Corner Box Format for Featured Tabs */
+    /* Unified Rectangular Rounded-Corner Box Format for Featured Tabs (Publications, SPInsLab, Teaching) */
     .nav-portal-btn {
       display: inline-flex !important;
       align-items: center;
+      justify-content: center;
       gap: 0.45rem;
       font-size: 0.825rem !important;
       font-weight: 600 !important;
@@ -263,44 +264,59 @@
       background: rgba(56, 189, 248, 0.08);
       border: 1px solid rgba(56, 189, 248, 0.28);
       padding: 0.35rem 0.75rem !important;
-      border-radius: 8px; /* Rectangular box with rounded corners */
+      border-radius: 8px; /* Rectangular box with clean rounded corners */
       transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
       text-decoration: none;
       white-space: nowrap;
       height: 32px;
       box-sizing: border-box;
+      position: relative;
+    }
+
+    .nav-portal-btn::after {
+      display: none !important; /* Disable standard underline on boxed tabs */
     }
 
     .nav-portal-btn:hover {
       background: rgba(56, 189, 248, 0.18);
       border-color: var(--accent-cyan);
       color: var(--accent-cyan) !important;
-      box-shadow: 0 0 12px rgba(0, 240, 255, 0.22);
+      box-shadow: 0 0 14px rgba(0, 240, 255, 0.24);
       transform: translateY(-1px);
     }
 
     .nav-portal-btn.active {
-      background: linear-gradient(135deg, rgba(2, 132, 199, 0.35), rgba(99, 102, 241, 0.3));
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.35), rgba(99, 102, 241, 0.35));
       border-color: var(--accent-cyan);
       color: #ffffff !important;
       box-shadow: 0 0 14px rgba(0, 240, 255, 0.3);
     }
 
+    .nav-portal-btn .tab-badge,
     .nav-portal-btn .pub-count-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: rgba(56, 189, 248, 0.2);
       color: var(--accent-cyan);
       font-family: var(--font-mono);
-      font-size: 0.68rem;
-      padding: 0.1rem 0.4rem;
+      font-size: 0.7rem;
+      padding: 0.1rem 0.45rem;
       border-radius: 5px;
       font-weight: 700;
-      line-height: 1.1;
+      line-height: 1;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      height: 18px;
+      min-width: 18px;
+      box-sizing: border-box;
     }
 
+    .nav-portal-btn.active .tab-badge,
     .nav-portal-btn.active .pub-count-pill {
       background: var(--accent-cyan);
       color: #050811;
+      border-color: var(--accent-cyan);
     }
 
     .nav-portal-btn svg {
@@ -320,7 +336,7 @@
     }
 
     [data-theme="light"] .nav-portal-btn:hover {
-      background: rgba(2, 132, 199, 0.15);
+      background: rgba(2, 132, 199, 0.16);
       border-color: var(--accent-cyan);
       color: var(--accent-cyan) !important;
       box-shadow: 0 2px 10px rgba(2, 132, 199, 0.2);
@@ -675,6 +691,7 @@
       padding: 6rem 0;
       position: relative;
       border-bottom: 1px solid var(--border-subtle);
+      scroll-margin-top: calc(var(--nav-height) + 12px);
     }
 
     .section-header {
@@ -1747,25 +1764,29 @@
           <li><a onclick="switchAppView('overview', 'research')" class="nav-link" id="navResearch">Research</a></li>
           <li><a onclick="switchAppView('overview', 'highlights')" class="nav-link" id="navHighlights">Highlights</a></li>
           
-          <!-- Unified Rounded-Corner Box Tabs: Publications, SPInsLab, Teaching -->
+          <!-- Unified Rectangular Rounded-Corner Box Tabs: Publications, SPInsLab, Teaching -->
           <li>
             <a onclick="switchAppView('publications')" class="nav-link nav-portal-btn" id="navPublicationsTab" title="View Full Publications, Chapters & Patents Repository">
               <span>Publications</span>
-              <span class="pub-count-pill" id="totalPubCountPill">70</span>
+              <span class="tab-badge" id="totalPubCountPill">70</span>
             </a>
           </li>
 
           <li>
             <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" id="navLabTab" title="SPInsLab — Physics Virtual Lab">
               <span>SPInsLab</span>
-              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              <span class="tab-badge">
+                <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </span>
             </a>
           </li>
 
           <li>
-            <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" id="navTeaching" title="Teaching & Coursework Portal">
+            <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" id="navTeachingTab" title="Teaching & Coursework Portal">
               <span>Teaching</span>
-              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              <span class="tab-badge">
+                <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </span>
             </a>
           </li>
           
@@ -1788,30 +1809,30 @@
 
   <div class="mobile-menu-drawer" id="mobileDrawer">
     <a onclick="switchAppView('overview'); closeDrawer()" class="nav-link">Main Profile Overview</a>
-    <a onclick="switchAppView('publications'); closeDrawer()" class="nav-link nav-portal-btn" style="justify-content: space-between;">
+    
+    <!-- Three Featured Tabs Styled in Matching Rectangular Rounded-Corner Format -->
+    <a onclick="switchAppView('publications'); closeDrawer()" class="nav-link nav-portal-btn" style="justify-content: space-between; width: 100%; height: 40px;">
       <span>Publications & Patents Catalog</span>
-      <span class="pub-count-pill">70 Records</span>
+      <span class="tab-badge">70</span>
     </a>
-    <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" onclick="closeDrawer()" style="justify-content: space-between;">
+    <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" onclick="closeDrawer()" style="justify-content: space-between; width: 100%; height: 40px;">
       <span>SPInsLab (Physics Virtual Lab)</span>
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      <span class="tab-badge">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </span>
     </a>
-    <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" onclick="closeDrawer()" style="justify-content: space-between;">
+    <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" onclick="closeDrawer()" style="justify-content: space-between; width: 100%; height: 40px;">
       <span>Teaching & Coursework</span>
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      <span class="tab-badge">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </span>
     </a>
+
+    <!-- Standard Section Links -->
     <a onclick="switchAppView('overview', 'about'); closeDrawer()" class="nav-link">About Dr. Pathak</a>
     <a onclick="switchAppView('overview', 'vision'); closeDrawer()" class="nav-link">Research Vision</a>
     <a onclick="switchAppView('overview', 'research'); closeDrawer()" class="nav-link">Research Areas</a>
     <a onclick="switchAppView('overview', 'highlights'); closeDrawer()" class="nav-link">Selected Contributions</a>
-    <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-lab" onclick="closeDrawer()" style="justify-content: space-between;">
-      <span>SPInsLab (Physics Virtual Lab)</span>
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-    </a>
-    <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="nav-link" onclick="closeDrawer()" style="justify-content: space-between;">
-      <span>Teaching & Coursework</span>
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-    </a>
     <a onclick="switchAppView('overview', 'mentorship'); closeDrawer()" class="nav-link">Ph.D. Mentoring & Grants</a>
     <a onclick="switchAppView('overview', 'network'); closeDrawer()" class="nav-link">International Network</a>
     <a onclick="switchAppView('overview', 'contact'); closeDrawer()" class="nav-link">Contact & Collaborate</a>
@@ -1965,7 +1986,7 @@
               <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                 Teaching & Courses ↗
               </a>
-              <a href="#contact" class="btn btn-secondary">Contact</a>
+              <button onclick="switchAppView('overview', 'contact')" class="btn btn-secondary">Contact</button>
             </div>
 
             <div class="hero-affiliation">
@@ -2438,6 +2459,230 @@
           </div>
         </div>
       </section>
+
+      <!-- SECTION 06: MENTORING & GRANTS -->
+      <section class="section" id="mentorship">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">06 — Academic Leadership</span>
+            <h2 class="section-title">Research Mentorship & Funded Grants</h2>
+            <p class="section-lead">
+              Advancing scientific frontiers through doctoral supervision, postgraduate M.Sc. theses, undergraduate research dissertations, and sponsored research projects.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <h3>Supervised Researchers & Students</h3>
+                <span class="badge-scientific">PH.D. • M.SC. • B.SC.</span>
+              </div>
+              <div class="timeline-track">
+                <!-- Doctoral (Ph.D.) Level -->
+                <div style="font-family: var(--font-mono); font-size: 0.725rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: -0.5rem;">
+                  ◈ Doctoral (Ph.D.) Supervision
+                </div>
+
+                <div class="timeline-step">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-institution">
+                    <span>Dr. Kuldeep Rawat</span>
+                    <span class="timeline-badge" style="color:var(--accent-emerald);">Ph.D. Awarded (2025)</span>
+                  </div>
+                  <div class="timeline-role">Advisor: Dr. Sachin Pathak (Co-Advisor: Dr. AK Gupta)</div>
+                  <div class="timeline-focus">Thesis: Development of HM/Co/HM multilayers with perpendicular magnetic anisotropy (PMA) through thermal annealing. Multiple publications in Applied Surface Science.</div>
+                </div>
+
+                <div class="timeline-step">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-institution">
+                    <span>Dr. Anmol Sharma</span>
+                    <span class="timeline-badge" style="color:var(--accent-emerald);">Ph.D. Awarded (2025)</span>
+                  </div>
+                  <div class="timeline-role">Advisor: Dr. Sachin Pathak (Co-Advisor: Dr. RK Brajpuriya)</div>
+                  <div class="timeline-focus">Thesis: Tailoring magnetic properties in multilayer thin films through interface engineering. Lead author in Scientific Reports, J. Alloys & Compounds, and Surfaces & Interfaces.</div>
+                </div>
+
+                <div class="timeline-step">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-institution">
+                    <span>Sakshi Bagwari</span>
+                    <span class="timeline-badge" style="color:var(--accent-amber);">Ph.D. Ongoing (2025 – Present)</span>
+                  </div>
+                  <div class="timeline-role">Advisor: Dr. Sachin Pathak (Co-Advisor: Dr. RK Brajpuriya)</div>
+                  <div class="timeline-focus">Doctoral Research: Magnetic Materials for High-Sensitivity Magnetic Field Sensors.</div>
+                </div>
+
+                <!-- Master of Science (M.Sc.) Level -->
+                <div style="font-family: var(--font-mono); font-size: 0.725rem; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.75rem; margin-bottom: -0.5rem;">
+                  ◈ Master of Science (M.Sc.) Theses
+                </div>
+
+                <div class="timeline-step">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-institution">
+                    <span>Arnab Tripathi</span>
+                    <span class="timeline-badge" style="color:var(--accent-emerald);">M.Sc. Completed (2026)</span>
+                  </div>
+                  <div class="timeline-role">Advisor: Dr. Sachin Pathak</div>
+                  <div class="timeline-focus">Thesis: Thermally Induced Interdiffusion and Interface Periodicity in [NiFe/Ta]10 Multilayers for Spintronic Applications.</div>
+                </div>
+
+                <div class="timeline-step">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-institution">
+                    <span>Quneey Kaur</span>
+                    <span class="timeline-badge" style="color:var(--accent-amber);">M.Sc. Ongoing (2026 – Present)</span>
+                  </div>
+                  <div class="timeline-role">Advisor: Dr. Sachin Pathak</div>
+                  <div class="timeline-focus">Research: Reduction of CoO to Metallic Co in Pd/Co/Pd Multilayers: Structural and Magnetic Investigations for Spintronic Devices.</div>
+                </div>
+
+                <div class="timeline-step">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-institution">
+                    <span>Prakhar Trivedi</span>
+                    <span class="timeline-badge" style="color:var(--accent-amber);">M.Sc. Ongoing (2026 – Present)</span>
+                  </div>
+                  <div class="timeline-role">Advisor: Dr. Sachin Pathak</div>
+                  <div class="timeline-focus">Research: Engineering Magnetic Anisotropy and Interfacial Effects in Hf/Co/Hf Thin Films for Spintronic Applications.</div>
+                </div>
+
+                <!-- Bachelor of Science (B.Sc.) Level -->
+                <div style="font-family: var(--font-mono); font-size: 0.725rem; font-weight: 700; color: var(--accent-violet); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.75rem; margin-bottom: -0.5rem;">
+                  ◈ Bachelor of Science (B.Sc.) Dissertation
+                </div>
+
+                <div class="timeline-step">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-institution">
+                    <span>Tanya Singh</span>
+                    <span class="timeline-badge" style="color:var(--accent-emerald);">B.Sc. Completed (2020)</span>
+                  </div>
+                  <div class="timeline-role">Advisor: Dr. Sachin Pathak</div>
+                  <div class="timeline-focus">Dissertation: Computer simulations for magneto-resistive spin-valve sensors.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Grants Grid -->
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">Funded Research Projects</h3>
+              <div class="grants-grid">
+                <div class="grant-card">
+                  <div>
+                    <span class="grant-role-badge">Principal Investigator (PI)</span>
+                    <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">UGC-DAE CSR Collaborative Scheme</h4>
+                    <p style="font-size:0.825rem; color:var(--text-secondary); line-height:1.5;">Origin and modulation of interfacial magnetic anisotropy in HM/CoFeB/MgO heterostructures for magnetic memory applications (CRS/2022-23/01/675).</p>
+                  </div>
+                  <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:0.75rem;">Grant: 135,000 INR • UGC-DAE CSR</div>
+                </div>
+
+                <div class="grant-card">
+                  <div>
+                    <span class="grant-role-badge">Principal Investigator (PI)</span>
+                    <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">UPES-SEED Grant 2025</h4>
+                    <p style="font-size:0.825rem; color:var(--text-secondary); line-height:1.5;">Spin-orbit torque (SOT) induced magnetization dynamics in PMA materials for non-volatile memory and logic applications (UPES/R&D-SOAE/25062025/17).</p>
+                  </div>
+                  <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:0.75rem;">Grant: 417,000 INR • UPES</div>
+                </div>
+
+                <div class="grant-card">
+                  <div>
+                    <span class="grant-role-badge">Principal Investigator (PI)</span>
+                    <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">UPES-SEED INFRA Grant 2024</h4>
+                    <p style="font-size:0.825rem; color:var(--text-secondary); line-height:1.5;">MOKE instrument for the study of magnetic dynamics in nanostructures (UPES/R&D-SEED-INFRA/18032024/012).</p>
+                  </div>
+                  <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:0.75rem;">Grant: 130,390 INR • Equipment Build</div>
+                </div>
+
+                <div class="grant-card">
+                  <div>
+                    <span class="grant-role-badge" style="background:rgba(129,140,248,0.15); color:var(--accent-violet);">Co-Principal Investigator</span>
+                    <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">UPES-SEED Energy & Materials Grants</h4>
+                    <p style="font-size:0.825rem; color:var(--text-secondary); line-height:1.5;">CNTs reinforced polymer coatings (450,000 INR), Py nanostructures on curved surfaces (427,000 INR), Piezoelectric harvesters (205,000 INR).</p>
+                  </div>
+                  <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-blue); margin-top:0.75rem;">Multiple Active Interdisciplinary Grants</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 07: GLOBAL COLLABORATIONS -->
+      <section class="section" id="network">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">07 — Global Collaborations</span>
+            <h2 class="section-title">International Research Network</h2>
+            <p class="section-lead">
+              Building scientific bridges across elite synchrotron facilities, research universities, and experimental centers.
+            </p>
+          </div>
+
+          <div style="background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:16px; padding:2.5rem;">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.75rem;">
+              <div>
+                <h4 style="color:var(--accent-cyan); font-weight:700; margin-bottom:0.5rem;">🇮🇳 India</h4>
+                <p style="font-size:0.85rem; color:var(--text-secondary);">UPES Dehradun (Faculty) • Ph.D. from IIT Delhi • UGC-DAE CSR Indore Beamline & User Experiments.</p>
+              </div>
+              <div>
+                <h4 style="color:var(--accent-blue); font-weight:700; margin-bottom:0.5rem;">🇰🇷 South Korea</h4>
+                <p style="font-size:0.85rem; color:var(--text-secondary);">Yonsei University (SMDL, Brain Korea BK21 Plus) • Korea University (Center for Spin-Orbitronic Materials).</p>
+              </div>
+              <div>
+                <h4 style="color:var(--accent-violet); font-weight:700; margin-bottom:0.5rem;">🇩🇪 Germany (DESY)</h4>
+                <p style="font-size:0.85rem; color:var(--text-secondary);">Deutsches Elektronen-Synchrotron (Hamburg). Synchrotron beamtime spectroscopic probing of magnetic multilayers.</p>
+              </div>
+              <div>
+                <h4 style="color:var(--accent-amber); font-weight:700; margin-bottom:0.5rem;">🇮🇹 Italy (Elettra)</h4>
+                <p style="font-size:0.85rem; color:var(--text-secondary);">Elettra Sincrotrone Trieste. Synchrotron-based depth-sensitive spectroscopy & magnetic domain analyses.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 08: CONTACT & COLLABORATE -->
+      <section class="section" id="contact" style="border-bottom: none;">
+        <div class="container">
+          <div class="contact-box">
+            <span class="badge-scientific" style="margin-bottom: 1.25rem;">COLLABORATION</span>
+            <h2 class="contact-headline">Let’s Collaborate</h2>
+            <p class="contact-lead">
+              Open to meaningful academic collaborations, student mentorship, synchrotron beamtime partnerships, conference invitations, and joint funding initiatives in physics and spintronics.
+            </p>
+
+            <div class="email-display-container">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color: var(--accent-blue);"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span class="email-text" id="officialEmailText">s.pathak@upes.ddn.ac.in</span>
+              <button class="copy-btn" id="copyEmailBtn" aria-label="Copy institutional email address" title="Copy Email">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+              <a href="mailto:s.pathak@upes.ddn.ac.in" class="btn btn-primary">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                Compose Email
+              </a>
+              <button onclick="switchAppView('publications')" class="btn btn-secondary">
+                View Publications (70)
+              </button>
+              <a href="https://scholar.google.co.kr/citations?user=z9OYfvkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                Google Scholar
+              </a>
+              <a href="https://orcid.org/0000-0002-5354-9334" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                ORCID
+              </a>
+              <a href="https://www.linkedin.com/in/dr-sachin-pathak-25749744/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 
@@ -2465,6 +2710,8 @@
             <li><a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" style="color:var(--accent-cyan); font-weight:600;">SPInsLab (Physics Virtual Lab) ↗</a></li>
             <li><a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-blue); font-weight:600;">Teaching & Curriculum ↗</a></li>
             <li><a onclick="switchAppView('overview', 'mentorship')">Ph.D. Supervision & Grants</a></li>
+            <li><a onclick="switchAppView('overview', 'network')">International Network</a></li>
+            <li><a onclick="switchAppView('overview', 'contact')">Contact & Collaborate</a></li>
           </ul>
         </div>
 
@@ -3259,19 +3506,19 @@
       if (viewId === "publications") {
         overviewView.classList.remove("active-view");
         publicationsView.classList.add("active-view");
-        navPubTab.classList.add("active");
+        if (navPubTab) navPubTab.classList.add("active");
         window.scrollTo({ top: 0, behavior: "smooth" });
         renderFullPublicationsList();
       } else {
         publicationsView.classList.remove("active-view");
         overviewView.classList.add("active-view");
-        navPubTab.classList.remove("active");
+        if (navPubTab) navPubTab.classList.remove("active");
 
         if (targetSectionId) {
           setTimeout(() => {
             const el = document.getElementById(targetSectionId);
             if (el) el.scrollIntoView({ behavior: "smooth" });
-          }, 50);
+          }, 60);
         }
       }
     }
@@ -3720,6 +3967,45 @@
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
       }
+
+      // Scroll spy for overview section links
+      const sections = document.querySelectorAll("section[id]");
+      window.addEventListener("scroll", () => {
+        const overviewActive = document.getElementById("overviewView").classList.contains("active-view");
+        if (!overviewActive) return;
+
+        let currentSection = "";
+        const scrollPos = window.scrollY + 120;
+
+        sections.forEach(sec => {
+          const top = sec.offsetTop;
+          const height = sec.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            currentSection = sec.getAttribute("id");
+          }
+        });
+
+        const navIdMap = {
+          "about": "navAbout",
+          "vision": "navVision",
+          "research": "navResearch",
+          "highlights": "navHighlights",
+          "mentorship": "navMentorship",
+          "network": "navNetwork",
+          "contact": "navContact"
+        };
+
+        Object.keys(navIdMap).forEach(secKey => {
+          const link = document.getElementById(navIdMap[secKey]);
+          if (link) {
+            if (currentSection === secKey) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          }
+        });
+      });
     }
 
     function closeDrawer() {
