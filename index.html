@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr. Sachin Pathak | Explorer of Physics • Materials Science • Spintronics</title>
-  <meta name="description" content="Official academic research website of Dr. Sachin Pathak, Associate Professor of Physics at UPES. Complete repository of 56+ publications, 8 book chapters, 3 patents, and spintronics research.">
+  <meta name="description" content="Official academic research website of Dr. Sachin Pathak, Associate Professor of Physics at UPES. Complete repository of 56 publications (42 journal articles, 8 book chapters, 3 patents, 3 proceedings) and spintronics research.">
   <meta name="keywords" content="Sachin Pathak, Physicist, Spintronics, Materials Science, Nanomagnetism, Spin-Orbit Torque, Magnetic Thin Films, UPES, IIT Delhi, Yonsei, Korea University">
   <meta name="author" content="Dr. Sachin Pathak">
   <meta name="robots" content="index, follow">
-  
+
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Dr. Sachin Pathak | Spintronics & Nanomagnetism Researcher">
-  <meta property="og:description" content="Materials Engineering for Spintronic Devices — Comprehensive publications, patents, teaching, and research portal.">
+  <meta property="og:title" content="Dr. Sachin Pathak | Explorer of Physics • Materials Science • Spintronics">
+  <meta property="og:description" content="Materials Engineering for Spintronic Devices — Comprehensive publications, patents, news, gallery, and research portal.">
   <meta property="og:url" content="https://www.upes.ac.in/faculty/school-of-advanced-engineering/applied-science/dr-sachin-pathak">
 
   <!-- Schema.org Academic Person Structured Data -->
@@ -48,8 +48,7 @@
       "Nanomagnetism",
       "Magnetic Thin Films",
       "MOKE Microscopy",
-      "Micromagnetic Modelling (OOMMF)",
-      "Quantum Mechanics & Engineering Physics Pedagogy"
+      "Micromagnetic Modelling (OOMMF)"
     ],
     "sameAs": [
       "https://scholar.google.co.kr/citations?hl=en&tzom=-330&user=z9OYfvkAAAAJ",
@@ -132,7 +131,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Subtle scientific grid background */
     body::before {
       content: "";
       position: fixed;
@@ -161,7 +159,7 @@
 
     .container {
       width: 100%;
-      max-width: 1280px;
+      max-width: 1320px;
       margin: 0 auto;
       padding: 0 1.5rem;
       position: relative;
@@ -196,16 +194,17 @@
     .nav-brand {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.7rem;
       font-weight: 700;
-      font-size: 1.125rem;
+      font-size: 1.08rem;
       letter-spacing: -0.02em;
       cursor: pointer;
+      flex-shrink: 0;
     }
 
     .nav-brand-mark {
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       border-radius: 9px;
       background: linear-gradient(135deg, var(--accent-blue), var(--accent-violet));
       display: flex;
@@ -213,7 +212,7 @@
       justify-content: center;
       color: #fff;
       font-family: var(--font-mono);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 700;
       box-shadow: var(--glow-cyan);
     }
@@ -221,18 +220,19 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.72rem;
       list-style: none;
     }
 
     .nav-link {
-      font-size: 0.85rem;
+      font-size: 0.825rem;
       font-weight: 500;
       color: var(--text-secondary);
       transition: all 0.2s ease;
       position: relative;
-      padding: 0.35rem 0.25rem;
+      padding: 0.35rem 0.15rem;
       cursor: pointer;
+      white-space: nowrap;
     }
 
     .nav-link:hover,
@@ -252,106 +252,57 @@
       box-shadow: 0 0 8px var(--accent-cyan);
     }
 
-    /* Unified Rectangular Rounded-Corner Box Format for Featured Tabs (Publications, SPInsLab, Teaching) */
-    .nav-portal-btn {
-      display: inline-flex !important;
-      align-items: center;
-      justify-content: center;
-      gap: 0.45rem;
-      font-size: 0.825rem !important;
-      font-weight: 600 !important;
-      color: var(--text-main) !important;
-      background: rgba(56, 189, 248, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.28);
-      padding: 0.35rem 0.75rem !important;
-      border-radius: 8px; /* Rectangular box with clean rounded corners */
-      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-      cursor: pointer;
-      text-decoration: none;
-      white-space: nowrap;
-      height: 32px;
-      box-sizing: border-box;
-      position: relative;
-    }
-
-    .nav-portal-btn::after {
-      display: none !important; /* Disable standard underline on boxed tabs */
-    }
-
-    .nav-portal-btn:hover {
-      background: rgba(56, 189, 248, 0.18);
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan) !important;
-      box-shadow: 0 0 14px rgba(0, 240, 255, 0.24);
-      transform: translateY(-1px);
-    }
-
-    .nav-portal-btn.active {
-      background: linear-gradient(135deg, rgba(2, 132, 199, 0.35), rgba(99, 102, 241, 0.35));
-      border-color: var(--accent-cyan);
-      color: #ffffff !important;
-      box-shadow: 0 0 14px rgba(0, 240, 255, 0.3);
-    }
-
-    .nav-portal-btn .tab-badge,
-    .nav-portal-btn .pub-count-pill {
+    /* Unified Rectangular Rounded-Corner Box Tabs (Publications, SPInsLab, Teaching, News, Gallery) */
+    .nav-tab-box {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: rgba(56, 189, 248, 0.2);
-      color: var(--accent-cyan);
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      padding: 0.1rem 0.45rem;
-      border-radius: 5px;
-      font-weight: 700;
-      line-height: 1;
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      height: 18px;
-      min-width: 18px;
-      box-sizing: border-box;
-    }
-
-    .nav-portal-btn.active .tab-badge,
-    .nav-portal-btn.active .pub-count-pill {
-      background: var(--accent-cyan);
-      color: #050811;
-      border-color: var(--accent-cyan);
-    }
-
-    .nav-portal-btn svg {
-      color: var(--accent-cyan);
-      flex-shrink: 0;
-      transition: transform 0.2s ease;
-    }
-
-    .nav-portal-btn:hover svg {
-      transform: translate(1px, -1px);
-    }
-
-    [data-theme="light"] .nav-portal-btn {
-      background: rgba(2, 132, 199, 0.08);
-      border-color: rgba(2, 132, 199, 0.25);
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 600 !important;
       color: var(--text-main) !important;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 0.32rem 0.65rem !important;
+      border-radius: 8px;
+      height: 31px;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
     }
 
-    [data-theme="light"] .nav-portal-btn:hover {
-      background: rgba(2, 132, 199, 0.16);
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan) !important;
-      box-shadow: 0 2px 10px rgba(2, 132, 199, 0.2);
+    [data-theme="light"] .nav-tab-box {
+      background: rgba(2, 132, 199, 0.08);
+      border-color: rgba(2, 132, 199, 0.35);
+      color: #0f172a !important;
     }
 
-    [data-theme="light"] .nav-portal-btn.active {
-      background: rgba(2, 132, 199, 0.2);
+    .nav-tab-box:hover,
+    .nav-tab-box.active {
+      background: linear-gradient(135deg, #0284c7, #3b82f6);
       border-color: var(--accent-cyan);
-      color: var(--accent-cyan) !important;
+      color: #ffffff !important;
+      box-shadow: 0 0 14px rgba(0, 240, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .nav-tab-box.active::after {
+      display: none;
+    }
+
+    .nav-tab-box .tab-badge {
+      background: rgba(255, 255, 255, 0.15);
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      padding: 0.06rem 0.36rem;
+      border-radius: 5px;
+      line-height: 1.2;
+      font-weight: 700;
     }
 
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.65rem;
     }
 
     .theme-toggle,
@@ -359,8 +310,8 @@
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -379,7 +330,7 @@
       display: none;
     }
 
-    /* Keep mobile drawer strictly hidden on desktop screens */
+    /* Hide mobile drawer completely on desktop viewports */
     .mobile-menu-drawer {
       display: none;
     }
@@ -479,7 +430,7 @@
       50% { opacity: 0.4; transform: scale(0.85); }
     }
 
-    /* Page View Switcher Architecture (Overview vs Full Publications) */
+    /* Page View Switcher Architecture */
     .app-view-container {
       width: 100%;
       position: relative;
@@ -544,7 +495,7 @@
     }
 
     .hero-subtitle {
-      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-size: clamp(1.05rem, 1.9vw, 1.3rem);
       color: var(--accent-blue);
       font-weight: 500;
       letter-spacing: -0.01em;
@@ -566,7 +517,7 @@
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.85rem;
+      gap: 0.75rem;
       margin-bottom: 2.25rem;
     }
 
@@ -696,12 +647,11 @@
       padding: 6rem 0;
       position: relative;
       border-bottom: 1px solid var(--border-subtle);
-      scroll-margin-top: calc(var(--nav-height) + 12px);
     }
 
     .section-header {
       margin-bottom: 3.5rem;
-      max-width: 840px;
+      max-width: 820px;
     }
 
     .section-eyebrow {
@@ -729,8 +679,9 @@
       line-height: 1.65;
     }
 
+    /* Portal View Headers (Publications, News & Gallery) */
     .publications-portal-header {
-      padding: 5rem 0 2rem;
+      padding: 6.5rem 0 2.5rem;
       background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
       border-bottom: 1px solid var(--border-subtle);
     }
@@ -1009,6 +960,250 @@
       font-family: var(--font-mono);
       font-size: 0.75rem;
       color: var(--text-muted);
+    }
+
+    /* News Portal Cards & LinkedIn Embed Architecture */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .news-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: all 0.25s ease;
+    }
+
+    .news-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .news-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 0.85rem;
+    }
+
+    .news-linkedin-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.28rem 0.65rem;
+      border-radius: 6px;
+      background: rgba(10, 102, 194, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(10, 102, 194, 0.35);
+    }
+
+    .news-date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.28rem 0.7rem;
+      border-radius: 6px;
+      background: rgba(0, 240, 255, 0.1);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+    }
+
+    .news-iframe-wrapper {
+      width: 100%;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      position: relative;
+      height: 540px;
+      transition: height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .news-iframe-wrapper.expanded {
+      height: 760px;
+    }
+
+    .news-iframe-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .news-card-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      padding-top: 0.5rem;
+    }
+
+    /* Photo Gallery Grid & Lightbox */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .gallery-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .gallery-thumb-box {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      background: #070b14;
+      position: relative;
+    }
+
+    .gallery-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-card:hover .gallery-thumb-box img {
+      transform: scale(1.05);
+    }
+
+    .gallery-expand-chip {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: rgba(5, 8, 17, 0.78);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: var(--accent-cyan);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.28rem 0.6rem;
+      border-radius: 6px;
+      backdrop-filter: blur(8px);
+    }
+
+    .gallery-card-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      flex: 1;
+    }
+
+    .gallery-card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-cyan);
+      gap: 0.5rem;
+    }
+
+    .gallery-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+
+    .gallery-card-desc {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* Lightbox Modal */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 6, 14, 0.94);
+      backdrop-filter: blur(12px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .lightbox-overlay.open {
+      display: flex;
+    }
+
+    .lightbox-dialog {
+      max-width: 1020px;
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-accent);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lightbox-media {
+      background: #03060c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-height: 70vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .lightbox-media img {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-caption-bar {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border-subtle);
     }
 
     .about-grid {
@@ -1424,88 +1619,56 @@
       color: var(--text-secondary);
     }
 
-    .teaching-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.75rem;
-      margin-top: 2rem;
-    }
-
-    .teaching-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 14px;
-      padding: 1.85rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.25s ease;
-    }
-
-    .teaching-card:hover {
-      border-color: var(--border-accent);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
-    }
-
-    .teaching-card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .teaching-icon-badge {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: rgba(56, 189, 248, 0.12);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent-cyan);
-    }
-
-    .teaching-pills {
+    /* Teaching Philosophy & Curriculum Section */
+    .pedagogy-cycle {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 1.25rem;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      padding: 1.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
     }
 
-    .teaching-pill {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      padding: 0.2rem 0.55rem;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-secondary);
-    }
-
-    .pedagogy-cycle {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
-      margin: 2.5rem 0;
-    }
-
-    .pedagogy-step {
-      background: rgba(14, 22, 40, 0.5);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 1.35rem;
-      position: relative;
-    }
-
-    .pedagogy-step-num {
-      font-family: var(--font-mono);
-      font-size: 1.5rem;
-      font-weight: 800;
+    .cycle-stage {
+      padding: 0.65rem 1.35rem;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      font-weight: 700;
+      font-size: 0.95rem;
       color: var(--accent-cyan);
-      margin-bottom: 0.4rem;
+      font-family: var(--font-mono);
     }
 
+    .cycle-arrow {
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .teaching-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .course-pill {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.725rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 5px;
+      background: rgba(129, 140, 248, 0.15);
+      color: var(--accent-violet);
+      margin-bottom: 0.75rem;
+    }
+
+    /* Mentorship and Research Grants styling */
     .grants-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1535,7 +1698,6 @@
       margin-bottom: 0.65rem;
     }
 
-    /* Contact Box */
     .contact-box {
       background: linear-gradient(135deg, rgba(14, 22, 40, 0.95), rgba(7, 11, 20, 0.98));
       border: 1px solid var(--border-accent);
@@ -1659,9 +1821,12 @@
       gap: 0.6rem;
     }
 
+    .footer-links a {
+      cursor: pointer;
+    }
+
     .footer-links a:hover {
       color: var(--accent-cyan);
-      cursor: pointer;
     }
 
     .footer-bottom {
@@ -1705,6 +1870,19 @@
       transform: translateY(-2px);
     }
 
+    @media (max-width: 1200px) {
+      .nav-links {
+        gap: 0.45rem;
+      }
+      .nav-link {
+        font-size: 0.78rem;
+      }
+      .nav-tab-box {
+        font-size: 0.74rem;
+        padding: 0.28rem 0.5rem !important;
+      }
+    }
+
     @media (max-width: 1024px) {
       .hero-grid,
       .about-grid,
@@ -1716,7 +1894,7 @@
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .nav-links {
         display: none;
       }
@@ -1735,8 +1913,10 @@
         flex-direction: column;
         gap: 0.85rem;
         z-index: 99;
-        transform: translateY(-120%);
+        transform: translateY(-130%);
         transition: transform 0.3s ease;
+        max-height: calc(100vh - var(--nav-height));
+        overflow-y: auto;
       }
       .mobile-menu-drawer.open {
         transform: translateY(0);
@@ -1758,7 +1938,7 @@
         <div class="nav-brand-mark">SP</div>
         <div>
           <div style="line-height: 1.1;">Dr. Sachin Pathak</div>
-          <div style="font-size: 0.725rem; font-weight: 400; color: var(--text-muted); font-family: var(--font-mono);">Associate Professor • Physics & Spintronics</div>
+          <div style="font-size: 0.725rem; font-weight: 400; color: var(--text-muted); font-family: var(--font-mono);">Associate Professor • Physics &amp; Spintronics</div>
         </div>
       </div>
 
@@ -1768,34 +1948,48 @@
           <li><a onclick="switchAppView('overview', 'vision')" class="nav-link" id="navVision">Vision</a></li>
           <li><a onclick="switchAppView('overview', 'research')" class="nav-link" id="navResearch">Research</a></li>
           <li><a onclick="switchAppView('overview', 'highlights')" class="nav-link" id="navHighlights">Highlights</a></li>
-          
-          <!-- Unified Rectangular Rounded-Corner Box Tabs: Publications, SPInsLab, Teaching -->
+
+          <!-- Publications Box Tab -->
           <li>
-            <a onclick="switchAppView('publications')" class="nav-link nav-portal-btn" id="navPublicationsTab" title="View Full Publications, Chapters & Patents Repository">
+            <a onclick="switchAppView('publications')" class="nav-link nav-tab-box" id="navPublicationsTab" title="View Complete Publications, Chapters &amp; Patents Repository">
               <span>Publications</span>
-              <span class="tab-badge" id="totalPubCountPill">70</span>
+              <span class="tab-badge" id="totalPubCountPill">56</span>
             </a>
           </li>
 
+          <!-- SPInsLab Box Tab -->
           <li>
-            <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" id="navLabTab" title="SPInsLab — Physics Virtual Lab">
+            <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="nav-link nav-tab-box" title="SPInsLab — Physics Virtual Lab">
               <span>SPInsLab</span>
-              <span class="tab-badge">
-                <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </span>
+              <span class="tab-badge">↗</span>
             </a>
           </li>
 
+          <!-- Teaching Box Tab -->
           <li>
-            <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" id="navTeachingTab" title="Teaching & Coursework Portal">
+            <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="nav-link nav-tab-box" title="Teaching &amp; Course Portal">
               <span>Teaching</span>
-              <span class="tab-badge">
-                <svg width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-              </span>
+              <span class="tab-badge">↗</span>
             </a>
           </li>
-          
-          <li><a onclick="switchAppView('overview', 'mentorship')" class="nav-link" id="navMentorship">Mentoring & Grants</a></li>
+
+          <!-- News Box Tab -->
+          <li>
+            <a onclick="switchAppView('news')" class="nav-link nav-tab-box" id="navNewsTab" title="Latest LinkedIn Announcements &amp; Research Updates">
+              <span>News</span>
+              <span class="tab-badge" id="totalNewsCountPill">8</span>
+            </a>
+          </li>
+
+          <!-- Gallery Box Tab -->
+          <li>
+            <a onclick="switchAppView('gallery')" class="nav-link nav-tab-box" id="navGalleryTab" title="Research Laboratory &amp; Seminar Photo Gallery">
+              <span>Gallery</span>
+              <span class="tab-badge" id="totalGalleryCountPill">10</span>
+            </a>
+          </li>
+
+          <li><a onclick="switchAppView('overview', 'mentorship')" class="nav-link" id="navMentorship">Mentoring &amp; Grants</a></li>
           <li><a onclick="switchAppView('overview', 'network')" class="nav-link" id="navNetwork">Network</a></li>
           <li><a onclick="switchAppView('overview', 'contact')" class="nav-link" id="navContact">Collaborate</a></li>
         </ul>
@@ -1812,39 +2006,43 @@
     </div>
   </header>
 
+  <!-- Mobile Drawer -->
   <div class="mobile-menu-drawer" id="mobileDrawer">
     <a onclick="switchAppView('overview'); closeDrawer()" class="nav-link">Main Profile Overview</a>
-    
-    <!-- Three Featured Tabs Styled in Matching Rectangular Rounded-Corner Format -->
-    <a onclick="switchAppView('publications'); closeDrawer()" class="nav-link nav-portal-btn" style="justify-content: space-between; width: 100%; height: 40px;">
-      <span>Publications & Patents Catalog</span>
-      <span class="tab-badge">70</span>
+    <a onclick="switchAppView('publications'); closeDrawer()" class="nav-link nav-tab-box" style="justify-content: space-between; width: 100%; height: auto; padding: 0.65rem 1rem !important;">
+      <span>Publications &amp; Patents Catalog</span>
+      <span class="tab-badge">56 Records</span>
     </a>
-    <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" onclick="closeDrawer()" style="justify-content: space-between; width: 100%; height: 40px;">
+    <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="nav-link nav-tab-box" onclick="closeDrawer()" style="justify-content: space-between; width: 100%; height: auto; padding: 0.65rem 1rem !important;">
       <span>SPInsLab (Physics Virtual Lab)</span>
-      <span class="tab-badge">
-        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-      </span>
+      <span class="tab-badge">↗</span>
     </a>
-    <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="nav-link nav-portal-btn" onclick="closeDrawer()" style="justify-content: space-between; width: 100%; height: 40px;">
-      <span>Teaching & Coursework</span>
-      <span class="tab-badge">
-        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-      </span>
+    <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="nav-link nav-tab-box" onclick="closeDrawer()" style="justify-content: space-between; width: 100%; height: auto; padding: 0.65rem 1rem !important;">
+      <span>Teaching &amp; Course Portal</span>
+      <span class="tab-badge">↗</span>
     </a>
-
-    <!-- Standard Section Links -->
+    <a onclick="switchAppView('news'); closeDrawer()" class="nav-link nav-tab-box" style="justify-content: space-between; width: 100%; height: auto; padding: 0.65rem 1rem !important;">
+      <span>News &amp; LinkedIn Snapshots</span>
+      <span class="tab-badge">8 Updates</span>
+    </a>
+    <a onclick="switchAppView('gallery'); closeDrawer()" class="nav-link nav-tab-box" style="justify-content: space-between; width: 100%; height: auto; padding: 0.65rem 1rem !important;">
+      <span>Research &amp; Lab Photo Gallery</span>
+      <span class="tab-badge">10 Photos</span>
+    </a>
     <a onclick="switchAppView('overview', 'about'); closeDrawer()" class="nav-link">About Dr. Pathak</a>
     <a onclick="switchAppView('overview', 'vision'); closeDrawer()" class="nav-link">Research Vision</a>
     <a onclick="switchAppView('overview', 'research'); closeDrawer()" class="nav-link">Research Areas</a>
     <a onclick="switchAppView('overview', 'highlights'); closeDrawer()" class="nav-link">Selected Contributions</a>
-    <a onclick="switchAppView('overview', 'mentorship'); closeDrawer()" class="nav-link">Ph.D. Mentoring & Grants</a>
+    <a onclick="switchAppView('overview', 'mentorship'); closeDrawer()" class="nav-link">Mentoring &amp; Grants</a>
     <a onclick="switchAppView('overview', 'network'); closeDrawer()" class="nav-link">International Network</a>
-    <a onclick="switchAppView('overview', 'contact'); closeDrawer()" class="nav-link">Contact & Collaborate</a>
+    <a onclick="switchAppView('overview', 'contact'); closeDrawer()" class="nav-link">Contact &amp; Collaborate</a>
   </div>
 
   <main class="app-view-container">
 
+    <!-- =================================================================== -->
+    <!-- VIEW 1: DEDICATED PUBLICATIONS & INTELLECTUAL PROPERTY REPOSITORY   -->
+    <!-- =================================================================== -->
     <section id="publicationsView" class="app-view">
       <div class="publications-portal-header">
         <div class="container">
@@ -1853,7 +2051,7 @@
               <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
               Back to Overview Profile
             </button>
-            <div style="display: flex; gap: 0.75rem;">
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
               <a href="https://scholar.google.co.kr/citations?user=z9OYfvkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
                 Google Scholar Profile ↗
@@ -1864,48 +2062,48 @@
             </div>
           </div>
 
-          <span class="section-eyebrow">SCHOLARLY WORKS & INTELLECTUAL PROPERTY</span>
-          <h1 class="section-title">Publications, Book Chapters & Patents</h1>
+          <span class="section-eyebrow">SCHOLARLY WORKS &amp; INTELLECTUAL PROPERTY</span>
+          <h1 class="section-title">Publications, Book Chapters &amp; Patents</h1>
           <p class="section-lead" style="max-width: 860px;">
-            Complete verified bibliography of <strong>Dr. Sachin Pathak</strong> encompassing 56 peer-reviewed journal articles, 8 book chapters, 3 patents (US, KR & IN), and conference proceedings. Each entry includes complete citation details and scientific highlights summarizing core contributions.
+            Complete verified bibliography of <strong>Dr. Sachin Pathak</strong> encompassing <strong>56 total publications</strong>—comprising <strong>42 refereed journal articles</strong>, <strong>8 book chapters</strong>, <strong>3 patents (US, KR &amp; IN)</strong>, and <strong>3 conference proceedings</strong>. Each entry includes complete bibliographic metadata and scientific highlights summarizing the core contributions.
           </p>
 
           <!-- Repository Metrics Strip -->
           <div class="repo-stats-strip">
             <div class="repo-stat-card">
-              <div class="repo-stat-num">56</div>
-              <div class="repo-stat-label">Refereed Journal Articles<br><span style="font-size:0.75rem; color:var(--accent-blue);">Adv. Science, APL, JAP, etc.</span></div>
+              <div class="repo-stat-num" id="statTotalPubs">56</div>
+              <div class="repo-stat-label">Total Publications<br><span style="font-size:0.75rem; color:var(--accent-blue);">42 Journals • 8 Chapters • 3 Patents • 3 Proc.</span></div>
             </div>
             <div class="repo-stat-card">
-              <div class="repo-stat-num">08</div>
-              <div class="repo-stat-label">Published Book Chapters<br><span style="font-size:0.75rem; color:var(--accent-violet);">Wiley, Springer & Elsevier</span></div>
+              <div class="repo-stat-num" id="statJournalArticles">42</div>
+              <div class="repo-stat-label">Refereed Journal Articles<br><span style="font-size:0.75rem; color:var(--accent-cyan);">Adv. Science, APL, JAP, etc.</span></div>
             </div>
             <div class="repo-stat-card">
-              <div class="repo-stat-num">03</div>
-              <div class="repo-stat-label">Patents & Inventions<br><span style="font-size:0.75rem; color:var(--accent-amber);">US, Korean & Indian Patents</span></div>
+              <div class="repo-stat-num" id="statBookChapters">08</div>
+              <div class="repo-stat-label">Published Book Chapters<br><span style="font-size:0.75rem; color:var(--accent-violet);">Wiley, Springer &amp; Elsevier</span></div>
             </div>
             <div class="repo-stat-card">
-              <div class="repo-stat-num">17.5</div>
-              <div class="repo-stat-label">Top Impact Factor<br><span style="font-size:0.75rem; color:var(--accent-emerald);">Advanced Science (Wiley)</span></div>
+              <div class="repo-stat-num" id="statPatents">03</div>
+              <div class="repo-stat-label">Patents &amp; Inventions<br><span style="font-size:0.75rem; color:var(--accent-amber);">US, Korean &amp; Indian Patents</span></div>
             </div>
           </div>
 
           <!-- Category Sub-Tabs -->
           <div class="pub-category-tabs" id="repoCategoryTabs">
             <button class="pub-cat-btn active" data-category="all">
-              <span>All Scholarly Works</span>
-              <span class="pub-cat-count" id="countAll">70</span>
+              <span>All Publications</span>
+              <span class="pub-cat-count" id="countAll">56</span>
             </button>
             <button class="pub-cat-btn" data-category="journal">
-              <span>Refereed Journal Papers</span>
-              <span class="pub-cat-count" id="countJournal">56</span>
+              <span>Journal Articles</span>
+              <span class="pub-cat-count" id="countJournal">42</span>
             </button>
             <button class="pub-cat-btn" data-category="book">
               <span>Book Chapters</span>
               <span class="pub-cat-count" id="countBook">8</span>
             </button>
             <button class="pub-cat-btn" data-category="patent">
-              <span>Patents & IP</span>
+              <span>Patents &amp; IP</span>
               <span class="pub-cat-count" id="countPatent">3</span>
             </button>
             <button class="pub-cat-btn" data-category="proceedings">
@@ -1931,7 +2129,7 @@
                 <option value="2022">2022</option>
                 <option value="2021">2021</option>
                 <option value="2020">2020</option>
-                <option value="older">2019 & Earlier</option>
+                <option value="older">2019 &amp; Earlier</option>
               </select>
 
               <select id="roleFilterSelect" class="filter-select" aria-label="Filter by Author Role">
@@ -1952,6 +2150,111 @@
       </div>
     </section>
 
+    <!-- =================================================================== -->
+    <!-- VIEW 2: NEWS & LINKEDIN SNAPSHOTS PORTAL                            -->
+    <!-- =================================================================== -->
+    <section id="newsView" class="app-view">
+      <div class="publications-portal-header">
+        <div class="container">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+            <button onclick="switchAppView('overview')" class="btn btn-secondary btn-sm">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              Back to Overview Profile
+            </button>
+            <div style="display: flex; gap: 0.75rem;">
+              <a href="https://www.linkedin.com/in/dr-sachin-pathak-25749744/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                Connect on LinkedIn ↗
+              </a>
+            </div>
+          </div>
+
+          <span class="section-eyebrow">LATEST RESEARCH UPDATES &amp; ANNOUNCEMENTS</span>
+          <h1 class="section-title">News &amp; LinkedIn Activity Feed</h1>
+          <p class="section-lead" style="max-width: 820px;">
+            Chronological feed of recent scientific announcements, research milestones, academic discussions, and group highlights shared on LinkedIn by <strong>Dr. Sachin Pathak</strong>.
+          </p>
+
+          <!-- Date-wise Filter & Chronological Sort Controls -->
+          <div class="pub-controls-bar" style="margin-top: 2rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-cyan); font-weight: 700;">CHRONOLOGICAL ORDER:</span>
+              <span id="newsCountSummary" style="font-size: 0.85rem; color: var(--text-secondary);">Showing 8 updates sorted by date</span>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+              <select id="newsYearFilter" class="filter-select" aria-label="Filter News by Year">
+                <option value="all">All Dates (2021 – 2026)</option>
+                <option value="2026">2026 Updates (7)</option>
+                <option value="2021">2021 Archive (1)</option>
+              </select>
+
+              <select id="newsSortOrder" class="filter-select" aria-label="Sort News Chronologically">
+                <option value="newest">Newest First (Latest Date)</option>
+                <option value="oldest">Oldest First (Earliest Date)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="padding-top: 2.5rem; padding-bottom: 6rem;">
+        <div class="news-grid" id="linkedinNewsContainer">
+          <!-- Dynamically populated via JS LinkedIn News Feed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 3: RESEARCH & SEMINAR PHOTO GALLERY                            -->
+    <!-- =================================================================== -->
+    <section id="galleryView" class="app-view">
+      <div class="publications-portal-header">
+        <div class="container">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+            <button onclick="switchAppView('overview')" class="btn btn-secondary btn-sm">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              Back to Overview Profile
+            </button>
+          </div>
+
+          <span class="section-eyebrow">VISUAL ARCHIVE • LABORATORIES &amp; COLLABORATIONS</span>
+          <h1 class="section-title">Research &amp; Academic Gallery</h1>
+          <p class="section-lead" style="max-width: 840px;">
+            Snapshots from our experimental laboratories, custom Magneto-Optical Kerr Effect (MOKE) setups, cleanroom microfabrication facilities, Spin-Talk seminars at UPES, and international research visits.
+          </p>
+
+          <!-- Gallery Category Filter Tabs -->
+          <div class="pub-category-tabs" id="galleryCategoryTabs">
+            <button class="pub-cat-btn active" data-gallery-cat="all">
+              <span>All Photographs</span>
+              <span class="pub-cat-count">10</span>
+            </button>
+            <button class="pub-cat-btn" data-gallery-cat="lab-seminar">
+              <span>MOKE Lab &amp; Spin-Talk (UPES)</span>
+              <span class="pub-cat-count">3</span>
+            </button>
+            <button class="pub-cat-btn" data-gallery-cat="cleanroom">
+              <span>Cleanroom &amp; UHV Facilities</span>
+              <span class="pub-cat-count">5</span>
+            </button>
+            <button class="pub-cat-btn" data-gallery-cat="international">
+              <span>International Research Visits</span>
+              <span class="pub-cat-count">2</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="padding-top: 2.5rem; padding-bottom: 6rem;">
+        <div class="gallery-grid" id="galleryContainer">
+          <!-- Dynamically populated via JS Gallery Data -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 4: MAIN RESEARCH PROFILE OVERVIEW                              -->
+    <!-- =================================================================== -->
     <div id="overviewView" class="app-view active-view">
       <!-- HERO SECTION -->
       <section class="hero-section" id="hero">
@@ -1983,15 +2286,25 @@
             <div class="hero-actions">
               <button onclick="switchAppView('publications')" class="btn btn-primary" title="Open complete publications database">
                 <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                View All Publications (70)
+                View All Publications (56)
               </button>
               <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                 SPInsLab Virtual Lab ↗
               </a>
               <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                Teaching & Courses ↗
+                Teaching Portal ↗
               </a>
-              <button onclick="switchAppView('overview', 'contact')" class="btn btn-secondary">Contact</button>
+              <button onclick="switchAppView('news')" class="btn btn-secondary">
+                News &amp; Updates (8)
+              </button>
+              <button onclick="switchAppView('gallery')" class="btn btn-secondary">
+                Photo Gallery (10)
+              </button>
+              <a href="https://scholar.google.co.kr/citations?user=z9OYfvkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" title="Google Scholar Citations">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+                Google Scholar
+              </a>
+              <a href="#contact" class="btn btn-secondary">Contact</a>
             </div>
 
             <div class="hero-affiliation">
@@ -2047,6 +2360,7 @@
         </div>
       </section>
 
+      <!-- ABOUT SECTION -->
       <section class="section" id="about">
         <div class="container">
           <div class="section-header">
@@ -2071,13 +2385,13 @@
               </div>
 
               <p>
-                Dr. Pathak's work integrates thin film growth (sputtering, electrodeposition, thermal evaporation), advanced characterization (MOKE magnetometry, VSM, SQUID, synchrotron radiation spectroscopy), and micromagnetic simulations (OOMMF). At UPES, he leads research grants funded by UGC-DAE CSR and internal SEED funds, mentors doctoral scholars, and guides undergraduate and postgraduate students in experimental and computational physics.
+                Dr. Pathak's work integrates thin film growth (sputtering, electrodeposition, thermal evaporation), advanced characterization (MOKE magnetometry, VSM, SQUID, synchrotron radiation spectroscopy), and micromagnetic simulations (OOMMF). At UPES, he leads research grants funded by UGC-DAE CSR and internal SEED funds, and mentors doctoral scholars in nanomagnetism and sensor physics.
               </p>
             </div>
 
             <div class="timeline-card">
               <div class="timeline-header">
-                <h3>Academic & Research Journey</h3>
+                <h3>Academic &amp; Research Journey</h3>
                 <span class="badge-scientific">CAREER</span>
               </div>
 
@@ -2099,13 +2413,13 @@
                     <span class="timeline-badge">2022 – 2023</span>
                   </div>
                   <div class="timeline-role">Visiting Research Professor</div>
-                  <div class="timeline-focus">Spintronic Materials & Devices Lab. Process-in-Memory (PIM) and nanoscale MTJ architectures.</div>
+                  <div class="timeline-focus">Spintronic Materials &amp; Devices Lab. Process-in-Memory (PIM) and nanoscale MTJ architectures.</div>
                 </div>
 
                 <div class="timeline-step">
                   <div class="timeline-marker"></div>
                   <div class="timeline-institution">
-                    <span>Korea Univ. & Yonsei Univ.</span>
+                    <span>Korea Univ. &amp; Yonsei Univ.</span>
                     <span class="timeline-badge">2018 – 2019</span>
                   </div>
                   <div class="timeline-role">Research Professor</div>
@@ -2137,6 +2451,7 @@
         </div>
       </section>
 
+      <!-- RESEARCH VISION SECTION -->
       <section class="section" id="vision">
         <div class="container">
           <div class="section-header">
@@ -2177,7 +2492,7 @@
               <button class="radial-node-btn" data-node="memory" style="top: 50%; left: 4%;">Magnetic Memory</button>
               <button class="radial-node-btn" data-node="transport" style="top: 24%; left: 12%;">Spin Transport</button>
               <button class="radial-node-btn" data-node="micromag" style="top: 6%; left: 18%;">Micromagnetic Modelling</button>
-              <button class="radial-node-btn" data-node="char" style="top: 6%; left: 66%;">MOKE & Characterization</button>
+              <button class="radial-node-btn" data-node="char" style="top: 6%; left: 66%;">MOKE &amp; Characterization</button>
             </div>
 
             <div class="node-preview-box" id="nodeInfoBox">
@@ -2194,6 +2509,7 @@
         </div>
       </section>
 
+      <!-- CORE RESEARCH DOMAINS -->
       <section class="section" id="research">
         <div class="container">
           <div class="section-header">
@@ -2208,7 +2524,7 @@
             <div class="research-card">
               <div>
                 <div class="research-card-icon">⚡</div>
-                <h3>Spin-Orbit Torque & SOT-MRAM</h3>
+                <h3>Spin-Orbit Torque &amp; SOT-MRAM</h3>
                 <p>Generating transverse spin currents via heavy metal layers (Pt, Ta, W) for energy-efficient magnetization switching in perpendicular magnetic memory.</p>
               </div>
               <div class="research-card-tags">
@@ -2221,7 +2537,7 @@
             <div class="research-card">
               <div>
                 <div class="research-card-icon">🧲</div>
-                <h3>Magnetic Thin Films & Superlattices</h3>
+                <h3>Magnetic Thin Films &amp; Superlattices</h3>
                 <p>Precision deposition of atomically abrupt Co/Pd, Co/Pt, and Pt/Co/Pt multilayers with strong perpendicular magnetic anisotropy (PMA).</p>
               </div>
               <div class="research-card-tags">
@@ -2260,6 +2576,7 @@
         </div>
       </section>
 
+      <!-- SCIENTIFIC HIGHLIGHTS -->
       <section class="section" id="highlights">
         <div class="container">
           <div class="section-header">
@@ -2309,7 +2626,7 @@
 
             <div class="highlight-story-card">
               <div class="story-header">
-                <span class="badge-scientific">NATURE SCI. REP. & APL</span>
+                <span class="badge-scientific">NATURE SCI. REP. &amp; APL</span>
                 <span class="metric-badge-quantitative">80% FASTER SWITCHING</span>
               </div>
               <h3 class="story-title">Transient Pulse Current Switching for p-MTJ</h3>
@@ -2328,158 +2645,99 @@
         </div>
       </section>
 
-      <section class="section" id="teaching">
+      <!-- TEACHING & PEDAGOGY SECTION -->
+      <section class="section" id="teaching-overview">
         <div class="container">
           <div class="section-header">
-            <span class="section-eyebrow">05 — Academic Pedagogy</span>
-            <h2 class="section-title">Teaching Philosophy & Curriculum</h2>
+            <span class="section-eyebrow">05 — Teaching &amp; Pedagogy</span>
+            <h2 class="section-title">Teaching Philosophy &amp; Curriculum</h2>
             <p class="section-lead">
-              Cultivating curiosity-driven inquiry, strong mathematical fundamentals, and hands-on experimental mastery in physics and modern engineering materials.
+              Cultivating curiosity-driven scientific inquiry, physical intuition, and analytical rigor by linking fundamental equations to real-world experimental physics and nanoscale devices.
             </p>
           </div>
 
-          <!-- Teaching Philosophy Statement -->
-          <div class="vision-card" style="padding: 2.5rem; margin-bottom: 2.5rem;">
-            <h3 class="vision-quote" style="font-size: 1.45rem; margin-bottom: 1rem;">
-              "Connecting theoretical rigor with experimental discovery in the lecture hall and laboratory."
-            </h3>
-            <p class="vision-text" style="font-size: 1rem; line-height: 1.75;">
-              My teaching approach blends foundational principles of quantum mechanics and electromagnetism with modern, real-world technological challenges. By actively integrating virtual simulations from <strong>SPInsLab</strong> alongside laboratory instrumentation, students develop intuitive problem-solving abilities, learn to question physical models critically, and transition seamlessly into frontier research.
-            </p>
+          <!-- Interactive Teaching -> Research -> Discovery Flow -->
+          <div class="pedagogy-cycle" aria-label="Pedagogical Flow">
+            <div class="cycle-stage">01 • Curiosity &amp; Fundamentals</div>
+            <span class="cycle-arrow">→</span>
+            <div class="cycle-stage">02 • Virtual &amp; Experimental Labs</div>
+            <span class="cycle-arrow">→</span>
+            <div class="cycle-stage">03 • Research &amp; Discovery</div>
           </div>
 
-          <!-- Pedagogical Framework Flow -->
-          <div class="pedagogy-cycle">
-            <div class="pedagogy-step">
-              <div class="pedagogy-step-num">01</div>
-              <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--text-main);">Conceptual Foundations</h4>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
-                Demystifying abstract equations through physical intuition, symmetry arguments, and clear mathematical derivations.
-              </p>
-            </div>
-            <div class="pedagogy-step">
-              <div class="pedagogy-step-num">02</div>
-              <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--text-main);">Virtual Simulation</h4>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
-                Engaging interactive SPInsLab modules to visualize wave-particle duality, spin precession, and domain wall dynamics in real time.
-              </p>
-            </div>
-            <div class="pedagogy-step">
-              <div class="pedagogy-step-num">03</div>
-              <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--text-main);">Experimental Inquiry</h4>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
-                Hands-on measurement in the Engineering Physics Laboratory using optical interferometry, Hall effect, and Kerr magnetometry.
-              </p>
-            </div>
-            <div class="pedagogy-step">
-              <div class="pedagogy-step-num">04</div>
-              <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--text-main);">Research Translation</h4>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.55;">
-                Empowering students to publish dissertations, formulate novel hypotheses, and explore next-generation materials science.
-              </p>
-            </div>
-          </div>
-
-          <!-- Courses Grid -->
-          <h3 style="font-size: 1.35rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem;">Primary Courses & Academic Disciplines</h3>
           <div class="teaching-grid">
-            <div class="teaching-card">
+            <div class="research-card">
               <div>
-                <div class="teaching-card-header">
-                  <div class="teaching-icon-badge">⚛️</div>
-                  <div>
-                    <h4 style="font-size: 1.05rem; font-weight: 700;">Engineering Physics</h4>
-                    <span style="font-size: 0.775rem; color: var(--accent-cyan); font-family: var(--font-mono);">Theory & Principles</span>
-                  </div>
-                </div>
-                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
-                  Core instruction covering Laser Physics, Maxwell's Electromagnetism, Quantum Mechanics, Wave Optics, and Semiconductor Physics for engineering undergraduates.
-                </p>
+                <span class="course-pill">CORE UNDERGRADUATE</span>
+                <h3>Engineering Physics</h3>
+                <p>Foundational coursework covering Quantum Mechanics, Electromagnetism, Laser Physics, and Solid-State Materials with engineering applications.</p>
               </div>
-              <div class="teaching-pills">
-                <span class="teaching-pill">LASER Physics</span>
-                <span class="teaching-pill">Electromagnetism</span>
-                <span class="teaching-pill">Quantum Mechanics</span>
+              <div class="research-card-tags">
+                <span class="research-mini-tag">Quantum Mechanics</span>
+                <span class="research-mini-tag">Electromagnetism</span>
+                <span class="research-mini-tag">LASER</span>
               </div>
             </div>
 
-            <div class="teaching-card">
+            <div class="research-card">
               <div>
-                <div class="teaching-card-header">
-                  <div class="teaching-icon-badge">🔬</div>
-                  <div>
-                    <h4 style="font-size: 1.05rem; font-weight: 700;">Engineering Physics Laboratory</h4>
-                    <span style="font-size: 0.775rem; color: var(--accent-cyan); font-family: var(--font-mono);">Experimental Practicum</span>
-                  </div>
-                </div>
-                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
-                  Hands-on laboratory sessions training students in error analysis, optical grating spectroscopy, Hall coefficient measurement, dielectric constants, and magnetic hysteresis.
-                </p>
+                <span class="course-pill">EXPERIMENTAL &amp; VIRTUAL LABS</span>
+                <h3>Engineering Physics &amp; SPInsLab</h3>
+                <p>Hands-on laboratory training complemented by the custom-developed interactive SPInsLab virtual physics portal for simulation-aided learning.</p>
               </div>
-              <div class="teaching-pills">
-                <span class="teaching-pill">Hall Effect</span>
-                <span class="teaching-pill">Optics & Interferometry</span>
-                <span class="teaching-pill">Instrumentation</span>
+              <div class="research-card-tags">
+                <span class="research-mini-tag">Virtual Simulations</span>
+                <span class="research-mini-tag">Instrumentation</span>
+                <span class="research-mini-tag">Error Analysis</span>
               </div>
             </div>
 
-            <div class="teaching-card">
+            <div class="research-card">
               <div>
-                <div class="teaching-card-header">
-                  <div class="teaching-icon-badge">🧲</div>
-                  <div>
-                    <h4 style="font-size: 1.05rem; font-weight: 700;">Spintronics & Magnetic Materials</h4>
-                    <span style="font-size: 0.775rem; color: var(--accent-cyan); font-family: var(--font-mono);">Advanced Electives</span>
-                  </div>
-                </div>
-                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
-                  Specialized course modules exploring Giant Magnetoresistance (GMR), Spin-Orbit Torque, Perpendicular Magnetic Anisotropy, MRAM devices, and micromagnetic simulation.
-                </p>
+                <span class="course-pill">ADVANCED &amp; RESEARCH SEMINARS</span>
+                <h3>Spintronics &amp; Magnetic Materials</h3>
+                <p>Specialized graduate modules on nanomagnetism, spin-orbit torques, thin-film deposition, and micromagnetic modeling.</p>
               </div>
-              <div class="teaching-pills">
-                <span class="teaching-pill">SOT-MRAM</span>
-                <span class="teaching-pill">Thin-Film Physics</span>
-                <span class="teaching-pill">OOMMF Modelling</span>
+              <div class="research-card-tags">
+                <span class="research-mini-tag">MRAM Devices</span>
+                <span class="research-mini-tag">MOKE Metrology</span>
+                <span class="research-mini-tag">OOMMF</span>
               </div>
             </div>
           </div>
 
-          <!-- Pedagogical Certifications Banner -->
-          <div style="background: rgba(14, 22, 40, 0.6); border: 1px solid var(--border-subtle); border-radius: 14px; padding: 1.75rem; margin-top: 2rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.25rem;">
+          <div style="margin-top: 2.25rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.5rem 2rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 14px;">
             <div>
-              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan); font-weight: 600; text-transform: uppercase;">Verified Pedagogical Credentials</div>
-              <div style="font-size: 1.05rem; font-weight: 700; margin-top: 0.25rem;">Certified Online & Virtual Instruction Specialist</div>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">
-                Completed specialized educator certifications: <em>Virtual Teacher Specialization</em>, <em>Foundation of Virtual Instruction</em>, <em>Learning to Teach Online</em>, and <em>Hardware of a Quantum Computer</em>.
-              </p>
+              <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem;">Interactive Course Materials &amp; Virtual Experiments</h4>
+              <p style="font-size: 0.875rem; color: var(--text-secondary);">Access lecture notes, syllabi, assignments, and interactive physics simulations on Dr. Pathak's dedicated Teaching and SPInsLab portals.</p>
             </div>
             <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
               <a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
                 Open Teaching Portal ↗
               </a>
               <a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
-                SPInsLab Virtual Modules ↗
+                Launch SPInsLab ↗
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SECTION 06: MENTORING & GRANTS -->
+      <!-- MENTORSHIP & FUNDED GRANTS -->
       <section class="section" id="mentorship">
         <div class="container">
           <div class="section-header">
             <span class="section-eyebrow">06 — Academic Leadership</span>
-            <h2 class="section-title">Research Mentorship & Funded Grants</h2>
+            <h2 class="section-title">Research Mentorship &amp; Funded Grants</h2>
             <p class="section-lead">
-              Advancing scientific frontiers through doctoral supervision, postgraduate M.Sc. theses, undergraduate research dissertations, and sponsored research projects.
+              Advancing frontiers through doctoral supervision, postgraduate M.Sc. theses, undergraduate research dissertations, and sponsored research projects.
             </p>
           </div>
 
           <div class="about-grid">
             <div class="timeline-card">
               <div class="timeline-header">
-                <h3>Supervised Researchers & Students</h3>
+                <h3>Supervised Researchers &amp; Students</h3>
                 <span class="badge-scientific">PH.D. • M.SC. • B.SC.</span>
               </div>
               <div class="timeline-track">
@@ -2505,7 +2763,7 @@
                     <span class="timeline-badge" style="color:var(--accent-emerald);">Ph.D. Awarded (2025)</span>
                   </div>
                   <div class="timeline-role">Advisor: Dr. Sachin Pathak (Co-Advisor: Dr. RK Brajpuriya)</div>
-                  <div class="timeline-focus">Thesis: Tailoring magnetic properties in multilayer thin films through interface engineering. Lead author in Scientific Reports, J. Alloys & Compounds, and Surfaces & Interfaces.</div>
+                  <div class="timeline-focus">Thesis: Tailoring magnetic properties in multilayer thin films through interface engineering. Lead author in Scientific Reports, J. Alloys &amp; Compounds, and Surfaces &amp; Interfaces.</div>
                 </div>
 
                 <div class="timeline-step">
@@ -2587,7 +2845,7 @@
                   <div>
                     <span class="grant-role-badge">Principal Investigator (PI)</span>
                     <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">UPES-SEED Grant 2025</h4>
-                    <p style="font-size:0.825rem; color:var(--text-secondary); line-height:1.5;">Spin-orbit torque (SOT) induced magnetization dynamics in PMA materials for non-volatile memory and logic applications (UPES/R&D-SOAE/25062025/17).</p>
+                    <p style="font-size:0.825rem; color:var(--text-secondary); line-height:1.5;">Spin-orbit torque (SOT) induced magnetization dynamics in PMA materials for non-volatile memory and logic applications (UPES/R&amp;D-SOAE/25062025/17).</p>
                   </div>
                   <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:0.75rem;">Grant: 417,000 INR • UPES</div>
                 </div>
@@ -2596,7 +2854,7 @@
                   <div>
                     <span class="grant-role-badge">Principal Investigator (PI)</span>
                     <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">UPES-SEED INFRA Grant 2024</h4>
-                    <p style="font-size:0.825rem; color:var(--text-secondary); line-height:1.5;">MOKE instrument for the study of magnetic dynamics in nanostructures (UPES/R&D-SEED-INFRA/18032024/012).</p>
+                    <p style="font-size:0.825rem; color:var(--text-secondary); line-height:1.5;">MOKE instrument for the study of magnetic dynamics in nanostructures (UPES/R&amp;D-SEED-INFRA/18032024/012).</p>
                   </div>
                   <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-cyan); margin-top:0.75rem;">Grant: 130,390 INR • Equipment Build</div>
                 </div>
@@ -2604,7 +2862,7 @@
                 <div class="grant-card">
                   <div>
                     <span class="grant-role-badge" style="background:rgba(129,140,248,0.15); color:var(--accent-violet);">Co-Principal Investigator</span>
-                    <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">UPES-SEED Energy & Materials Grants</h4>
+                    <h4 style="font-size:0.95rem; font-weight:700; margin-bottom:0.4rem;">UPES-SEED Energy &amp; Materials Grants</h4>
                     <p style="font-size:0.825rem; color:var(--text-secondary); line-height:1.5;">CNTs reinforced polymer coatings (450,000 INR), Py nanostructures on curved surfaces (427,000 INR), Piezoelectric harvesters (205,000 INR).</p>
                   </div>
                   <div style="font-family:var(--font-mono); font-size:0.75rem; color:var(--accent-blue); margin-top:0.75rem;">Multiple Active Interdisciplinary Grants</div>
@@ -2615,7 +2873,7 @@
         </div>
       </section>
 
-      <!-- SECTION 07: GLOBAL COLLABORATIONS -->
+      <!-- INTERNATIONAL RESEARCH NETWORK -->
       <section class="section" id="network">
         <div class="container">
           <div class="section-header">
@@ -2630,7 +2888,7 @@
             <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.75rem;">
               <div>
                 <h4 style="color:var(--accent-cyan); font-weight:700; margin-bottom:0.5rem;">🇮🇳 India</h4>
-                <p style="font-size:0.85rem; color:var(--text-secondary);">UPES Dehradun (Faculty) • Ph.D. from IIT Delhi • UGC-DAE CSR Indore Beamline & User Experiments.</p>
+                <p style="font-size:0.85rem; color:var(--text-secondary);">UPES Dehradun (Faculty) • Ph.D. from IIT Delhi • UGC-DAE CSR Indore Beamline &amp; User Experiments.</p>
               </div>
               <div>
                 <h4 style="color:var(--accent-blue); font-weight:700; margin-bottom:0.5rem;">🇰🇷 South Korea</h4>
@@ -2642,14 +2900,14 @@
               </div>
               <div>
                 <h4 style="color:var(--accent-amber); font-weight:700; margin-bottom:0.5rem;">🇮🇹 Italy (Elettra)</h4>
-                <p style="font-size:0.85rem; color:var(--text-secondary);">Elettra Sincrotrone Trieste. Synchrotron-based depth-sensitive spectroscopy & magnetic domain analyses.</p>
+                <p style="font-size:0.85rem; color:var(--text-secondary);">Elettra Sincrotrone Trieste. Synchrotron-based depth-sensitive spectroscopy &amp; magnetic domain analyses.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SECTION 08: CONTACT & COLLABORATE -->
+      <!-- CONTACT SECTION -->
       <section class="section" id="contact" style="border-bottom: none;">
         <div class="container">
           <div class="contact-box">
@@ -2673,7 +2931,7 @@
                 Compose Email
               </a>
               <button onclick="switchAppView('publications')" class="btn btn-secondary">
-                View Publications (70)
+                View Publications (56)
               </button>
               <a href="https://scholar.google.co.kr/citations?user=z9OYfvkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                 Google Scholar
@@ -2691,13 +2949,34 @@
     </div>
   </main>
 
+  <!-- Lightbox Modal for Photo Gallery -->
+  <div class="lightbox-overlay" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Photo Lightbox Viewer">
+    <div class="lightbox-dialog">
+      <div class="lightbox-media">
+        <img id="lightboxImg" src="" alt="">
+      </div>
+      <div class="lightbox-caption-bar">
+        <div style="flex: 1; min-width: 240px;">
+          <div id="lightboxMeta" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan); margin-bottom: 0.25rem;"></div>
+          <h4 id="lightboxTitle" style="font-size: 1.05rem; font-weight: 700; color: var(--text-main);"></h4>
+          <p id="lightboxDesc" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.2rem;"></p>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <button class="btn btn-secondary btn-sm" id="lightboxPrev" aria-label="Previous photo">← Prev</button>
+          <button class="btn btn-secondary btn-sm" id="lightboxNext" aria-label="Next photo">Next →</button>
+          <button class="btn btn-primary btn-sm" id="lightboxClose" aria-label="Close photo viewer">Close ✕</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <h4>Dr. Sachin Pathak</h4>
           <p>
-            Associate Professor of Physics • Spintronics Researcher<br>
+            Associate Professor of Physics • Explorer of Physics • Materials Science • Spintronics<br>
             Department of Applied Science, School of Advanced Engineering<br>
             UPES (University of Petroleum and Energy Studies), Dehradun, India
           </p>
@@ -2711,12 +2990,12 @@
           <ul class="footer-links">
             <li><a onclick="switchAppView('overview', 'about')">About Dr. Pathak</a></li>
             <li><a onclick="switchAppView('overview', 'vision')">Research Vision</a></li>
-            <li><a onclick="switchAppView('publications')">Publications, Chapters & Patents (70)</a></li>
+            <li><a onclick="switchAppView('publications')">Publications, Chapters &amp; Patents (56)</a></li>
             <li><a href="https://spathakiitd.github.io/physics-virtual-lab/#home" target="_blank" rel="noopener noreferrer" style="color:var(--accent-cyan); font-weight:600;">SPInsLab (Physics Virtual Lab) ↗</a></li>
-            <li><a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-blue); font-weight:600;">Teaching & Curriculum ↗</a></li>
-            <li><a onclick="switchAppView('overview', 'mentorship')">Ph.D. Supervision & Grants</a></li>
-            <li><a onclick="switchAppView('overview', 'network')">International Network</a></li>
-            <li><a onclick="switchAppView('overview', 'contact')">Contact & Collaborate</a></li>
+            <li><a href="https://spathakiitd.github.io/teaching/" target="_blank" rel="noopener noreferrer" style="color:var(--accent-cyan); font-weight:600;">Teaching &amp; Course Portal ↗</a></li>
+            <li><a onclick="switchAppView('news')" style="color:var(--accent-cyan); font-weight:600;">News &amp; LinkedIn Snapshots (8)</a></li>
+            <li><a onclick="switchAppView('gallery')" style="color:var(--accent-cyan); font-weight:600;">Research Photo Gallery (10)</a></li>
+            <li><a onclick="switchAppView('overview', 'mentorship')">Mentoring &amp; Grants</a></li>
           </ul>
         </div>
 
@@ -2751,14 +3030,16 @@
   <script>
     /**
      * =========================================================================
-     * COMPREHENSIVE SCHOLARLY DATASET FOR DR. SACHIN PATHAK
-     * Direct from Curriculum Vitae & Google Scholar.
-     * Contains 56 Journal Articles, 8 Book Chapters, 3 Patents & 3 Proceedings.
-     * All items display bibliographic metadata cleanly without active DOI links.
+     * COMPLETE SCHOLARLY DATASET FOR DR. SACHIN PATHAK
+     * Total = 56 Publications:
+     *   - 42 Refereed Journal Articles ([56] down to [15])
+     *   -  3 Conference Proceedings    ([14] down to [12])
+     *   -  8 Published Book Chapters   ([11] down to [4])
+     *   -  3 Patents & IP              ([3]  down to [1])
      * =========================================================================
      */
     const masterScholarlyWorks = [
-      // --- JOURNAL ARTICLES [56] to [15] ---
+      // --- 42 REFEREED JOURNAL ARTICLES [56] to [15] ---
       {
         id: 56,
         type: "journal",
@@ -3306,7 +3587,7 @@
         highlight: "Controlled template electrodeposition synthesis yielding hollow magnetic nanotubules with low demagnetizing factors."
       },
 
-      // --- CONFERENCE PROCEEDINGS [14] to [12] ---
+      // --- 3 CONFERENCE PROCEEDINGS [14] to [12] ---
       {
         id: 14,
         type: "proceedings",
@@ -3347,7 +3628,7 @@
         highlight: "Early synthesis report establishing template-assisted electrodeposition inside track-etched polycarbonate membranes."
       },
 
-      // --- BOOK CHAPTERS [11] to [4] ---
+      // --- 8 PUBLISHED BOOK CHAPTERS [11] to [4] ---
       {
         id: 11,
         type: "book",
@@ -3453,7 +3734,7 @@
         highlight: "Cavity and coplanar waveguide FMR measurement protocols for 1D magnetic nanowires and patterned thin films."
       },
 
-      // --- PATENTS [3] to [1] ---
+      // --- 3 PATENTS & INTELLECTUAL PROPERTY [3] to [1] ---
       {
         id: 3,
         type: "patent",
@@ -3500,34 +3781,245 @@
 
     /**
      * =========================================================================
-     * VIEW SWITCHING ARCHITECTURE: Overview Profile <-> Full Publications Tab
+     * LINKEDIN NEWS & UPDATES SNAPSHOTS (DATE-WISE CHRONOLOGICAL FEED)
+     * =========================================================================
+     */
+    function getLinkedInPostDateMeta(urn) {
+      const idStr = urn.replace("urn:li:activity:", "");
+      const timestampMs = Math.floor(Number(idStr) / 4194304);
+      const dateObj = new Date(timestampMs);
+      const formatted = dateObj.toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric"
+      });
+      return {
+        timestamp: timestampMs,
+        year: dateObj.getFullYear(),
+        formattedDate: formatted
+      };
+    }
+
+    const linkedInNewsPosts = [
+      {
+        id: 1,
+        urn: "urn:li:activity:7467924921797718017",
+        label: "LinkedIn Research Update",
+        directUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7467924921797718017/",
+        embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7467924921797718017"
+      },
+      {
+        id: 2,
+        urn: "urn:li:activity:7467608155561160704",
+        label: "LinkedIn Research Update",
+        directUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7467608155561160704/",
+        embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7467608155561160704"
+      },
+      {
+        id: 3,
+        urn: "urn:li:activity:7465283087795396608",
+        label: "LinkedIn Research Update",
+        directUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7465283087795396608/",
+        embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7465283087795396608"
+      },
+      {
+        id: 4,
+        urn: "urn:li:activity:7465276032556666880",
+        label: "LinkedIn Research Update",
+        directUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7465276032556666880/",
+        embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7465276032556666880"
+      },
+      {
+        id: 5,
+        urn: "urn:li:activity:7451500977237700608",
+        label: "LinkedIn Research Update",
+        directUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7451500977237700608/",
+        embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7451500977237700608"
+      },
+      {
+        id: 6,
+        urn: "urn:li:activity:7438001222093164545",
+        label: "LinkedIn Research Update",
+        directUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7438001222093164545/",
+        embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7438001222093164545"
+      },
+      {
+        id: 7,
+        urn: "urn:li:activity:7411970744756178944",
+        label: "LinkedIn Research Update",
+        directUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7411970744756178944/",
+        embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:7411970744756178944"
+      },
+      {
+        id: 8,
+        urn: "urn:li:activity:6824399974814498816",
+        label: "LinkedIn Research Milestone",
+        directUrl: "https://www.linkedin.com/feed/update/urn:li:activity:6824399974814498816/",
+        embedUrl: "https://www.linkedin.com/embed/feed/update/urn:li:activity:6824399974814498816"
+      }
+    ].map(post => {
+      const meta = getLinkedInPostDateMeta(post.urn);
+      return {
+        ...post,
+        timestamp: meta.timestamp,
+        year: meta.year,
+        formattedDate: meta.formattedDate
+      };
+    });
+
+    /**
+     * =========================================================================
+     * RESEARCH & SEMINAR PHOTO GALLERY DATASET (10 PHOTOGRAPHS)
+     * =========================================================================
+     */
+    const galleryItems = [
+      {
+        id: 1,
+        src: "WhatsApp Image 2026-10-13 at 2.42.50 PM.jpeg",
+        category: "lab-seminar",
+        categoryLabel: "MOKE Lab • UPES",
+        date: "October 2026",
+        title: "Magneto-Optical Kerr Effect (MOKE) Laboratory Demonstration",
+        desc: "Experimental demonstration on the custom-built MOKE electromagnet and optical bench at UPES with visiting collaborator Dr. Sebastian Bustingorry and doctoral scholar Dr. Anmol Sharma."
+      },
+      {
+        id: 2,
+        src: "WhatsApp Image 2026-10-13 at 2.42.51 PM.jpeg",
+        category: "lab-seminar",
+        categoryLabel: "Spin-Talk • UPES",
+        date: "October 2026",
+        title: "Invited Spin-Talk Seminar at School of Advanced Engineering, UPES",
+        desc: "Dr. Sachin Pathak, Dr. Sebastian Bustingorry (CONICET, Argentina), and Dr. Anmol Sharma following the invited Spin-Talk on Universal Critical Exponents of the Magnetic Domain Wall Depinning Transition."
+      },
+      {
+        id: 3,
+        src: "WhatsApp Image 2026-10-13 at 2.42.49 PM.jpeg",
+        category: "lab-seminar",
+        categoryLabel: "Spin-Talk Lecture • UPES",
+        date: "October 2026",
+        title: "Technical Seminar on Universal Creep & Domain Wall Depinning",
+        desc: "Interactive scientific lecture at UPES examining thermal activation over disorder energy barriers and universal creep scaling laws in magnetic multilayers."
+      },
+      {
+        id: 4,
+        src: "WhatsApp Image 2026-10-15 at 2.09.04 PM.jpeg",
+        category: "cleanroom",
+        categoryLabel: "UHV Deposition System",
+        date: "October 2026",
+        title: "Ultra-High Vacuum (UHV) Chamber & Residual Gas Analyzer Setup",
+        desc: "Hands-on alignment and mass spectrometer interfacing on an Ultra-High Vacuum thin-film deposition chamber for atomically controlled multilayer fabrication."
+      },
+      {
+        id: 5,
+        src: "WhatsApp Image 2026-10-15 at 2.09.06 PM (1).jpeg",
+        category: "cleanroom",
+        categoryLabel: "Micro-Probing & Device Testing",
+        date: "October 2026",
+        title: "High-Frequency Probe Station & Micro-Patterned Device Inspection",
+        desc: "Optical alignment of micro-probes on patterned spintronic waveguides inside a multi-port vacuum probe station."
+      },
+      {
+        id: 6,
+        src: "WhatsApp Image 2026-10-15 at 2.09.05 PM (1).jpeg",
+        category: "cleanroom",
+        categoryLabel: "Yellow-Room Lithography",
+        date: "October 2026",
+        title: "Cleanroom Optical Microscope & Photolithography Inspection",
+        desc: "Inspecting microfabricated thin-film device patterns under UV-filtered yellow-room cleanroom lighting."
+      },
+      {
+        id: 7,
+        src: "WhatsApp Image 2026-10-15 at 2.09.05 PM.jpeg",
+        category: "cleanroom",
+        categoryLabel: "Class-1000 Cleanroom",
+        date: "October 2026",
+        title: "Clean Bench & Microfabrication Facility Operations",
+        desc: "Research group member in full cleanroom attire beside the laminar flow clean bench during nanofabrication processing."
+      },
+      {
+        id: 8,
+        src: "WhatsApp Image 2026-10-15 at 2.09.05 PM (2).jpeg",
+        category: "cleanroom",
+        categoryLabel: "Nanofabrication Lab",
+        date: "October 2026",
+        title: "Cleanroom Characterization & Optical Inspection Workstation",
+        desc: "Inside the microfabrication yellow room with the digital inspection microscope and laminar flow workstation."
+      },
+      {
+        id: 9,
+        src: "WhatsApp Image 2026-10-15 at 2.09.06 PM.jpeg",
+        category: "international",
+        categoryLabel: "Kyushu Institute of Technology",
+        date: "October 2026",
+        title: "Academic Research Visit — Kyushu Institute of Technology, Japan",
+        desc: "At the School of Computer Science and Systems Engineering, Kyushu Institute of Technology (Kyutech), Japan, during collaborative research training."
+      },
+      {
+        id: 10,
+        src: "WhatsApp Image 2026-10-15 at 2.09.04 PM (1).jpeg",
+        category: "international",
+        categoryLabel: "International Research Team",
+        date: "October 2026",
+        title: "Research Scholars & Collaborators on Campus in Japan",
+        desc: "Group photograph of visiting Indian research scholars on campus during international collaborative spintronics experiments."
+      }
+    ];
+
+    /**
+     * =========================================================================
+     * VIEW SWITCHING ARCHITECTURE
      * =========================================================================
      */
     function switchAppView(viewId, targetSectionId) {
       const overviewView = document.getElementById("overviewView");
       const publicationsView = document.getElementById("publicationsView");
+      const newsView = document.getElementById("newsView");
+      const galleryView = document.getElementById("galleryView");
+
       const navPubTab = document.getElementById("navPublicationsTab");
+      const navNewsTab = document.getElementById("navNewsTab");
+      const navGalleryTab = document.getElementById("navGalleryTab");
+
+      if (overviewView) overviewView.classList.remove("active-view");
+      if (publicationsView) publicationsView.classList.remove("active-view");
+      if (newsView) newsView.classList.remove("active-view");
+      if (galleryView) galleryView.classList.remove("active-view");
+
+      if (navPubTab) navPubTab.classList.remove("active");
+      if (navNewsTab) navNewsTab.classList.remove("active");
+      if (navGalleryTab) navGalleryTab.classList.remove("active");
 
       if (viewId === "publications") {
-        overviewView.classList.remove("active-view");
-        publicationsView.classList.add("active-view");
+        if (publicationsView) publicationsView.classList.add("active-view");
         if (navPubTab) navPubTab.classList.add("active");
         window.scrollTo({ top: 0, behavior: "smooth" });
         renderFullPublicationsList();
+      } else if (viewId === "news") {
+        if (newsView) newsView.classList.add("active-view");
+        if (navNewsTab) navNewsTab.classList.add("active");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        renderLinkedInNews();
+      } else if (viewId === "gallery") {
+        if (galleryView) galleryView.classList.add("active-view");
+        if (navGalleryTab) navGalleryTab.classList.add("active");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        renderGallery();
       } else {
-        publicationsView.classList.remove("active-view");
-        overviewView.classList.add("active-view");
-        if (navPubTab) navPubTab.classList.remove("active");
-
+        if (overviewView) overviewView.classList.add("active-view");
         if (targetSectionId) {
           setTimeout(() => {
             const el = document.getElementById(targetSectionId);
             if (el) el.scrollIntoView({ behavior: "smooth" });
-          }, 60);
+          }, 50);
         }
       }
     }
 
+    /**
+     * =========================================================================
+     * DYNAMIC RENDERING & FILTERING ENGINE FOR PUBLICATIONS REPOSITORY
+     * =========================================================================
+     */
     let currentCategory = "all";
     let searchQuery = "";
     let selectedYear = "all";
@@ -3545,7 +4037,7 @@
           if (selectedYear === "older") {
             matchYear = item.year <= 2019;
           } else {
-            matchYear = item.year === parseInt(selectedYear);
+            matchYear = item.year === parseInt(selectedYear, 10);
           }
         }
 
@@ -3573,7 +4065,7 @@
           <div style="text-align: center; padding: 4rem 2rem; background: var(--bg-card); border-radius: 14px; border: 1px dashed var(--border-subtle); color: var(--text-muted);">
             <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔍</div>
             <h3 style="font-size: 1.15rem; color: var(--text-main); margin-bottom: 0.5rem;">No publications match your criteria</h3>
-            <p style="font-size: 0.875rem;">Try clearing your search terms or selecting "All Scholarly Works".</p>
+            <p style="font-size: 0.875rem;">Try clearing your search terms or selecting "All Publications".</p>
           </div>
         `;
         return;
@@ -3592,6 +4084,7 @@
         if (item.role === "corresponding") roleBadge = `<span class="pub-author-role-badge">Corresponding Author (*CA)</span>`;
         if (item.role === "first") roleBadge = `<span class="pub-author-role-badge" style="color:var(--accent-cyan); border-color:var(--accent-cyan);">First / Equal Contributor (*FA)</span>`;
 
+        // Patent official registry links only (all DOI hyperlinks removed)
         let actionBtn = "";
         if (item.type === "patent" && item.doiUrl) {
           actionBtn = `
@@ -3643,6 +4136,26 @@
     }
 
     function initPublicationsFilterSystem() {
+      const totalCount = masterScholarlyWorks.length;
+      const journalCount = masterScholarlyWorks.filter(item => item.type === "journal").length;
+      const bookCount = masterScholarlyWorks.filter(item => item.type === "book").length;
+      const patentCount = masterScholarlyWorks.filter(item => item.type === "patent").length;
+      const procCount = masterScholarlyWorks.filter(item => item.type === "proceedings").length;
+
+      const pillEl = document.getElementById("totalPubCountPill");
+      const countAllEl = document.getElementById("countAll");
+      const countJournalEl = document.getElementById("countJournal");
+      const countBookEl = document.getElementById("countBook");
+      const countPatentEl = document.getElementById("countPatent");
+      const countProcEl = document.getElementById("countProc");
+
+      if (pillEl) pillEl.textContent = totalCount;
+      if (countAllEl) countAllEl.textContent = totalCount;
+      if (countJournalEl) countJournalEl.textContent = journalCount;
+      if (countBookEl) countBookEl.textContent = bookCount;
+      if (countPatentEl) countPatentEl.textContent = patentCount;
+      if (countProcEl) countProcEl.textContent = procCount;
+
       const catBtns = document.querySelectorAll("#repoCategoryTabs .pub-cat-btn");
       catBtns.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -3678,6 +4191,208 @@
       }
     }
 
+    /**
+     * =========================================================================
+     * LINKEDIN NEWS FEED RENDERER (DATE-WISE CHRONOLOGICAL SORT & FILTER)
+     * =========================================================================
+     */
+    let newsSelectedYear = "all";
+    let newsSortOrder = "newest";
+
+    function renderLinkedInNews() {
+      const container = document.getElementById("linkedinNewsContainer");
+      const summaryEl = document.getElementById("newsCountSummary");
+      if (!container) return;
+
+      const filteredPosts = linkedInNewsPosts
+        .filter(post => newsSelectedYear === "all" || post.year === parseInt(newsSelectedYear, 10))
+        .sort((a, b) => newsSortOrder === "newest" ? b.timestamp - a.timestamp : a.timestamp - b.timestamp);
+
+      if (summaryEl) {
+        summaryEl.textContent = `Showing ${filteredPosts.length} update${filteredPosts.length === 1 ? "" : "s"} (${newsSortOrder === "newest" ? "Newest First" : "Oldest First"})`;
+      }
+
+      container.innerHTML = filteredPosts.map((post, idx) => `
+        <article class="news-card">
+          <div class="news-card-header">
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="news-linkedin-badge">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                <span>#${idx + 1} • ${post.label}</span>
+              </span>
+              <span class="news-date-pill">
+                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>${post.formattedDate}</span>
+              </span>
+            </div>
+            <span style="font-family:var(--font-mono); font-size:0.7rem; color:var(--text-muted);">${post.urn}</span>
+          </div>
+
+          <div class="news-iframe-wrapper" id="iframeWrapper-${post.id}">
+            <iframe
+              src="${post.embedUrl}"
+              title="LinkedIn Post Snapshot (${post.formattedDate})"
+              loading="lazy"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <div class="news-card-actions">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="toggleSnapshotExpand(${post.id}, this)">
+              Expand Snapshot ↕
+            </button>
+            <a href="${post.directUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+              Open Original on LinkedIn ↗
+            </a>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function toggleSnapshotExpand(postId, btnEl) {
+      const wrapper = document.getElementById(`iframeWrapper-${postId}`);
+      if (!wrapper) return;
+      wrapper.classList.toggle("expanded");
+      btnEl.textContent = wrapper.classList.contains("expanded") ? "Collapse Snapshot ↑" : "Expand Snapshot ↕";
+    }
+
+    function initNewsFilterSystem() {
+      const yearFilter = document.getElementById("newsYearFilter");
+      const sortOrder = document.getElementById("newsSortOrder");
+
+      if (yearFilter) {
+        yearFilter.addEventListener("change", (e) => {
+          newsSelectedYear = e.target.value;
+          renderLinkedInNews();
+        });
+      }
+
+      if (sortOrder) {
+        sortOrder.addEventListener("change", (e) => {
+          newsSortOrder = e.target.value;
+          renderLinkedInNews();
+        });
+      }
+    }
+
+    /**
+     * =========================================================================
+     * PHOTO GALLERY RENDERING & LIGHTBOX VIEWER
+     * =========================================================================
+     */
+    let currentGalleryCategory = "all";
+    let filteredGalleryCache = [...galleryItems];
+    let currentLightboxIndex = 0;
+
+    function buildGalleryFallbackSvg(categoryLabel, fileName) {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+        <rect width="800" height="500" fill="#090e1c"/>
+        <rect x="24" y="24" width="752" height="452" rx="14" fill="none" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="2"/>
+        <text x="400" y="230" font-family="monospace" font-size="18" fill="#00f0ff" text-anchor="middle">${categoryLabel}</text>
+        <text x="400" y="265" font-family="sans-serif" font-size="15" fill="#94a3b8" text-anchor="middle">${fileName}</text>
+      </svg>`;
+      return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+    }
+
+    function renderGallery() {
+      const container = document.getElementById("galleryContainer");
+      if (!container) return;
+
+      filteredGalleryCache = currentGalleryCategory === "all"
+        ? [...galleryItems]
+        : galleryItems.filter(item => item.category === currentGalleryCategory);
+
+      container.innerHTML = filteredGalleryCache.map((item, idx) => {
+        const fallbackSvg = buildGalleryFallbackSvg(item.categoryLabel, item.src);
+        return `
+          <article class="gallery-card" onclick="openLightbox(${idx})" tabindex="0" role="button" aria-label="Open photo: ${item.title}">
+            <div class="gallery-thumb-box">
+              <img src="${item.src}" alt="${item.title}" loading="lazy" onerror="this.onerror=null; this.src='${fallbackSvg}';">
+              <span class="gallery-expand-chip">View Full ↗</span>
+            </div>
+            <div class="gallery-card-body">
+              <div class="gallery-card-meta">
+                <span>${item.categoryLabel}</span>
+                <span style="color:var(--text-muted);">${item.date}</span>
+              </div>
+              <h3 class="gallery-card-title">${item.title}</h3>
+              <p class="gallery-card-desc">${item.desc}</p>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function openLightbox(index) {
+      if (!filteredGalleryCache.length) return;
+      currentLightboxIndex = (index + filteredGalleryCache.length) % filteredGalleryCache.length;
+      const item = filteredGalleryCache[currentLightboxIndex];
+
+      const overlay = document.getElementById("galleryLightbox");
+      const imgEl = document.getElementById("lightboxImg");
+      const metaEl = document.getElementById("lightboxMeta");
+      const titleEl = document.getElementById("lightboxTitle");
+      const descEl = document.getElementById("lightboxDesc");
+
+      if (!overlay || !imgEl) return;
+
+      const fallbackSvg = buildGalleryFallbackSvg(item.categoryLabel, item.src);
+      imgEl.onerror = function() {
+        this.onerror = null;
+        this.src = fallbackSvg;
+      };
+      imgEl.src = item.src;
+      imgEl.alt = item.title;
+      metaEl.textContent = `${item.categoryLabel} • ${item.date} (${currentLightboxIndex + 1} / ${filteredGalleryCache.length})`;
+      titleEl.textContent = item.title;
+      descEl.textContent = item.desc;
+
+      overlay.classList.add("open");
+    }
+
+    function closeLightbox() {
+      const overlay = document.getElementById("galleryLightbox");
+      if (overlay) overlay.classList.remove("open");
+    }
+
+    function initGallerySystem() {
+      const catBtns = document.querySelectorAll("#galleryCategoryTabs .pub-cat-btn");
+      catBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          catBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          currentGalleryCategory = btn.getAttribute("data-gallery-cat");
+          renderGallery();
+        });
+      });
+
+      const prevBtn = document.getElementById("lightboxPrev");
+      const nextBtn = document.getElementById("lightboxNext");
+      const closeBtn = document.getElementById("lightboxClose");
+      const overlay = document.getElementById("galleryLightbox");
+
+      if (prevBtn) prevBtn.addEventListener("click", () => openLightbox(currentLightboxIndex - 1));
+      if (nextBtn) nextBtn.addEventListener("click", () => openLightbox(currentLightboxIndex + 1));
+      if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
+      if (overlay) {
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) closeLightbox();
+        });
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (!overlay || !overlay.classList.contains("open")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") openLightbox(currentLightboxIndex - 1);
+        if (e.key === "ArrowRight") openLightbox(currentLightboxIndex + 1);
+      });
+    }
+
+    /**
+     * =========================================================================
+     * INTERACTIVE SPINTRONICS CANVAS & ORBITAL ECOSYSTEM LOGIC
+     * =========================================================================
+     */
     const ecosystemData = {
       sot: {
         title: "Spin-Orbit Torque (SOT)",
@@ -3766,9 +4481,10 @@
 
       function resizeCanvas() {
         const rect = canvas.getBoundingClientRect();
-        canvas.width = rect.width * window.devicePixelRatio;
-        canvas.height = rect.height * window.devicePixelRatio;
-        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
       resizeCanvas();
       window.addEventListener("resize", resizeCanvas);
@@ -3813,7 +4529,6 @@
         const heavyMetalHeight = 120;
         const heavyMetalBottom = interfaceY + heavyMetalHeight;
 
-        // FM Layer
         const fmGrad = ctx.createLinearGradient(0, ferromagnetTop, 0, interfaceY);
         fmGrad.addColorStop(0, "rgba(2, 132, 199, 0.15)");
         fmGrad.addColorStop(1, "rgba(0, 240, 255, 0.25)");
@@ -3828,7 +4543,6 @@
         ctx.fillStyle = "#38bdf8";
         ctx.fillText("FERROMAGNETIC LAYER (CoFeB / Co/Pd)", 50, ferromagnetTop + 20);
 
-        // HM Layer
         const hmGrad = ctx.createLinearGradient(0, interfaceY, 0, heavyMetalBottom);
         hmGrad.addColorStop(0, "rgba(245, 158, 11, 0.12)");
         hmGrad.addColorStop(1, "rgba(217, 119, 6, 0.05)");
@@ -3841,7 +4555,6 @@
         ctx.fillStyle = "#f59e0b";
         ctx.fillText("HEAVY METAL LAYER (Pt / Ta / W) — J_c →", 50, heavyMetalBottom - 15);
 
-        // Interface line
         ctx.beginPath();
         ctx.moveTo(40, interfaceY);
         ctx.lineTo(w - 40, interfaceY);
@@ -3853,7 +4566,6 @@
         ctx.font = "9px 'JetBrains Mono', monospace";
         ctx.fillText("INTERFACE: SPIN-ORBIT COUPLING & RASHBA INTERACTION", 50, interfaceY - 6);
 
-        // Magnetization vectors (precessing arrows)
         const arrowColumns = 8;
         const arrowSpacing = (w - 140) / (arrowColumns - 1);
         for (let col = 0; col < arrowColumns; col++) {
@@ -3883,7 +4595,6 @@
           ctx.fill();
         }
 
-        // Spin Transport Particles
         particles.forEach(p => {
           p.x += p.vx;
           if (p.spin === 1) {
@@ -3921,6 +4632,11 @@
       renderFrame();
     }
 
+    /**
+     * =========================================================================
+     * UTILITY FUNCTIONS & INITIALIZATION
+     * =========================================================================
+     */
     function initUtilities() {
       const yearEl = document.getElementById("currentYear");
       if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -3961,6 +4677,7 @@
 
       const backToTop = document.getElementById("backToTop");
       window.addEventListener("scroll", () => {
+        if (!backToTop) return;
         if (window.scrollY > 400) {
           backToTop.classList.add("visible");
         } else {
@@ -3972,45 +4689,6 @@
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
       }
-
-      // Scroll spy for overview section links
-      const sections = document.querySelectorAll("section[id]");
-      window.addEventListener("scroll", () => {
-        const overviewActive = document.getElementById("overviewView").classList.contains("active-view");
-        if (!overviewActive) return;
-
-        let currentSection = "";
-        const scrollPos = window.scrollY + 120;
-
-        sections.forEach(sec => {
-          const top = sec.offsetTop;
-          const height = sec.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            currentSection = sec.getAttribute("id");
-          }
-        });
-
-        const navIdMap = {
-          "about": "navAbout",
-          "vision": "navVision",
-          "research": "navResearch",
-          "highlights": "navHighlights",
-          "mentorship": "navMentorship",
-          "network": "navNetwork",
-          "contact": "navContact"
-        };
-
-        Object.keys(navIdMap).forEach(secKey => {
-          const link = document.getElementById(navIdMap[secKey]);
-          if (link) {
-            if (currentSection === secKey) {
-              link.classList.add("active");
-            } else {
-              link.classList.remove("active");
-            }
-          }
-        });
-      });
     }
 
     function closeDrawer() {
@@ -4018,13 +4696,27 @@
       if (mobileDrawer) mobileDrawer.classList.remove("open");
     }
 
-    window.onload = function() {
-      initPublicationsFilterSystem();
-      renderFullPublicationsList();
-      initRadialEcosystem();
-      initSpintronicsCanvas();
-      initUtilities();
-    };
+    function initApp() {
+      try {
+        initPublicationsFilterSystem();
+        renderFullPublicationsList();
+        initNewsFilterSystem();
+        renderLinkedInNews();
+        initGallerySystem();
+        renderGallery();
+        initRadialEcosystem();
+        initSpintronicsCanvas();
+        initUtilities();
+      } catch (err) {
+        console.error("Initialization error:", err);
+      }
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initApp);
+    } else {
+      initApp();
+    }
   </script>
 </body>
 </html>
